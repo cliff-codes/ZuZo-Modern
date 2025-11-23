@@ -8,43 +8,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useQuery } from "@tanstack/react-query";
+import { Skeleton } from "@/components/ui/skeleton";
+import type { Testimonial } from "@shared/schema";
 
-const testimonials = [
-  {
-    name: "Elymas Dekonor",
-    title: "Global Senior Manager",
-    company: "Eyewear Nonprofit",
-    rating: 5,
-    content: "They work beyond the defined scope and give thoughtful attention to related needs. They are very responsive and adaptable to the project.",
-    initials: "ED",
-  },
-  {
-    name: "Sarah Mitchell",
-    title: "CEO",
-    company: "TechFlow Solutions",
-    rating: 5,
-    content: "ZuZo transformed our customer support operations. The 60% cost reduction was impressive, but the quality improvement exceeded all expectations.",
-    initials: "SM",
-  },
-  {
-    name: "David Chen",
-    title: "Operations Director",
-    company: "Global Retail Corp",
-    rating: 5,
-    content: "The 48-hour deployment was incredible. Our virtual assistant team was operational before we even finished onboarding internally.",
-    initials: "DC",
-  },
-  {
-    name: "Maria Rodriguez",
-    title: "VP of Customer Success",
-    company: "FinTech Innovations",
-    rating: 5,
-    content: "Outstanding omnichannel support. Our customer satisfaction scores increased by 35% within the first quarter of partnership.",
-    initials: "MR",
-  },
-];
+function getInitials(name: string): string {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
 
 export function TestimonialsSection() {
+  const { data: testimonials, isLoading } = useQuery<Testimonial[]>({
+    queryKey: ["/api/testimonials"],
+  });
   return (
     <section className="py-20 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
@@ -60,52 +40,76 @@ export function TestimonialsSection() {
 
         {/* Testimonials Carousel */}
         <div className="max-w-5xl mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                  <Card className="h-full" data-testid={`testimonial-${index}`}>
-                    <CardContent className="p-8">
-                      <div className="flex items-start gap-4 mb-6">
-                        <Quote className="h-10 w-10 text-primary/20 flex-shrink-0" />
-                        <div className="flex gap-1">
-                          {Array.from({ length: testimonial.rating }).map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-warning text-warning" />
-                          ))}
-                        </div>
+          {isLoading ? (
+            <div className="grid md:grid-cols-2 gap-6">
+              {[1, 2].map((i) => (
+                <Card key={i} className="h-full">
+                  <CardContent className="p-8">
+                    <Skeleton className="h-10 w-10 mb-6" />
+                    <Skeleton className="h-20 w-full mb-6" />
+                    <div className="flex items-center gap-4">
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      <div className="flex-1">
+                        <Skeleton className="h-4 w-32 mb-2" />
+                        <Skeleton className="h-3 w-48" />
                       </div>
-
-                      <p className="text-base leading-relaxed mb-6 text-muted-foreground">
-                        "{testimonial.content}"
-                      </p>
-
-                      <div className="flex items-center gap-4">
-                        <Avatar className="h-12 w-12">
-                          <AvatarFallback className="bg-primary/10 text-primary font-semibold">
-                            {testimonial.initials}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <div className="font-heading font-semibold">{testimonial.name}</div>
-                          <div className="text-sm text-muted-foreground">
-                            {testimonial.title}, {testimonial.company}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : testimonials && testimonials.length > 0 ? (
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {testimonials.map((testimonial) => (
+                  <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
+                    <Card className="h-full" data-testid={`testimonial-${testimonial.id}`}>
+                      <CardContent className="p-8">
+                        <div className="flex items-start gap-4 mb-6">
+                          <Quote className="h-10 w-10 text-primary/20 flex-shrink-0" />
+                          <div className="flex gap-1">
+                            {Array.from({ length: testimonial.rating }).map((_, i) => (
+                              <Star key={i} className="h-4 w-4 fill-warning text-warning" />
+                            ))}
                           </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="-left-12 hidden lg:flex" />
-            <CarouselNext className="-right-12 hidden lg:flex" />
-          </Carousel>
+
+                        <p className="text-base leading-relaxed mb-6 text-muted-foreground">
+                          "{testimonial.content}"
+                        </p>
+
+                        <div className="flex items-center gap-4">
+                          <Avatar className="h-12 w-12">
+                            <AvatarFallback className="bg-primary/10 text-primary font-semibold">
+                              {getInitials(testimonial.name)}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <div className="font-heading font-semibold">{testimonial.name}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {testimonial.title}, {testimonial.company}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-12 hidden lg:flex" />
+              <CarouselNext className="-right-12 hidden lg:flex" />
+            </Carousel>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No testimonials available yet.</p>
+            </div>
+          )}
         </div>
 
         {/* Trust Indicators */}
