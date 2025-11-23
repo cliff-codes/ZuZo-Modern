@@ -60,9 +60,6 @@ export default function Contact() {
                     <div>
                       <div className="font-semibold mb-2">Phone</div>
                       <div className="space-y-1.5">
-                        <a href="tel:+233508000013" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
-                          +233 50 800 0013
-                        </a>
                         <a href="tel:+233240526570" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
                           +233 24 052 6570
                         </a>
