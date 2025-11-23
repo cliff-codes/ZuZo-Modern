@@ -110,3 +110,20 @@ Preferred communication style: Simple, everyday language.
 - Event listeners track booking success/cancellation events
 - Brand color customization (#0066CC) matching ZuZo theme
 - Bookings captured with name, email, company, phone, timezone, and scheduling details
+
+**QContact CRM Integration**: Automatic webhook forwarding for all form submissions:
+- Service module: `server/services/qcontact.service.ts`
+- Webhook URL: https://zuzo.qcontact.com/api/v2/webhooks/callback/inbound
+- Organization ID: 236522, Event ID: 1897941956
+- **Field Mapping**: 
+  - name → first_name + last_name (automatic split)
+  - email → c__email (custom field)
+  - phone → phone_number
+  - company → c__company (custom field)
+  - industry → c__industry (custom field)
+  - message → body
+  - interestedServices → c__service_interest (custom field, comma-separated)
+- **Dual Storage**: Leads stored in local PostgreSQL database AND forwarded to QContact
+- **Error Handling**: Asynchronous forwarding with retry logic (up to 2 retries with exponential backoff)
+- **Non-blocking**: Form submissions return immediately to user, QContact forwarding happens in background
+- Credentials stored in environment variables (QCONTACT_ORG_ID, QCONTACT_EVENT_ID)
