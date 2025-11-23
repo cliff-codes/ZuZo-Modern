@@ -5,10 +5,11 @@
 ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solutions, including AI-powered virtual assistants and omnichannel contact center services. The platform enables businesses to reduce operational costs by 60% through a combination of human expertise and AI automation. 
 
 **Key Features**:
+- **Video Hero Section**: Homepage features a 3-minute overview video showcasing ZuZo's Gitex presentation
 - **5 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management
 - **8 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics & Transportation
 - **Resources Hub**: Blog, Case Studies, FAQ
-- **Conversion Tools**: Contact forms, demo booking, ROI calculator, newsletter subscriptions
+- **Conversion Tools**: Contact forms, demo booking (Cal.com integration), ROI calculator, newsletter subscriptions
 - **Content Management**: Database-driven testimonials, blog posts, and case studies
 
 The application is built as a full-stack web platform with a React-based frontend and Express backend, designed for rapid deployment (48-hour launch capability) and global 24/7 service delivery.

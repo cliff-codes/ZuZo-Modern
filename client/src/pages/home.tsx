@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/home/hero-section";
+import { VideoHeroSection } from "@/components/home/video-hero-section";
 import { TrustBar } from "@/components/home/trust-bar";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { HowItWorks } from "@/components/home/how-it-works";
@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
+        <VideoHeroSection />
         <TrustBar />
         <ServicesOverview />
         <HowItWorks />
