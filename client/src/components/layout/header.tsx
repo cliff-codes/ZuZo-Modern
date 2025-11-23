@@ -27,6 +27,8 @@ const industries = [
   { title: "Technology & SaaS", href: "/industries/technology", description: "Technical support & customer success" },
   { title: "Real Estate", href: "/industries/real-estate", description: "Lead qualification & tenant support" },
   { title: "Professional Services", href: "/industries/professional-services", description: "Client communication & admin support" },
+  { title: "Automotive", href: "/industries/automotive", description: "Dealership & service center support" },
+  { title: "Logistics & Transportation", href: "/industries/logistics", description: "Shipment tracking & carrier coordination" },
 ];
 
 const resources = [

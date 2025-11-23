@@ -28,6 +28,8 @@ import HealthcarePage from "@/pages/industries/healthcare";
 import TechnologyPage from "@/pages/industries/technology";
 import RealEstatePage from "@/pages/industries/real-estate";
 import ProfessionalServicesPage from "@/pages/industries/professional-services";
+import AutomotivePage from "@/pages/industries/automotive";
+import LogisticsPage from "@/pages/industries/logistics";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -58,6 +60,8 @@ function Router() {
       <Route path="/industries/technology" component={TechnologyPage} />
       <Route path="/industries/real-estate" component={RealEstatePage} />
       <Route path="/industries/professional-services" component={ProfessionalServicesPage} />
+      <Route path="/industries/automotive" component={AutomotivePage} />
+      <Route path="/industries/logistics" component={LogisticsPage} />
 
       {/* Tools & Actions */}
       <Route path="/contact" component={Contact} />

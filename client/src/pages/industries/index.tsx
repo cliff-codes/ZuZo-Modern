@@ -10,6 +10,8 @@ import {
   Laptop, 
   Home as HomeIcon, 
   Briefcase,
+  Car,
+  Truck,
   ArrowRight,
   CheckCircle2,
   TrendingUp,
@@ -66,6 +68,22 @@ export default function IndustriesPage() {
       description: "Client communication, appointment management, and administrative support",
       benefits: ["Client communication", "Scheduling", "Document processing", "Billing support"],
       path: "/industries/professional-services"
+    },
+    {
+      id: "automotive",
+      name: "Automotive",
+      icon: Car,
+      description: "Dealership support, service scheduling, parts inquiries, and customer retention",
+      benefits: ["Service appointments", "Sales support", "Parts inquiries", "Warranty processing"],
+      path: "/industries/automotive"
+    },
+    {
+      id: "logistics",
+      name: "Logistics & Transportation",
+      icon: Truck,
+      description: "Shipment tracking, carrier coordination, warehouse operations, and delivery support",
+      benefits: ["Shipment tracking", "Carrier coordination", "Claims handling", "Customer service"],
+      path: "/industries/logistics"
     }
   ];
 
