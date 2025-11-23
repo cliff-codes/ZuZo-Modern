@@ -9,18 +9,18 @@ export function VideoHeroSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
               Stop Losing Customers to Poor Support
               <br />
               <span className="text-primary">Start Delivering Exceptional Experiences</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
               Get world-class customer support, sales, and admin teams powered by AI automation and omnichannel technology — <strong>without hiring, training, or managing staff</strong>
             </p>
             
             {/* Key Benefits */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <div className="flex flex-wrap justify-center gap-6 mb-6">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-primary" />
                 <span className="font-semibold">Reduce costs by 60%</span>
@@ -36,34 +36,35 @@ export function VideoHeroSection() {
             </div>
 
             <Link href="/book-demo">
-              <Button size="lg" className="text-lg px-8 py-6 h-auto" data-testid="button-hero-book-demo">
+              <Button size="lg" className="text-lg px-8 py-6 h-auto mb-4" data-testid="button-hero-book-demo">
                 Get Your Free Strategy Session Now
               </Button>
             </Link>
             
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-muted-foreground mb-8">
               🎁 Free 30-minute consultation • No credit card • No commitment
             </p>
           </div>
 
           {/* Video Player */}
-          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-card border">
-            <video
-              controls
-              className="w-full"
-              poster="/api/placeholder/1200/675"
-              data-testid="video-hero-player"
-            >
-              <source src={videoFile} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black">
+            <div className="relative aspect-video">
+              <video
+                controls
+                className="w-full h-full object-cover"
+                data-testid="video-hero-player"
+              >
+                <source src={videoFile} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             
             {/* Video Caption */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
-              <div className="flex items-center gap-2">
-                <Play className="h-5 w-5" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 text-white pointer-events-none">
+              <div className="flex items-center gap-2 text-sm md:text-base">
+                <Play className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
                 <span className="font-semibold">3-Minute Overview:</span>
-                <span className="text-sm">See how ZuZo transforms your customer operations with AI + expert teams</span>
+                <span className="hidden sm:inline">See how ZuZo transforms your customer operations with AI + expert teams</span>
               </div>
             </div>
           </div>
