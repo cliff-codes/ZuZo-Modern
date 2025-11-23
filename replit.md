@@ -6,7 +6,7 @@ ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solution
 
 **Key Features**:
 - **5 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management
-- **6 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services
+- **8 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics & Transportation
 - **Resources Hub**: Blog, Case Studies, FAQ
 - **Conversion Tools**: Contact forms, demo booking, ROI calculator, newsletter subscriptions
 - **Content Management**: Database-driven testimonials, blog posts, and case studies
@@ -27,7 +27,7 @@ Preferred communication style: Simple, everyday language.
 
 **Routing**: Wouter for lightweight client-side routing with comprehensive page coverage:
 - **Service Pages** (5): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management
-- **Industry Pages** (7): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services
+- **Industry Pages** (9): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services, /industries/automotive, /industries/logistics
 - **Resources** (5): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq
 - **Utility Pages**: /contact, /book-demo, /roi-calculator, /pricing, /company/about
 
@@ -43,7 +43,7 @@ Preferred communication style: Simple, everyday language.
 
 **Navigation System**: Comprehensive header navigation with:
 - Services dropdown menu (5 services with descriptions)
-- Industries dropdown menu (6 industries with descriptions)  
+- Industries dropdown menu (8 industries with descriptions: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics)  
 - Resources dropdown menu (Blog, Case Studies, FAQ)
 - Direct links for About, Pricing, and ROI Calculator
 - Mobile-responsive sheet navigation mirroring desktop structure
