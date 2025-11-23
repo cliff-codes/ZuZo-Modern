@@ -1,18 +1,4 @@
-import { useEffect } from "react";
-import { getCalApi } from "@calcom/embed-react";
-
 export function BookingForm() {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "30min" });
-      cal("ui", {
-        hideEventTypeDetails: false,
-        layout: "month_view",
-        theme: "light",
-      });
-    })();
-  }, []);
-
   return (
     <div className="w-full space-y-6">
       <div className="rounded-lg overflow-hidden border shadow-lg">
@@ -42,13 +28,24 @@ export function BookingForm() {
           </div>
         </div>
 
-        {/* Calendar Embed - Using Cal.com React Component */}
-        <div className="bg-white min-h-[600px]" data-testid="cal-booking-embed">
-          <div
-            data-cal-namespace="30min"
-            data-cal-link="zuzo-ltd/30min"
-            data-cal-config='{"layout":"month_view","theme":"light"}'
-            style={{ width: "100%", height: "100%", overflow: "scroll" }}
+        {/* Calendar Embed - Optimized iframe */}
+        <div 
+          className="relative overflow-y-auto bg-white"
+          style={{ height: "500px" }}
+        >
+          <iframe
+            src="https://cal.com/zuzo-ltd/30min?layout=month_view"
+            data-testid="cal-booking-embed"
+            loading="eager"
+            style={{
+              width: "100%",
+              height: "600px",
+              border: "none",
+              position: "relative",
+              top: "-80px",
+            }}
+            title="Book a Demo with ZuZo"
+            allow="camera; microphone; autoplay"
           />
         </div>
       </div>
