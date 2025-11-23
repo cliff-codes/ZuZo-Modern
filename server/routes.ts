@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { qcontactService } from "./services/qcontact.service";
 import {
   insertLeadSchema,
   insertSubscriberSchema,
@@ -16,6 +17,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertLeadSchema.parse(req.body);
       const lead = await storage.createLead(validatedData);
+      
+      // Forward to QContact asynchronously (don't block the response)
+      qcontactService.forwardLeadWithRetry(lead).catch(error => {
+        console.error('[QContact] Failed to forward lead:', error);
+      });
+      
       res.json(lead);
     } catch (error: any) {
       res.status(400).json({ error: error.message || "Invalid request data" });
