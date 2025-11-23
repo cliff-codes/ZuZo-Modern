@@ -15,6 +15,24 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const services = [
   { title: "Contact Center Services", href: "/services/contact-center", description: "24/7 omnichannel customer support" },
   { title: "Virtual Assistants", href: "/services/virtual-assistants", description: "AI-powered administrative support" },
+  { title: "AI & Automation", href: "/services/ai-automation", description: "Intelligent process automation" },
+  { title: "Back Office Support", href: "/services/back-office", description: "Administrative & operational support" },
+  { title: "Workforce Management", href: "/services/workforce-management", description: "Scalable team solutions" },
+];
+
+const industries = [
+  { title: "E-commerce & Retail", href: "/industries/ecommerce", description: "24/7 customer support & order management" },
+  { title: "Financial Services", href: "/industries/financial-services", description: "Secure, compliant financial operations" },
+  { title: "Healthcare", href: "/industries/healthcare", description: "HIPAA-compliant patient support" },
+  { title: "Technology & SaaS", href: "/industries/technology", description: "Technical support & customer success" },
+  { title: "Real Estate", href: "/industries/real-estate", description: "Lead qualification & tenant support" },
+  { title: "Professional Services", href: "/industries/professional-services", description: "Client communication & admin support" },
+];
+
+const resources = [
+  { title: "Blog", href: "/resources/blog", description: "Latest insights and best practices" },
+  { title: "Case Studies", href: "/resources/case-studies", description: "Success stories from our clients" },
+  { title: "FAQ", href: "/resources/faq", description: "Frequently asked questions" },
 ];
 
 export function Header() {
@@ -69,6 +87,62 @@ export function Header() {
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               {service.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="font-sans" data-testid="nav-industries-trigger">
+                  Industries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[600px] gap-3 p-6 md:grid-cols-2">
+                    {industries.map((industry) => (
+                      <li key={industry.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={industry.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover-elevate"
+                            data-testid={`link-industry-${industry.href.split("/").pop()}`}
+                          >
+                            <div className="text-sm font-medium leading-none font-heading">
+                              {industry.title}
+                            </div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {industry.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="font-sans" data-testid="nav-resources-trigger">
+                  Resources
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-6">
+                    {resources.map((resource) => (
+                      <li key={resource.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={resource.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover-elevate"
+                            data-testid={`link-resource-${resource.href.split("/").pop()}`}
+                          >
+                            <div className="text-sm font-medium leading-none font-heading">
+                              {resource.title}
+                            </div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {resource.description}
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -136,6 +210,46 @@ export function Header() {
                       >
                         <div className="font-medium font-heading text-sm">{service.title}</div>
                         <p className="text-xs text-muted-foreground mt-1">{service.description}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-heading font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">
+                    Industries
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    {industries.map((industry) => (
+                      <Link
+                        key={industry.href}
+                        href={industry.href}
+                        className="block px-4 py-3 rounded-md hover-elevate"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        data-testid={`mobile-link-industry-${industry.href.split("/").pop()}`}
+                      >
+                        <div className="font-medium font-heading text-sm">{industry.title}</div>
+                        <p className="text-xs text-muted-foreground mt-1">{industry.description}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-heading font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">
+                    Resources
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    {resources.map((resource) => (
+                      <Link
+                        key={resource.href}
+                        href={resource.href}
+                        className="block px-4 py-3 rounded-md hover-elevate"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        data-testid={`mobile-link-resource-${resource.href.split("/").pop()}`}
+                      >
+                        <div className="font-medium font-heading text-sm">{resource.title}</div>
+                        <p className="text-xs text-muted-foreground mt-1">{resource.description}</p>
                       </Link>
                     ))}
                   </div>
