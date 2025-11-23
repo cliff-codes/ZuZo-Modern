@@ -13,7 +13,7 @@ export default function BookDemo() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 pb-20 lg:pt-40 lg:pb-24">
+      <main className="pt-12 pb-20 lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-8">
