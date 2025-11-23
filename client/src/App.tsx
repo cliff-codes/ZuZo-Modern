@@ -8,6 +8,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import ContactCenterService from "@/pages/services/contact-center";
 import VirtualAssistantsService from "@/pages/services/virtual-assistants";
+import AIAutomationService from "@/pages/services/ai-automation";
+import BackOfficeService from "@/pages/services/back-office";
+import WorkforceManagementService from "@/pages/services/workforce-management";
 import Contact from "@/pages/contact";
 import BookDemo from "@/pages/book-demo";
 import ROICalculatorPage from "@/pages/roi-calculator";
@@ -29,6 +32,9 @@ function Router() {
       {/* Service Pages */}
       <Route path="/services/contact-center" component={ContactCenterService} />
       <Route path="/services/virtual-assistants" component={VirtualAssistantsService} />
+      <Route path="/services/ai-automation" component={AIAutomationService} />
+      <Route path="/services/back-office" component={BackOfficeService} />
+      <Route path="/services/workforce-management" component={WorkforceManagementService} />
 
       {/* Resources */}
       <Route path="/resources/blog" component={BlogPage} />
