@@ -42,7 +42,7 @@ export function VideoHeroSection() {
             </Link>
             
             <p className="text-sm text-muted-foreground mb-8">
-              🎁 Free 30-minute consultation • No credit card • No commitment
+              Free 30-minute consultation • No credit card • No commitment
             </p>
           </div>
 
