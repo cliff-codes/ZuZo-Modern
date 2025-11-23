@@ -2,7 +2,8 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, Clock, MessageCircle, Linkedin, Facebook } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -58,8 +59,20 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-semibold mb-1">Phone</div>
-                      <a href="tel:+233240526570" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        +233 240 526 570
+                      <a href="tel:+233508000013" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        +233 50 800 0013
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold mb-1">WhatsApp</div>
+                      <a href="https://wa.me/233508000013" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        +233 50 800 0013
                       </a>
                     </div>
                   </div>
@@ -71,8 +84,9 @@ export default function Contact() {
                     <div>
                       <div className="font-semibold mb-1">Office</div>
                       <p className="text-sm text-muted-foreground">
-                        Medina Estates<br />
-                        Greater Accra, Ghana
+                        World Trade Centre Accra<br />
+                        29 Independence Avenue, 1st Floor<br />
+                        Accra, Ghana
                       </p>
                     </div>
                   </div>
@@ -104,6 +118,58 @@ export default function Contact() {
                     <div className="font-semibold mb-1">Average Response Time</div>
                     <div className="text-muted-foreground">&lt; 24 hours</div>
                   </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-heading text-xl">Connect With Us</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <a
+                    href="https://www.linkedin.com/company/zuzo-contactcare247/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover-elevate transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Linkedin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">LinkedIn</div>
+                      <div className="text-xs text-muted-foreground">Follow us for updates</div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100063778181391"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover-elevate transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Facebook className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">Facebook</div>
+                      <div className="text-xs text-muted-foreground">Like our page</div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://wa.me/233508000013"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover-elevate transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">WhatsApp</div>
+                      <div className="text-xs text-muted-foreground">Chat with us instantly</div>
+                    </div>
+                  </a>
                 </CardContent>
               </Card>
             </div>

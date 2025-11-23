@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { NewsletterSignup } from "./newsletter-signup";
 
 export function Footer() {
@@ -17,9 +17,13 @@ export function Footer() {
               Transforming business operations with AI-powered virtual assistants and omnichannel contact center solutions. Trusted by 500+ businesses worldwide.
             </p>
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm">
-                <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <span className="text-muted-foreground">Medina Estates, Greater Accra, Ghana</span>
+              <div className="flex items-start gap-3 text-sm">
+                <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                <span className="text-muted-foreground">
+                  World Trade Centre Accra<br />
+                  29 Independence Avenue, 1st Floor<br />
+                  Accra, Ghana
+                </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0" />
@@ -29,8 +33,14 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <a href="tel:+233240526570" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
-                  +233 240 526 570
+                <a href="tel:+233508000013" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
+                  +233 50 800 0013
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-sm">
+                <MessageCircle className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                <a href="https://wa.me/233508000013" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-whatsapp">
+                  WhatsApp Support
                 </a>
               </div>
             </div>
@@ -119,31 +129,34 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/zuzo-contactcare247/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="LinkedIn"
               data-testid="link-linkedin"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=100063778181391"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Facebook"
               data-testid="link-facebook"
             >
               <Facebook className="h-5 w-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://wa.me/233508000013"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
-              data-testid="link-twitter"
+              aria-label="WhatsApp"
+              data-testid="link-whatsapp-footer"
             >
-              <Twitter className="h-5 w-5" />
+              <MessageCircle className="h-5 w-5" />
             </a>
           </div>
         </div>
