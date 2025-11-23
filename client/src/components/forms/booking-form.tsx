@@ -2,11 +2,9 @@ export function BookingForm() {
   return (
     <div className="w-full space-y-6">
       <div 
-        className="relative overflow-hidden"
+        className="relative overflow-hidden rounded-lg border"
         style={{
-          height: "600px",
-          marginTop: "-150px",
-          marginBottom: "-80px",
+          height: "650px",
         }}
       >
         <iframe
@@ -14,17 +12,14 @@ export function BookingForm() {
           data-testid="cal-booking-embed"
           style={{
             width: "100%",
-            height: "830px",
+            height: "100%",
             border: "none",
-            position: "relative",
-            top: "150px",
           }}
           title="Book a Demo with ZuZo"
         />
       </div>
       <p className="text-sm text-muted-foreground text-center">
-        ✓ No credit card required ✓ 30-minute consultation ✓ Custom proposal
-        included
+        ✓ No credit card required ✓ 30-minute consultation ✓ Custom proposal included
       </p>
     </div>
   );
