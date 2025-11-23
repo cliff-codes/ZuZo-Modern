@@ -32,8 +32,8 @@ export function BookingForm() {
         <div 
           className="relative overflow-hidden"
           style={{
-            height: "580px",
-            marginTop: "-80px",
+            height: "500px",
+            marginTop: "-60px",
           }}
         >
           <iframe
@@ -41,11 +41,11 @@ export function BookingForm() {
             data-testid="cal-booking-embed"
             style={{
               width: "100%",
-              height: "660px",
+              height: "560px",
               border: "none",
               position: "relative",
-              top: "80px",
-              clipPath: "inset(50px 0 0 0)",
+              top: "60px",
+              clipPath: "inset(60px 0 0 0)",
             }}
             title="Book a Demo with ZuZo"
           />
