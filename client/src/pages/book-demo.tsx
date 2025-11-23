@@ -28,14 +28,7 @@ export default function BookDemo() {
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Booking Form */}
             <div className="lg:col-span-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-heading text-2xl">Schedule Your Consultation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <BookingForm />
-                </CardContent>
-              </Card>
+              <BookingForm />
             </div>
 
             {/* What to Expect */}
