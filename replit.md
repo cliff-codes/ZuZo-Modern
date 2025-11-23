@@ -101,3 +101,11 @@ Preferred communication style: Simple, everyday language.
 **Date Handling**: date-fns for date manipulation and formatting.
 
 **Session Management**: connect-pg-simple for PostgreSQL-backed session storage (configured but authentication not yet implemented).
+
+**Scheduling Integration**: Cal.com (@calcom/embed-react) for automated demo booking and calendar management:
+- Inline calendar embed on /book-demo page
+- Cal.com event link: https://cal.com/zuzo-ltd/30min
+- Automatic sync of Cal.com bookings to local database for tracking and analytics
+- Event listeners track booking success/cancellation events
+- Brand color customization (#0066CC) matching ZuZo theme
+- Bookings captured with name, email, company, phone, timezone, and scheduling details
