@@ -31,11 +31,19 @@ export function Footer() {
                   remote@zuzogp.com
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-sm">
-                <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <a href="tel:+233508000013" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
-                  +233 50 800 0013
-                </a>
+              <div className="flex items-start gap-3 text-sm">
+                <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <a href="tel:+233508000013" className="text-muted-foreground hover:text-primary transition-colors block" data-testid="link-phone-1">
+                    +233 50 800 0013
+                  </a>
+                  <a href="tel:+233240526570" className="text-muted-foreground hover:text-primary transition-colors block" data-testid="link-phone-2">
+                    +233 24 052 6570
+                  </a>
+                  <a href="tel:+233302729016" className="text-muted-foreground hover:text-primary transition-colors block" data-testid="link-phone-3">
+                    +233 30 272 9016
+                  </a>
+                </div>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <MessageCircle className="h-4 w-4 text-muted-foreground flex-shrink-0" />

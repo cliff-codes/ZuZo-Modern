@@ -58,10 +58,18 @@ export default function Contact() {
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold mb-1">Phone</div>
-                      <a href="tel:+233508000013" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        +233 50 800 0013
-                      </a>
+                      <div className="font-semibold mb-2">Phone</div>
+                      <div className="space-y-1.5">
+                        <a href="tel:+233508000013" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
+                          +233 50 800 0013
+                        </a>
+                        <a href="tel:+233240526570" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
+                          +233 24 052 6570
+                        </a>
+                        <a href="tel:+233302729016" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
+                          +233 30 272 9016
+                        </a>
+                      </div>
                     </div>
                   </div>
 
