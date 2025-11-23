@@ -22,6 +22,12 @@ import CaseStudiesPage from "@/pages/resources/case-studies";
 import CaseStudyPage from "@/pages/resources/case-study";
 import FAQPage from "@/pages/resources/faq";
 import IndustriesPage from "@/pages/industries/index";
+import EcommercePage from "@/pages/industries/ecommerce";
+import FinancialServicesPage from "@/pages/industries/financial-services";
+import HealthcarePage from "@/pages/industries/healthcare";
+import TechnologyPage from "@/pages/industries/technology";
+import RealEstatePage from "@/pages/industries/real-estate";
+import ProfessionalServicesPage from "@/pages/industries/professional-services";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -46,6 +52,12 @@ function Router() {
 
       {/* Industries */}
       <Route path="/industries" component={IndustriesPage} />
+      <Route path="/industries/ecommerce" component={EcommercePage} />
+      <Route path="/industries/financial-services" component={FinancialServicesPage} />
+      <Route path="/industries/healthcare" component={HealthcarePage} />
+      <Route path="/industries/technology" component={TechnologyPage} />
+      <Route path="/industries/real-estate" component={RealEstatePage} />
+      <Route path="/industries/professional-services" component={ProfessionalServicesPage} />
 
       {/* Tools & Actions */}
       <Route path="/contact" component={Contact} />
