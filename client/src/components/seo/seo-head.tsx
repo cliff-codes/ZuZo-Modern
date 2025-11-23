@@ -14,14 +14,15 @@ export function SEOHead({
   title,
   description,
   canonical,
-  ogImage = "/og-image.png",
+  ogImage,
   ogType = "website",
   schema,
   keywords,
 }: SEOProps) {
   const fullTitle = `${title} | ZuZo - Human-AI Powered BPO Solutions`;
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://zuzo.replit.app';
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : (typeof window !== 'undefined' ? window.location.href : siteUrl);
+  const siteUrl = 'https://zuzo.replit.app';
+  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/og-default.png`;
 
   return (
     <Helmet>
@@ -36,14 +37,14 @@ export function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+      <meta property="og:image" content={ogImageUrl} />
       <meta property="og:site_name" content="ZuZo" />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+      <meta name="twitter:image" content={ogImageUrl} />
 
       {/* Schema Markup */}
       {schema && (

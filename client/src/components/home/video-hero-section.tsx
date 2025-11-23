@@ -57,7 +57,6 @@ export function VideoHeroSection() {
                 aria-label="ZuZo company overview video showcasing BPO solutions"
               >
                 <source src={videoFile} type="video/mp4" />
-                <track kind="captions" label="English captions" />
                 Your browser does not support the video tag.
               </video>
             </div>

@@ -98,6 +98,9 @@
     <priority>0.7</priority>
   </url>
   
+  <!-- Note: Blog post and case study detail pages are dynamically generated -->
+  <!-- Add individual blog/case study URLs as they are published -->
+  
   <!-- Action Pages -->
   <url>
     <loc>https://zuzo.replit.app/contact</loc>
