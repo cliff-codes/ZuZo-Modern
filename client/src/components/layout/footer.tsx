@@ -5,46 +5,46 @@ import { NewsletterSignup } from "./newsletter-signup";
 export function Footer() {
 
   return (
-    <footer className="bg-card border-t">
+    <footer className="bg-slate-950 text-white border-t">
       <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="font-heading font-bold text-3xl text-primary mb-4">
+            <div className="font-heading font-bold text-3xl text-white mb-4">
               ZuZo
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-md">
+            <p className="text-sm text-gray-300 leading-relaxed mb-6 max-w-md">
               Transforming business operations with AI-powered virtual assistants and omnichannel contact center solutions. Trusted by 500+ businesses worldwide.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm">
-                <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">
+                <MapPin className="h-4 w-4 text-gray-300 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300">
                   World Trade Centre Accra<br />
                   29 Independence Avenue, 1st Floor<br />
                   Accra, Ghana
                 </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <a href="mailto:remote@zuzogp.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+                <Mail className="h-4 w-4 text-gray-300 flex-shrink-0" />
+                <a href="mailto:remote@zuzogp.com" className="text-gray-300 hover:text-white transition-colors" data-testid="link-email">
                   remote@zuzogp.com
                 </a>
               </div>
               <div className="flex items-start gap-3 text-sm">
-                <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                <Phone className="h-4 w-4 text-gray-300 flex-shrink-0 mt-0.5" />
                 <div className="space-y-1">
-                  <a href="tel:+233240526570" className="text-muted-foreground hover:text-primary transition-colors block" data-testid="link-phone-1">
+                  <a href="tel:+233240526570" className="text-gray-300 hover:text-white transition-colors block" data-testid="link-phone-1">
                     +233 24 052 6570
                   </a>
-                  <a href="tel:+233302729016" className="text-muted-foreground hover:text-primary transition-colors block" data-testid="link-phone-2">
+                  <a href="tel:+233302729016" className="text-gray-300 hover:text-white transition-colors block" data-testid="link-phone-2">
                     +233 30 272 9016
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <MessageCircle className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <a href="https://wa.me/233508000013" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-whatsapp">
+                <MessageCircle className="h-4 w-4 text-gray-300 flex-shrink-0" />
+                <a href="https://wa.me/233508000013" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors" data-testid="link-whatsapp">
                   WhatsApp Support
                 </a>
               </div>
@@ -53,17 +53,17 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide">
+            <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide text-white">
               Services
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/contact-center" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-contact-center">
+                <Link href="/services/contact-center" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-contact-center">
                   Contact Center
                 </Link>
               </li>
               <li>
-                <Link href="/services/virtual-assistants" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-virtual-assistants">
+                <Link href="/services/virtual-assistants" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-virtual-assistants">
                   Virtual Assistants
                 </Link>
               </li>
@@ -72,17 +72,17 @@ export function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide">
+            <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide text-white">
               Company
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/company" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-about">
+                <Link href="/company" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-about">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-contact">
+                <Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-contact">
                   Contact
                 </Link>
               </li>
@@ -91,22 +91,22 @@ export function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide">
+            <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide text-white">
               Quick Links
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-pricing">
+                <Link href="/pricing" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-pricing">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/roi-calculator" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-roi-calculator">
+                <Link href="/roi-calculator" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-roi-calculator">
                   ROI Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/book-demo" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-link-book-demo">
+                <Link href="/book-demo" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-book-demo">
                   Book Demo
                 </Link>
               </li>
@@ -115,12 +115,12 @@ export function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-12 pt-8 border-t">
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="max-w-md">
-            <h3 className="font-heading font-semibold mb-2">
+            <h3 className="font-heading font-semibold mb-2 text-white">
               Subscribe to Our Newsletter
             </h3>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-gray-300 mb-4">
               Get the latest insights on BPO, AI automation, and business optimization.
             </p>
             <NewsletterSignup />
@@ -128,8 +128,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-300">
             © {new Date().getFullYear()} ZuZo Company Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -137,7 +137,7 @@ export function Footer() {
               href="https://www.linkedin.com/company/zuzo-contactcare247/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
               aria-label="LinkedIn"
               data-testid="link-linkedin"
             >
@@ -147,7 +147,7 @@ export function Footer() {
               href="https://www.facebook.com/profile.php?id=100063778181391"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
               aria-label="Facebook"
               data-testid="link-facebook"
             >
@@ -157,7 +157,7 @@ export function Footer() {
               href="https://wa.me/233508000013"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
               aria-label="WhatsApp"
               data-testid="link-whatsapp-footer"
             >
