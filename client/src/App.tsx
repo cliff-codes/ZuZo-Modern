@@ -21,6 +21,7 @@ import BlogPostPage from "@/pages/resources/blog-post";
 import CaseStudiesPage from "@/pages/resources/case-studies";
 import CaseStudyPage from "@/pages/resources/case-study";
 import FAQPage from "@/pages/resources/faq";
+import IndustriesPage from "@/pages/industries/index";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -42,6 +43,9 @@ function Router() {
       <Route path="/resources/case-studies" component={CaseStudiesPage} />
       <Route path="/resources/case-studies/:slug" component={CaseStudyPage} />
       <Route path="/resources/faq" component={FAQPage} />
+
+      {/* Industries */}
+      <Route path="/industries" component={IndustriesPage} />
 
       {/* Tools & Actions */}
       <Route path="/contact" component={Contact} />
