@@ -47,8 +47,8 @@ export function VideoHeroSection() {
           </div>
 
           {/* Video Player */}
-          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black">
-            <div className="relative aspect-video">
+          <div className="rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-video bg-black">
               <video
                 controls
                 className="w-full h-full object-cover"
@@ -60,11 +60,11 @@ export function VideoHeroSection() {
             </div>
             
             {/* Video Caption */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 text-white pointer-events-none">
-              <div className="flex items-center gap-2 text-sm md:text-base">
+            <div className="bg-primary p-4 text-white">
+              <div className="flex items-center justify-center gap-2 text-sm md:text-base">
                 <Play className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
                 <span className="font-semibold">3-Minute Overview:</span>
-                <span className="hidden sm:inline">See how ZuZo transforms your customer operations with AI + expert teams</span>
+                <span>See how ZuZo transforms your customer operations with AI + expert teams</span>
               </div>
             </div>
           </div>
