@@ -13,6 +13,11 @@ import BookDemo from "@/pages/book-demo";
 import ROICalculatorPage from "@/pages/roi-calculator";
 import Pricing from "@/pages/pricing";
 import About from "@/pages/company/about";
+import BlogPage from "@/pages/resources/blog";
+import BlogPostPage from "@/pages/resources/blog-post";
+import CaseStudiesPage from "@/pages/resources/case-studies";
+import CaseStudyPage from "@/pages/resources/case-study";
+import FAQPage from "@/pages/resources/faq";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +29,13 @@ function Router() {
       {/* Service Pages */}
       <Route path="/services/contact-center" component={ContactCenterService} />
       <Route path="/services/virtual-assistants" component={VirtualAssistantsService} />
+
+      {/* Resources */}
+      <Route path="/resources/blog" component={BlogPage} />
+      <Route path="/resources/blog/:slug" component={BlogPostPage} />
+      <Route path="/resources/case-studies" component={CaseStudiesPage} />
+      <Route path="/resources/case-studies/:slug" component={CaseStudyPage} />
+      <Route path="/resources/faq" component={FAQPage} />
 
       {/* Tools & Actions */}
       <Route path="/contact" component={Contact} />
