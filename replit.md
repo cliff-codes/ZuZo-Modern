@@ -2,7 +2,14 @@
 
 ## Overview
 
-ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solutions, including AI-powered virtual assistants and omnichannel contact center services. The platform enables businesses to reduce operational costs by 60% through a combination of human expertise and AI automation. Key features include contact forms, demo booking, ROI calculator, newsletter subscriptions, and service showcase pages.
+ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solutions, including AI-powered virtual assistants and omnichannel contact center services. The platform enables businesses to reduce operational costs by 60% through a combination of human expertise and AI automation. 
+
+**Key Features**:
+- **5 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management
+- **6 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services
+- **Resources Hub**: Blog, Case Studies, FAQ
+- **Conversion Tools**: Contact forms, demo booking, ROI calculator, newsletter subscriptions
+- **Content Management**: Database-driven testimonials, blog posts, and case studies
 
 The application is built as a full-stack web platform with a React-based frontend and Express backend, designed for rapid deployment (48-hour launch capability) and global 24/7 service delivery.
 
@@ -18,7 +25,11 @@ Preferred communication style: Simple, everyday language.
 
 **UI Framework**: shadcn/ui component library built on Radix UI primitives, providing accessible, customizable components with Tailwind CSS styling.
 
-**Routing**: Wouter for lightweight client-side routing, handling multiple service pages, contact forms, and utility pages.
+**Routing**: Wouter for lightweight client-side routing with comprehensive page coverage:
+- **Service Pages** (5): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management
+- **Industry Pages** (7): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services
+- **Resources** (5): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq
+- **Utility Pages**: /contact, /book-demo, /roi-calculator, /pricing, /company/about
 
 **State Management**: TanStack Query (React Query) for server state management, handling API calls, caching, and mutations for leads, subscribers, bookings, and content management.
 
@@ -29,6 +40,14 @@ Preferred communication style: Simple, everyday language.
 - Color system: CSS custom properties with HSL values for theming support
 
 **Form Handling**: React Hook Form with Zod schema validation, integrated with backend validation schemas shared between client and server.
+
+**Navigation System**: Comprehensive header navigation with:
+- Services dropdown menu (5 services with descriptions)
+- Industries dropdown menu (6 industries with descriptions)  
+- Resources dropdown menu (Blog, Case Studies, FAQ)
+- Direct links for About, Pricing, and ROI Calculator
+- Mobile-responsive sheet navigation mirroring desktop structure
+- Comprehensive data-testid attributes for e2e testing
 
 ### Backend Architecture
 
