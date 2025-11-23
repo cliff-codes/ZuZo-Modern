@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import blueLogo from "@assets/ZUZO LOGO 2_1763932128048.png";
 
 const services = [
   { title: "Contact Center Services", href: "/services/contact-center", description: "24/7 omnichannel customer support" },
@@ -61,10 +62,13 @@ export function Header() {
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex h-16 md:h-20 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2" data-testid="link-home">
-            <div className="font-heading font-bold text-2xl md:text-3xl text-primary">
-              ZuZo
-            </div>
+          <Link href="/" className="flex items-center" data-testid="link-home">
+            <img 
+              src={blueLogo} 
+              alt="ZuZo Logo" 
+              className="h-12 md:h-16 w-auto"
+              data-testid="header-logo"
+            />
           </Link>
 
           {/* Desktop Navigation */}

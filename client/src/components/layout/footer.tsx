@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Facebook, Linkedin, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { NewsletterSignup } from "./newsletter-signup";
+import whiteLogo from "@assets/ZUZO LOGO ALL WHITE_1763932128050.png";
 
 export function Footer() {
 
@@ -10,9 +11,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="font-heading font-bold text-3xl text-white mb-4">
-              ZuZo
-            </div>
+            <img 
+              src={whiteLogo} 
+              alt="ZuZo Logo" 
+              className="h-16 w-auto mb-6"
+              data-testid="footer-logo"
+            />
             <p className="text-sm text-gray-300 leading-relaxed mb-6 max-w-md">
               Transforming business operations with AI-powered virtual assistants and omnichannel contact center solutions. Trusted by 500+ businesses worldwide.
             </p>
