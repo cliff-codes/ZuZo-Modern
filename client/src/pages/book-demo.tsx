@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BookingForm } from "@/components/forms/booking-form";
@@ -5,6 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 
 export default function BookDemo() {
+  useEffect(() => {
+    document.title = "Book a Free Demo - ZuZo BPO Solutions";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
