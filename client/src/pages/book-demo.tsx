@@ -16,7 +16,7 @@ export default function BookDemo() {
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-8">
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
               Book Your Free Strategy Session
             </h1>
