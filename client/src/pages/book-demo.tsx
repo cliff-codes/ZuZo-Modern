@@ -1,17 +1,20 @@
-import { useEffect } from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BookingForm } from "@/components/forms/booking-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { SEOHead, getOrganizationSchema } from "@/components/seo/seo-head";
 
 export default function BookDemo() {
-  useEffect(() => {
-    document.title = "Book a Free Demo - ZuZo BPO Solutions";
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Book a Free Strategy Session"
+        description="Schedule your free 30-minute BPO consultation with ZuZo experts. Get custom solutions, ROI projections, and implementation roadmap. No obligation required."
+        canonical="/book-demo"
+        keywords="book demo, free consultation, BPO strategy session, business process outsourcing demo"
+        schema={getOrganizationSchema()}
+      />
       <Header />
       <main className="pt-12 pb-20 lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">

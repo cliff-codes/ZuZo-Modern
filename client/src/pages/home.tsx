@@ -7,10 +7,26 @@ import { PricingSection } from "@/components/home/pricing-section";
 import { CTASection } from "@/components/home/cta-section";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { SEOHead, getOrganizationSchema, getSoftwareApplicationSchema } from "@/components/seo/seo-head";
 
 export default function Home() {
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getOrganizationSchema(),
+      getSoftwareApplicationSchema()
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Home"
+        description="Transform your business with ZuZo's AI-powered virtual assistants and omnichannel contact center solutions. 60% cost reduction, 48-hour launch, and 24/7 global coverage. Trusted by 500+ businesses worldwide."
+        canonical="/"
+        keywords="BPO services, virtual assistants, contact center, AI automation, back office support, Ghana BPO, omnichannel support"
+        schema={combinedSchema}
+      />
       <Header />
       <main>
         <VideoHeroSection />

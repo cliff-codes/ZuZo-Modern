@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Check, ArrowRight } from "lucide-react";
+import { SEOHead, getSoftwareApplicationSchema } from "@/components/seo/seo-head";
 
 const pricingTiers = [
   {
@@ -66,6 +67,13 @@ const services = [
 export default function Pricing() {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Transparent BPO Pricing"
+        description="ZuZo BPO pricing from $6.19/hour. Flexible hourly, daily ($45), and monthly ($990) plans. No hidden fees. 60% cost savings guaranteed. Contact center, virtual assistants, and AI automation."
+        canonical="/pricing"
+        keywords="BPO pricing, virtual assistant cost, contact center pricing, outsourcing rates, Ghana BPO costs"
+        schema={getSoftwareApplicationSchema()}
+      />
       <Header />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">

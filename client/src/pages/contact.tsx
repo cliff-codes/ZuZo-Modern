@@ -4,10 +4,18 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Clock, MessageCircle, Linkedin, Facebook } from "lucide-react";
+import { SEOHead, getOrganizationSchema } from "@/components/seo/seo-head";
 
 export default function Contact() {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Contact Us"
+        description="Get in touch with ZuZo BPO Solutions. Located at World Trade Centre Accra, Ghana. Email: remote@zuzogp.com. Phone: +233 24 052 6570. 24/7 support available."
+        canonical="/contact"
+        keywords="contact ZuZo, BPO contact, Ghana contact center, business process outsourcing inquiry"
+        schema={getOrganizationSchema()}
+      />
       <Header />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-24">
         <div className="container mx-auto px-4 lg:px-8">

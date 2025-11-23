@@ -60,29 +60,29 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide text-white">
               Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
-                <Link href="/services/contact-center" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-contact-center">
+                <Link href="/services/contact-center" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-contact-center">
                   Contact Center
                 </Link>
               </li>
               <li>
-                <Link href="/services/virtual-assistants" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-virtual-assistants">
+                <Link href="/services/virtual-assistants" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-virtual-assistants">
                   Virtual Assistants
                 </Link>
               </li>
               <li>
-                <Link href="/services/ai-automation" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-ai-automation">
+                <Link href="/services/ai-automation" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-ai-automation">
                   AI & Automation
                 </Link>
               </li>
               <li>
-                <Link href="/services/back-office" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-back-office">
+                <Link href="/services/back-office" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-back-office">
                   Back Office
                 </Link>
               </li>
               <li>
-                <Link href="/services/workforce-management" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-workforce">
+                <Link href="/services/workforce-management" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-workforce">
                   Workforce Management
                 </Link>
               </li>
@@ -94,29 +94,29 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide text-white">
               Company
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
-                <Link href="/company/about" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-about">
+                <Link href="/company/about" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-about">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-contact">
+                <Link href="/contact" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-contact">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/resources/blog" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-blog">
+                <Link href="/resources/blog" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-blog">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/resources/case-studies" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-case-studies">
+                <Link href="/resources/case-studies" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-case-studies">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/resources/faq" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-faq">
+                <Link href="/resources/faq" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-faq">
                   FAQ
                 </Link>
               </li>
@@ -128,19 +128,19 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-sm mb-4 uppercase tracking-wide text-white">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
-                <Link href="/pricing" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-pricing">
+                <Link href="/pricing" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-pricing">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/roi-calculator" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-roi-calculator">
+                <Link href="/roi-calculator" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-roi-calculator">
                   ROI Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/book-demo" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-book-demo">
+                <Link href="/book-demo" className="block py-1.5 text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-book-demo">
                   Book Demo
                 </Link>
               </li>

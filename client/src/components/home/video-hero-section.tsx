@@ -36,7 +36,7 @@ export function VideoHeroSection() {
             </div>
 
             <Link href="/book-demo">
-              <Button size="lg" className="text-lg px-8 py-6 h-auto mb-4" data-testid="button-hero-book-demo">
+              <Button size="lg" className="text-lg mb-4" data-testid="button-hero-book-demo">
                 Get Your Free Strategy Session Now
               </Button>
             </Link>
@@ -51,10 +51,13 @@ export function VideoHeroSection() {
             <div className="relative aspect-video bg-black">
               <video
                 controls
+                preload="metadata"
                 className="w-full h-full object-cover"
                 data-testid="video-hero-player"
+                aria-label="ZuZo company overview video showcasing BPO solutions"
               >
                 <source src={videoFile} type="video/mp4" />
+                <track kind="captions" label="English captions" />
                 Your browser does not support the video tag.
               </video>
             </div>
