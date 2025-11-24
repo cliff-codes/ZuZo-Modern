@@ -6,7 +6,7 @@ ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solution
 
 **Key Features**:
 - **Video Hero Section**: Homepage features a 3-minute overview video with optimized poster image for faster mobile loading, showcasing ZuZo's Gitex presentation with prominent "Get Your Free Strategy Session Now" CTA directing to /book-demo
-- **5 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management (all with contextual CTAs and Service schema markup)
+- **6 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management, Omnichannel Platform (QContact) (all with contextual CTAs and Service schema markup)
 - **8 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics & Transportation (all with contextual CTAs and Service schema markup)
 - **Strategic B2B Pages**: Customer Stories showcase, Security & Compliance, Comparison (ZuZo vs In-House vs Traditional BPO), BPO ROI Guide lead magnet
 - **Resources Hub**: Blog, Case Studies, FAQ
@@ -22,7 +22,7 @@ ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solution
   - Compact testimonials on booking and contact pages for social proof
   - Post-newsletter subscription upsell prompting demo booking (auto-dismisses after 10 seconds)
   - Sticky header with "Book Free Demo" CTA available on all pages
-- **SEO Optimization**: Service schema markup (schema.org) on all 13 service and industry pages for improved search visibility
+- **SEO Optimization**: Service schema markup (schema.org) on all 14 service and industry pages for improved search visibility
 
 The application is built as a full-stack web platform with a React-based frontend and Express backend, designed for rapid deployment (48-hour launch capability) and global 24/7 service delivery.
 
@@ -39,7 +39,7 @@ Preferred communication style: Simple, everyday language.
 **UI Framework**: shadcn/ui component library built on Radix UI primitives, providing accessible, customizable components with Tailwind CSS styling.
 
 **Routing**: Wouter for lightweight client-side routing with comprehensive page coverage:
-- **Service Pages** (5): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management (all with InlineBookingCTA, MiniTrustBar, and Service schema)
+- **Service Pages** (6): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management, /services/omnichannel-platform (all with InlineBookingCTA, MiniTrustBar, and Service schema)
 - **Industry Pages** (9): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services, /industries/automotive, /industries/logistics (all with InlineBookingCTA, MiniTrustBar, and Service schema)
 - **Resources** (6): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq, /resources/bpo-roi-guide (lead magnet with form capture)
 - **Strategic Pages** (3): /customer-stories (success stories showcase), /security (compliance and certifications), /compare (competitive comparison)
@@ -56,7 +56,7 @@ Preferred communication style: Simple, everyday language.
 **Form Handling**: React Hook Form with Zod schema validation, integrated with backend validation schemas shared between client and server.
 
 **Navigation System**: Comprehensive header navigation with:
-- Services dropdown menu (5 services with descriptions)
+- Services dropdown menu (6 services with descriptions: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management, Omnichannel Platform)
 - Industries dropdown menu (8 industries with descriptions: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics)  
 - Resources dropdown menu (Blog, Case Studies, FAQ)
 - Direct links for About, Pricing, and ROI Calculator
