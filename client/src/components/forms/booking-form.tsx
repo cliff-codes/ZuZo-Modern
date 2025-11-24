@@ -46,7 +46,7 @@ export function BookingForm() {
         </div>
 
         {/* Calendar Embed - Using Cal.com React Component */}
-        <div className="min-h-[700px]" data-testid="cal-booking-embed">
+        <div data-testid="cal-booking-embed">
           <Cal
             namespace="30min"
             calLink="zuzo-ltd/30min"
@@ -55,7 +55,7 @@ export function BookingForm() {
           />
         </div>
       </div>
-      <p className="text-sm text-muted-foreground text-center">
+      <p className="text-sm text-muted-foreground text-center mt-4">
         ✓ No credit card required ✓ 30-minute consultation ✓ Custom proposal included
       </p>
     </div>
