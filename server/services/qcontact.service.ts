@@ -1,4 +1,4 @@
-import type { Lead } from "@shared/schema";
+import type { Lead, Subscriber } from "@shared/schema";
 
 interface QContactPayload {
   first_name: string;
@@ -128,6 +128,103 @@ export class QContactService {
       }
 
       const result = await this.forwardLead(lead);
+      
+      if (result.success) {
+        if (attempt > 0) {
+          console.log(`[QContact] Succeeded on retry attempt ${attempt + 1}`);
+        }
+        return result;
+      }
+
+      lastError = result.error;
+    }
+
+    return {
+      success: false,
+      error: lastError || 'Failed after retries',
+    };
+  }
+
+  /**
+   * Map newsletter subscriber to QContact's expected format
+   */
+  private mapSubscriberToQContact(subscriber: Subscriber): QContactPayload {
+    const payload: QContactPayload = {
+      first_name: 'Newsletter',
+      last_name: 'Subscriber',
+      body: 'Newsletter subscription request',
+      c__email: subscriber.email,
+      c__service_interest: 'Newsletter Subscription',
+    };
+
+    return payload;
+  }
+
+  /**
+   * Forward newsletter subscriber to QContact webhook
+   */
+  async forwardSubscriber(subscriber: Subscriber): Promise<{ success: boolean; error?: string }> {
+    try {
+      const payload = this.mapSubscriberToQContact(subscriber);
+      
+      console.log('[QContact] Forwarding newsletter subscriber:', { 
+        subscriberId: subscriber.id, 
+        email: subscriber.email 
+      });
+
+      const response = await fetch(this.webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(payload as any).toString(),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('[QContact] Webhook failed:', {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorText,
+        });
+        
+        return {
+          success: false,
+          error: `QContact webhook returned ${response.status}: ${response.statusText}`,
+        };
+      }
+
+      const result = await response.text();
+      console.log('[QContact] Webhook success:', result);
+      
+      return { success: true };
+    } catch (error) {
+      console.error('[QContact] Webhook error:', error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      };
+    }
+  }
+
+  /**
+   * Forward subscriber with retry logic
+   */
+  async forwardSubscriberWithRetry(
+    subscriber: Subscriber,
+    maxRetries: number = 2
+  ): Promise<{ success: boolean; error?: string }> {
+    let lastError: string | undefined;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      if (attempt > 0) {
+        // Exponential backoff: 1s, 2s
+        const delay = Math.pow(2, attempt - 1) * 1000;
+        console.log(`[QContact] Retrying after ${delay}ms (attempt ${attempt + 1}/${maxRetries + 1})`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+
+      const result = await this.forwardSubscriber(subscriber);
       
       if (result.success) {
         if (attempt > 0) {

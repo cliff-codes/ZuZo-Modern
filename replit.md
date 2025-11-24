@@ -111,11 +111,11 @@ Preferred communication style: Simple, everyday language.
 - Brand color customization (#0066CC) matching ZuZo theme
 - Bookings captured with name, email, company, phone, timezone, and scheduling details
 
-**QContact CRM Integration**: Automatic webhook forwarding for all form submissions:
+**QContact CRM Integration**: Automatic webhook forwarding for all form submissions and newsletter subscriptions:
 - Service module: `server/services/qcontact.service.ts`
 - Webhook URL: https://zuzo.qcontact.com/api/v2/webhooks/callback/inbound
 - Organization ID: 236522, Event ID: 1897941956
-- **Field Mapping**: 
+- **Contact Form Field Mapping**: 
   - name → first_name + last_name (automatic split)
   - email → c__email (custom field)
   - phone → phone_number
@@ -123,7 +123,12 @@ Preferred communication style: Simple, everyday language.
   - industry → c__industry (custom field)
   - message → body
   - interestedServices → c__service_interest (custom field, comma-separated)
-- **Dual Storage**: Leads stored in local PostgreSQL database AND forwarded to QContact
+- **Newsletter Subscription Field Mapping**:
+  - email → c__email (custom field)
+  - first_name → "Newsletter", last_name → "Subscriber"
+  - body → "Newsletter subscription request"
+  - c__service_interest → "Newsletter Subscription"
+- **Dual Storage**: Leads and subscribers stored in local PostgreSQL database AND forwarded to QContact
 - **Error Handling**: Asynchronous forwarding with retry logic (up to 2 retries with exponential backoff)
-- **Non-blocking**: Form submissions return immediately to user, QContact forwarding happens in background
+- **Non-blocking**: Form submissions and subscriptions return immediately to user, QContact forwarding happens in background
 - Credentials stored in environment variables (QCONTACT_ORG_ID, QCONTACT_EVENT_ID)

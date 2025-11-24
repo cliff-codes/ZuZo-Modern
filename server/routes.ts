@@ -43,6 +43,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertSubscriberSchema.parse(req.body);
       const subscriber = await storage.createSubscriber(validatedData);
+      
+      // Forward to QContact asynchronously (don't block the response)
+      qcontactService.forwardSubscriberWithRetry(subscriber).catch(error => {
+        console.error('[QContact] Failed to forward subscriber:', error);
+      });
+      
       res.json(subscriber);
     } catch (error: any) {
       res.status(400).json({ error: error.message || "Invalid request data" });
