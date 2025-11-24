@@ -68,38 +68,35 @@ export function ClutchCredentials() {
               <div className="space-y-3">
                 <h3 className="font-heading font-semibold text-lg mb-3">2025 Clutch Awards</h3>
                 <div className="grid gap-3">
-                  <Card className="hover-elevate transition-all">
+                  <Card className="hover-elevate transition-all" data-testid="award-card-1">
                     <CardContent className="p-4 flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Award className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-semibold text-sm">Top Inbound Call Center</div>
-                        <div className="text-xs text-muted-foreground">Ghana 2025</div>
+                        <div className="font-semibold text-sm">Top Inbound Call Center - Ghana 2025</div>
                       </div>
                     </CardContent>
                   </Card>
                   
-                  <Card className="hover-elevate transition-all">
+                  <Card className="hover-elevate transition-all" data-testid="award-card-2">
                     <CardContent className="p-4 flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Award className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-semibold text-sm">Top Call Centers</div>
-                        <div className="text-xs text-muted-foreground">Ghana 2025</div>
+                        <div className="font-semibold text-sm">Top Call Centers - Ghana 2025</div>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="hover-elevate transition-all">
+                  <Card className="hover-elevate transition-all" data-testid="award-card-3">
                     <CardContent className="p-4 flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Award className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-semibold text-sm">Top HR Staffing Company</div>
-                        <div className="text-xs text-muted-foreground">Non-profit 2025</div>
+                        <div className="font-semibold text-sm">Top HR Staffing Company - Non-profit 2025</div>
                       </div>
                     </CardContent>
                   </Card>
@@ -124,32 +121,32 @@ export function ClutchCredentials() {
                 </h3>
 
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3" data-testid="metric-csat">
                     <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 font-bold text-success">
                       4.7
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">CSAT Score</div>
+                      <div className="font-semibold text-sm">4.7/5 CSAT Score</div>
                       <div className="text-xs text-muted-foreground">Post-implementation</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3" data-testid="metric-nps">
                     <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 font-bold text-success">
                       +70
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">Net Promoter Score</div>
+                      <div className="font-semibold text-sm">+70 Net Promoter Score</div>
                       <div className="text-xs text-muted-foreground">Strong referral likelihood</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3" data-testid="metric-reduction">
                     <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 font-bold text-success text-xs">
                       60%
                     </div>
                     <div>
-                      <div className="font-semibold text-sm">Reduction in Missed Appointments</div>
+                      <div className="font-semibold text-sm">60% Reduction in missed appointments</div>
                       <div className="text-xs text-muted-foreground">Improved follow-up</div>
                     </div>
                   </div>
