@@ -11,7 +11,7 @@ export function VideoHeroSection() {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
-              Stop Losing Customers to Poor Support
+              Stop Losing Customers to <span className="text-red-600">Poor Support</span>
               <br />
               <span className="text-primary">Start Delivering Exceptional Experiences</span>
             </h1>
