@@ -35,19 +35,20 @@ export default function BookDemo() {
               <BookingForm />
             </div>
 
-            {/* What to Expect */}
+            {/* Right Sidebar */}
             <div className="space-y-6">
+              {/* What to Expect */}
               <Card>
                 <CardHeader>
                   <CardTitle className="font-heading text-xl">What to Expect</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-semibold mb-1">Needs Assessment</div>
-                      <p className="text-sm text-muted-foreground">
-                        We'll analyze your current operations and identify optimization opportunities
+                      <div className="font-semibold text-sm mb-1">Needs Assessment</div>
+                      <p className="text-xs text-muted-foreground">
+                        Analyze operations and identify opportunities
                       </p>
                     </div>
                   </div>
@@ -55,9 +56,9 @@ export default function BookDemo() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-semibold mb-1">Custom Solution Design</div>
-                      <p className="text-sm text-muted-foreground">
-                        Tailored BPO strategy aligned with your business objectives
+                      <div className="font-semibold text-sm mb-1">Custom Solution Design</div>
+                      <p className="text-xs text-muted-foreground">
+                        Tailored BPO strategy for your business
                       </p>
                     </div>
                   </div>
@@ -65,9 +66,9 @@ export default function BookDemo() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-semibold mb-1">ROI Projection</div>
-                      <p className="text-sm text-muted-foreground">
-                        Clear breakdown of potential cost savings and efficiency gains
+                      <div className="font-semibold text-sm mb-1">ROI Projection</div>
+                      <p className="text-xs text-muted-foreground">
+                        Cost savings and efficiency gains breakdown
                       </p>
                     </div>
                   </div>
@@ -75,15 +76,29 @@ export default function BookDemo() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-semibold mb-1">Implementation Roadmap</div>
-                      <p className="text-sm text-muted-foreground">
-                        Step-by-step plan for 48-hour deployment
+                      <div className="font-semibold text-sm mb-1">Implementation Roadmap</div>
+                      <p className="text-xs text-muted-foreground">
+                        48-hour deployment plan
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
+              {/* Social Proof - Testimonials */}
+              <Card data-testid="testimonials-section">
+                <CardHeader>
+                  <CardTitle className="font-heading text-xl flex items-center gap-2">
+                    What Our Clients Say
+                    <span className="text-xs font-normal text-muted-foreground">★ Trusted by 500+ businesses</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CompactTestimonials limit={2} />
+                </CardContent>
+              </Card>
+
+              {/* Session Includes */}
               <Card className="bg-gradient-to-br from-success/10 to-success/5 border-success/20">
                 <CardHeader>
                   <CardTitle className="font-heading text-xl">Session Includes</CardTitle>
@@ -111,12 +126,6 @@ export default function BookDemo() {
                   </div>
                 </CardContent>
               </Card>
-
-              {/* Social Proof */}
-              <div>
-                <h3 className="font-heading font-semibold text-lg mb-4">What Our Clients Say</h3>
-                <CompactTestimonials limit={2} />
-              </div>
             </div>
           </div>
         </div>
