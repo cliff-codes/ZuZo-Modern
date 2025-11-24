@@ -30,9 +30,38 @@ export default function BookDemo() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Booking Form */}
-            <div className="lg:col-span-2">
+            {/* Left: Booking Form + Session Includes */}
+            <div className="lg:col-span-2 space-y-6">
               <BookingForm />
+              
+              {/* Session Includes */}
+              <Card className="bg-gradient-to-br from-success/10 to-success/5 border-success/20" data-testid="session-includes">
+                <CardHeader>
+                  <CardTitle className="font-heading text-xl">Session Includes</CardTitle>
+                </CardHeader>
+                <CardContent className="grid sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
+                    <span>30-minute expert consultation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
+                    <span>Custom proposal document</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
+                    <span>ROI calculator analysis</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
+                    <span>Q&A with BPO specialist</span>
+                  </div>
+                  <div className="flex items-center gap-2 sm:col-span-2">
+                    <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
+                    <span>No obligation or commitment</span>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Right Sidebar */}
@@ -95,35 +124,6 @@ export default function BookDemo() {
                 </CardHeader>
                 <CardContent>
                   <CompactTestimonials limit={2} />
-                </CardContent>
-              </Card>
-
-              {/* Session Includes */}
-              <Card className="bg-gradient-to-br from-success/10 to-success/5 border-success/20">
-                <CardHeader>
-                  <CardTitle className="font-heading text-xl">Session Includes</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>30-minute expert consultation</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>Custom proposal document</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>ROI calculator analysis</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>Q&A with BPO specialist</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>No obligation or commitment</span>
-                  </div>
                 </CardContent>
               </Card>
             </div>
