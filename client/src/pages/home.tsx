@@ -2,6 +2,8 @@ import { VideoHeroSection } from "@/components/home/video-hero-section";
 import { TrustBar } from "@/components/home/trust-bar";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { WhyZuzoSection } from "@/components/home/why-zuzo-section";
+import { FeaturedCaseStudy } from "@/components/home/featured-case-study";
+import { ClientLogos } from "@/components/home/client-logos";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { PricingSection } from "@/components/home/pricing-section";
@@ -32,8 +34,10 @@ export default function Home() {
       <main>
         <VideoHeroSection />
         <TrustBar />
+        <ClientLogos />
         <WhyZuzoSection />
         <ServicesOverview />
+        <FeaturedCaseStudy />
         <HowItWorks />
         <TestimonialsSection />
         <PricingSection />
