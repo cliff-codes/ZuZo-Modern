@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Heart, 
@@ -25,6 +28,12 @@ export default function HealthcarePage() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Healthcare BPO Solutions"
+          description="HIPAA-compliant patient support and healthcare operations"
+          url="/industries/healthcare"
+          category="Healthcare Services"
+        />
         {/* Hero Section */}
         <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
           <div className="container mx-auto px-6">
@@ -56,6 +65,8 @@ export default function HealthcarePage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         {/* Why Choose ZuZo */}
         <section className="py-20 lg:py-32">
@@ -434,6 +445,13 @@ export default function HealthcarePage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Transform Your Healthcare Operations"
+            description="Discover how ZuZo helps healthcare providers reduce costs while improving patient satisfaction with HIPAA-compliant support solutions. Book your consultation today."
+          />
+        </div>
 
         {/* Stats Section */}
         <section className="py-20 lg:py-32 bg-muted/30">

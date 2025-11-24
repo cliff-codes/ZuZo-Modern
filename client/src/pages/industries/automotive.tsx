@@ -3,6 +3,9 @@ import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Car, 
@@ -24,6 +27,12 @@ export default function AutomotivePage() {
       <Header />
       
       <main className="flex-1">
+        <ServiceSchema 
+          name="Automotive BPO Solutions"
+          description="Dealership and service center support for automotive industry"
+          url="/industries/automotive"
+          category="Automotive Services"
+        />
         <section className="py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
           <div className="container mx-auto max-w-6xl">
             <div className="max-w-3xl">
@@ -52,6 +61,8 @@ export default function AutomotivePage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
@@ -226,6 +237,13 @@ export default function AutomotivePage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Drive Dealership Excellence"
+            description="See how ZuZo helps automotive dealerships increase sales conversions, improve service appointment bookings, and enhance customer satisfaction with 24/7 support. Schedule your demo."
+          />
+        </div>
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">

@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Briefcase, 
@@ -25,6 +28,12 @@ export default function ProfessionalServicesPage() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Professional Services BPO Solutions"
+          description="Client communication and admin support for professional firms"
+          url="/industries/professional-services"
+          category="Professional Services"
+        />
         {/* Hero Section */}
         <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
           <div className="container mx-auto px-6">
@@ -56,6 +65,8 @@ export default function ProfessionalServicesPage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         {/* Why Choose ZuZo */}
         <section className="py-20 lg:py-32">
@@ -434,6 +445,13 @@ export default function ProfessionalServicesPage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Maximize Your Billable Hours"
+            description="Free your professionals to focus on high-value client work. Discover how ZuZo handles administrative tasks, client communication, and scheduling so your firm can grow revenue. Schedule your consultation."
+          />
+        </div>
 
         {/* Stats Section */}
         <section className="py-20 lg:py-32 bg-muted/30">

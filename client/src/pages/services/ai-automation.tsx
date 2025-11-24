@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Bot, 
@@ -24,6 +27,11 @@ export default function AIAutomationService() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="AI & Automation Solutions"
+          description="Intelligent process automation to transform business operations"
+          url="/services/ai-automation"
+        />
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="container mx-auto px-6">
@@ -54,6 +62,8 @@ export default function AIAutomationService() {
           </div>
         </div>
       </section>
+
+      <MiniTrustBar />
 
       {/* Key Benefits */}
       <section className="py-20 lg:py-32">
@@ -295,6 +305,13 @@ export default function AIAutomationService() {
           </div>
         </div>
       </section>
+
+      <div className="container mx-auto px-4 lg:px-8 py-16">
+        <InlineBookingCTA 
+          title="Ready to Automate Your Operations?"
+          description="See how our AI-powered automation can reduce costs by 60% and accelerate your business processes. Schedule a free consultation to discuss your automation opportunities."
+        />
+      </div>
 
       {/* ROI Section */}
       <section className="py-20 lg:py-32 bg-muted/30">

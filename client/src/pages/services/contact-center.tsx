@@ -3,6 +3,9 @@ import { Footer } from "@/components/layout/footer";
 import { ServiceHero } from "@/components/services/service-hero";
 import { ServiceFeatures } from "@/components/services/service-features";
 import { CTASection } from "@/components/home/cta-section";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Headset } from "lucide-react";
 
 const features = [
@@ -57,13 +60,25 @@ export default function ContactCenterService() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Contact Center Services"
+          description="24/7 omnichannel customer support with AI-powered automation"
+          url="/services/contact-center"
+        />
         <ServiceHero
           title="Contact Center Services"
           subtitle="24/7 Customer Support"
           description="Transform your customer experience with our omnichannel contact center solutions. From inbound support to technical assistance, we deliver exceptional service that builds loyalty and drives growth."
           icon={<Headset className="h-10 w-10 text-primary" />}
         />
+        <MiniTrustBar />
         <ServiceFeatures features={features} />
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Ready to Elevate Your Customer Support?"
+            description="See how our contact center solutions can reduce costs by 60% while improving customer satisfaction. Book a free consultation today."
+          />
+        </div>
         <CTASection />
       </main>
       <Footer />

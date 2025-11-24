@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Play, CheckCircle } from "lucide-react";
 import videoFile from "@assets/Zuzo Ltd Gitex - Oct 7_ 2025_1760910955846-DS4WSt0i_1763928463966.mp4";
+import videoPoster from "@assets/generated_images/zuzo_bpo_video_thumbnail.png";
 
 export function VideoHeroSection() {
   return (
@@ -52,6 +53,7 @@ export function VideoHeroSection() {
               <video
                 controls
                 preload="metadata"
+                poster={videoPoster}
                 className="w-full h-full object-cover"
                 data-testid="video-hero-player"
                 aria-label="ZuZo company overview video showcasing BPO solutions"

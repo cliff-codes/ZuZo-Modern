@@ -11,6 +11,12 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import blueLogo from "@assets/ZUZO LOGO 2_1763932128048.png";
 
 const services = [
@@ -200,94 +206,104 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full sm:w-96 overflow-y-auto">
-              <nav className="flex flex-col gap-6 mt-8">
-                <div>
-                  <h3 className="font-heading font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">
-                    Services
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    {services.map((service) => (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        className="block px-4 py-3 rounded-md hover-elevate"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-service-${service.href.split("/").pop()}`}
-                      >
-                        <div className="font-medium font-heading text-sm">{service.title}</div>
-                        <p className="text-xs text-muted-foreground mt-1">{service.description}</p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-heading font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">
-                    Industries
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    {industries.map((industry) => (
-                      <Link
-                        key={industry.href}
-                        href={industry.href}
-                        className="block px-4 py-3 rounded-md hover-elevate"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-industry-${industry.href.split("/").pop()}`}
-                      >
-                        <div className="font-medium font-heading text-sm">{industry.title}</div>
-                        <p className="text-xs text-muted-foreground mt-1">{industry.description}</p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-heading font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">
-                    Resources
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    {resources.map((resource) => (
-                      <Link
-                        key={resource.href}
-                        href={resource.href}
-                        className="block px-4 py-3 rounded-md hover-elevate"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-resource-${resource.href.split("/").pop()}`}
-                      >
-                        <div className="font-medium font-heading text-sm">{resource.title}</div>
-                        <p className="text-xs text-muted-foreground mt-1">{resource.description}</p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Link href="/company" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start" data-testid="mobile-link-company">
-                      About
+              <nav className="flex flex-col gap-4 mt-8">
+                {/* Primary CTAs at top */}
+                <div className="flex flex-col gap-3 pb-4 border-b">
+                  <Link href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button size="lg" className="w-full" data-testid="mobile-button-book-demo">
+                      Book Free Demo
                     </Button>
                   </Link>
-                  <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start" data-testid="mobile-link-pricing">
-                      Pricing
+                  <div className="grid grid-cols-2 gap-2">
+                    <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button variant="outline" size="sm" className="w-full" data-testid="mobile-link-pricing">
+                        Pricing
+                      </Button>
+                    </Link>
+                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button variant="outline" size="sm" className="w-full" data-testid="mobile-button-contact">
+                        Contact
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Collapsible sections for Services, Industries, Resources */}
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="services">
+                    <AccordionTrigger className="font-heading font-semibold text-sm">
+                      Services
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="flex flex-col gap-1">
+                        {services.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block px-3 py-2 rounded-md hover-elevate text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            data-testid={`mobile-link-service-${service.href.split("/").pop()}`}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="industries">
+                    <AccordionTrigger className="font-heading font-semibold text-sm">
+                      Industries
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="flex flex-col gap-1">
+                        {industries.map((industry) => (
+                          <Link
+                            key={industry.href}
+                            href={industry.href}
+                            className="block px-3 py-2 rounded-md hover-elevate text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            data-testid={`mobile-link-industry-${industry.href.split("/").pop()}`}
+                          >
+                            {industry.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="resources">
+                    <AccordionTrigger className="font-heading font-semibold text-sm">
+                      Resources
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="flex flex-col gap-1">
+                        {resources.map((resource) => (
+                          <Link
+                            key={resource.href}
+                            href={resource.href}
+                            className="block px-3 py-2 rounded-md hover-elevate text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            data-testid={`mobile-link-resource-${resource.href.split("/").pop()}`}
+                          >
+                            {resource.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+
+                {/* Quick links */}
+                <div className="flex flex-col gap-2 pt-2">
+                  <Link href="/company" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button variant="ghost" size="sm" className="w-full justify-start" data-testid="mobile-link-company">
+                      About Us
                     </Button>
                   </Link>
                   <Link href="/roi-calculator" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start" data-testid="mobile-link-roi-calculator">
+                    <Button variant="ghost" size="sm" className="w-full justify-start" data-testid="mobile-link-roi-calculator">
                       ROI Calculator
-                    </Button>
-                  </Link>
-                </div>
-
-                <div className="flex flex-col gap-3 pt-4 border-t">
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="outline" className="w-full" data-testid="mobile-button-contact">
-                      Contact Us
-                    </Button>
-                  </Link>
-                  <Link href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button className="w-full" data-testid="mobile-button-book-demo">
-                      Book Free Demo
                     </Button>
                   </Link>
                 </div>

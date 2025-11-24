@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { HelmetProvider } from "react-helmet-async";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { StickyMobileCTA } from "@/components/layout/sticky-mobile-cta";
 
 // Pages
 import Home from "@/pages/home";
@@ -33,6 +34,10 @@ import ProfessionalServicesPage from "@/pages/industries/professional-services";
 import AutomotivePage from "@/pages/industries/automotive";
 import LogisticsPage from "@/pages/industries/logistics";
 import PrivacyPolicy from "@/pages/privacy-policy";
+import CustomerStoriesPage from "@/pages/customer-stories";
+import SecurityPage from "@/pages/security";
+import ComparePage from "@/pages/compare";
+import BPOROIGuidePage from "@/pages/resources/bpo-roi-guide";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -54,6 +59,7 @@ function Router() {
       <Route path="/resources/case-studies" component={CaseStudiesPage} />
       <Route path="/resources/case-studies/:slug" component={CaseStudyPage} />
       <Route path="/resources/faq" component={FAQPage} />
+      <Route path="/resources/bpo-roi-guide" component={BPOROIGuidePage} />
 
       {/* Industries */}
       <Route path="/industries" component={IndustriesPage} />
@@ -71,6 +77,9 @@ function Router() {
       <Route path="/book-demo" component={BookDemo} />
       <Route path="/roi-calculator" component={ROICalculatorPage} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/customer-stories" component={CustomerStoriesPage} />
+      <Route path="/security" component={SecurityPage} />
+      <Route path="/compare" component={ComparePage} />
 
       {/* Company */}
       <Route path="/company" component={About} />
@@ -92,6 +101,7 @@ function App() {
         <TooltipProvider>
           <ScrollToTop />
           <Router />
+          <StickyMobileCTA />
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>

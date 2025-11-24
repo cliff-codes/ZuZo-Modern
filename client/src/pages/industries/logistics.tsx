@@ -3,6 +3,9 @@ import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Truck, 
@@ -24,6 +27,12 @@ export default function LogisticsPage() {
       <Header />
       
       <main className="flex-1">
+        <ServiceSchema 
+          name="Logistics & Transportation BPO Solutions"
+          description="Shipment tracking and carrier coordination for logistics companies"
+          url="/industries/logistics"
+          category="Logistics Services"
+        />
         <section className="py-20 px-4 bg-gradient-to-br from-background via-background to-muted/20">
           <div className="container mx-auto max-w-6xl">
             <div className="max-w-3xl">
@@ -52,6 +61,8 @@ export default function LogisticsPage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
@@ -226,6 +237,13 @@ export default function LogisticsPage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Optimize Your Logistics Operations"
+            description="Discover how ZuZo helps logistics companies improve delivery success rates, reduce support costs by 35%, and provide 24/7 shipment tracking assistance. Book your consultation today."
+          />
+        </div>
 
         <section className="py-20 px-4 bg-muted/30">
           <div className="container mx-auto max-w-6xl">

@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Laptop, 
@@ -25,6 +28,12 @@ export default function TechnologyPage() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Technology & SaaS BPO Solutions"
+          description="Technical support and customer success for tech companies"
+          url="/industries/technology"
+          category="Technology Services"
+        />
         {/* Hero Section */}
         <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
           <div className="container mx-auto px-6">
@@ -56,6 +65,8 @@ export default function TechnologyPage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         {/* Why Choose ZuZo */}
         <section className="py-20 lg:py-32">
@@ -434,6 +445,13 @@ export default function TechnologyPage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Scale Your Technical Support"
+            description="See how ZuZo provides technically-skilled support teams who speak your developers' language. Reduce support costs by 60% while improving CSAT. Schedule your demo."
+          />
+        </div>
 
         {/* Stats Section */}
         <section className="py-20 lg:py-32 bg-muted/30">

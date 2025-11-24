@@ -1,0 +1,43 @@
+import { Award, Users, Clock, Shield } from "lucide-react";
+
+export function MiniTrustBar() {
+  return (
+    <div className="bg-muted/30 py-6" data-testid="mini-trust-bar">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Users className="h-6 w-6 text-primary" />
+            </div>
+            <div className="font-bold text-lg">500+</div>
+            <div className="text-xs text-muted-foreground">Happy Clients</div>
+          </div>
+          
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Clock className="h-6 w-6 text-primary" />
+            </div>
+            <div className="font-bold text-lg">24/7</div>
+            <div className="text-xs text-muted-foreground">Support Coverage</div>
+          </div>
+          
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center">
+              <Award className="h-6 w-6 text-success" />
+            </div>
+            <div className="font-bold text-lg">4.5/5</div>
+            <div className="text-xs text-muted-foreground">Clutch Rating</div>
+          </div>
+          
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Shield className="h-6 w-6 text-primary" />
+            </div>
+            <div className="font-bold text-lg">ISO</div>
+            <div className="text-xs text-muted-foreground">Certified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

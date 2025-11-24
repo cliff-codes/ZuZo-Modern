@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Home as HomeIcon, 
@@ -25,6 +28,12 @@ export default function RealEstatePage() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Real Estate BPO Solutions"
+          description="Lead qualification and tenant support for real estate businesses"
+          url="/industries/real-estate"
+          category="Real Estate Services"
+        />
         {/* Hero Section */}
         <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
           <div className="container mx-auto px-6">
@@ -56,6 +65,8 @@ export default function RealEstatePage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         {/* Why Choose ZuZo */}
         <section className="py-20 lg:py-32">
@@ -416,6 +427,13 @@ export default function RealEstatePage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Convert More Real Estate Leads"
+            description="Never miss a property inquiry again. See how ZuZo helps real estate agencies capture more leads, schedule more viewings, and close more deals with 24/7 support. Book your consultation."
+          />
+        </div>
 
         {/* Stats Section */}
         <section className="py-20 lg:py-32 bg-muted/30">

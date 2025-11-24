@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   ShoppingCart, 
@@ -25,6 +28,12 @@ export default function EcommercePage() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="E-commerce & Retail BPO Solutions"
+          description="24/7 customer support and order management for e-commerce businesses"
+          url="/industries/ecommerce"
+          category="E-commerce Services"
+        />
         {/* Hero Section */}
         <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
           <div className="container mx-auto px-6">
@@ -56,6 +65,8 @@ export default function EcommercePage() {
             </div>
           </div>
         </section>
+
+        <MiniTrustBar />
 
         {/* Why Choose ZuZo */}
         <section className="py-20 lg:py-32">
@@ -430,6 +441,13 @@ export default function EcommercePage() {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <InlineBookingCTA 
+            title="Scale Your E-commerce Customer Support"
+            description="Discover how ZuZo helps online retailers reduce cart abandonment and increase conversions with 24/7 customer support. Book a consultation to explore your options."
+          />
+        </div>
 
         {/* Stats Section */}
         <section className="py-20 lg:py-32 bg-muted/30">

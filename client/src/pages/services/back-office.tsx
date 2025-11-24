@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   FileText, 
@@ -25,6 +28,11 @@ export default function BackOfficeService() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Back Office Support Services"
+          description="Comprehensive administrative and operational support for business efficiency"
+          url="/services/back-office"
+        />
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="container mx-auto px-6">
@@ -55,6 +63,8 @@ export default function BackOfficeService() {
           </div>
         </div>
       </section>
+
+      <MiniTrustBar />
 
       {/* Key Benefits */}
       <section className="py-20 lg:py-32">
@@ -373,6 +383,13 @@ export default function BackOfficeService() {
           </div>
         </div>
       </section>
+
+      <div className="container mx-auto px-4 lg:px-8 py-16">
+        <InlineBookingCTA 
+          title="Streamline Your Back Office Operations"
+          description="Discover how our back office support can reduce costs by 65% while improving accuracy and efficiency. Book a free consultation to explore your options."
+        />
+      </div>
 
       {/* Stats Section */}
       <section className="py-20 lg:py-32 bg-muted/30">

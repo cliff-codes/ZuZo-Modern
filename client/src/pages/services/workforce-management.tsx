@@ -3,6 +3,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { InlineBookingCTA } from "@/components/cta/inline-booking-cta";
+import { MiniTrustBar } from "@/components/trust/mini-trust-bar";
+import { ServiceSchema } from "@/components/seo/service-schema";
 import { Link } from "wouter";
 import { 
   Users, 
@@ -25,6 +28,11 @@ export default function WorkforceManagementService() {
     <div className="min-h-screen">
       <Header />
       <main>
+        <ServiceSchema 
+          name="Workforce Management Solutions"
+          description="Scalable team solutions and on-demand skilled professionals"
+          url="/services/workforce-management"
+        />
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="container mx-auto px-6">
@@ -55,6 +63,8 @@ export default function WorkforceManagementService() {
           </div>
         </div>
       </section>
+
+      <MiniTrustBar />
 
       {/* Key Benefits */}
       <section className="py-20 lg:py-32">
@@ -378,6 +388,13 @@ export default function WorkforceManagementService() {
           </div>
         </div>
       </section>
+
+      <div className="container mx-auto px-4 lg:px-8 py-16">
+        <InlineBookingCTA 
+          title="Build Your Dream Team Today"
+          description="Access pre-vetted talent, reduce hiring costs by 60%, and deploy your team within 48 hours. Schedule a consultation to discuss your workforce needs."
+        />
+      </div>
 
       {/* Stats Section */}
       <section className="py-20 lg:py-32 bg-muted/30">
