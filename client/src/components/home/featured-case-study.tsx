@@ -85,16 +85,18 @@ export function FeaturedCaseStudy() {
                 <h4 className="font-heading font-semibold text-xl mb-4 text-primary">
                   The Solution
                 </h4>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {featuredCaseStudy.solution}
-                </p>
+                <div 
+                  className="text-muted-foreground mb-6 leading-relaxed prose prose-sm max-w-none"
+                  dangerouslySetInnerHTML={{ __html: featuredCaseStudy.solution }}
+                />
 
                 <h4 className="font-heading font-semibold text-xl mb-4 text-success">
                   The Results
                 </h4>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {featuredCaseStudy.results}
-                </p>
+                <div 
+                  className="text-muted-foreground mb-6 leading-relaxed prose prose-sm max-w-none"
+                  dangerouslySetInnerHTML={{ __html: featuredCaseStudy.results }}
+                />
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">

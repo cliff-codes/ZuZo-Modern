@@ -105,9 +105,10 @@ export default function CaseStudyPage() {
                           </div>
                           <h2 className="font-heading font-bold text-2xl">The Challenge</h2>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {caseStudy.challenge}
-                        </p>
+                        <div 
+                          className="text-muted-foreground leading-relaxed prose prose-sm max-w-none"
+                          dangerouslySetInnerHTML={{ __html: caseStudy.challenge }}
+                        />
                       </CardContent>
                     </Card>
                   )}
@@ -121,9 +122,10 @@ export default function CaseStudyPage() {
                           </div>
                           <h2 className="font-heading font-bold text-2xl">Our Solution</h2>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {caseStudy.solution}
-                        </p>
+                        <div 
+                          className="text-muted-foreground leading-relaxed prose prose-sm max-w-none"
+                          dangerouslySetInnerHTML={{ __html: caseStudy.solution }}
+                        />
                       </CardContent>
                     </Card>
                   )}
