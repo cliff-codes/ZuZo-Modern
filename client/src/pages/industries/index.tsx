@@ -140,7 +140,7 @@ export default function IndustriesPage() {
                     Industry Compliance
                   </h3>
                   <p className="text-muted-foreground" data-testid="benefit-description-compliance">
-                    Pre-trained teams understand your industry's regulatory requirements, from HIPAA to PCI-DSS to SOC 2.
+                    Pre-trained teams understand your industry's regulatory requirements, with ISO 27001 aligned processes and Data Protection Certification.
                   </p>
                 </CardHeader>
               </Card>

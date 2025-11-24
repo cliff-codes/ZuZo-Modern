@@ -45,7 +45,7 @@ export default function FinancialServicesPage() {
                 Secure, Compliant BPO for Financial Services
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-hero-description">
-                PCI-DSS and SOC 2 certified support for banking, insurance, and fintech. Deliver 
+                ISO 27001 aligned processes with Data Protection Certification for banking, insurance, and fintech. Deliver 
                 exceptional customer experiences while maintaining the highest security and regulatory 
                 compliance standards. Reduce costs by 60% without compromising on quality.
               </p>
@@ -90,9 +90,9 @@ export default function FinancialServicesPage() {
                     Regulatory Compliance
                   </h3>
                   <p className="text-muted-foreground" data-testid="benefit-description-compliance">
-                    PCI-DSS Level 1, SOC 2 Type II, and ISO 27001 certified operations. Our teams are 
-                    trained on financial regulations including GDPR, KYC, AML, and industry-specific 
-                    compliance requirements to ensure your operations meet all standards.
+                    ISO 27001 aligned processes with Data Protection Certification and full GDPR compliance. 
+                    Our teams are trained on financial regulations including KYC, AML, and industry-specific 
+                    compliance requirements to ensure your operations meet all regulatory standards.
                   </p>
                 </CardHeader>
               </Card>
@@ -365,7 +365,7 @@ export default function FinancialServicesPage() {
                     <p className="text-muted-foreground" data-testid="process-description-1">
                       We conduct a comprehensive security assessment of your requirements, ensuring our 
                       infrastructure, processes, and team training meet all regulatory standards including 
-                      PCI-DSS, SOC 2, GDPR, and industry-specific regulations.
+                      ISO 27001 aligned security, GDPR compliance, and industry-specific regulations.
                     </p>
                   </div>
                 </CardContent>
@@ -431,7 +431,7 @@ export default function FinancialServicesPage() {
         <div className="container mx-auto px-4 lg:px-8 py-16">
           <InlineBookingCTA 
             title="Secure Your Financial Operations"
-            description="Learn how ZuZo's PCI-DSS and SOC 2 certified support helps financial institutions reduce costs by 60% while maintaining the highest security standards. Schedule your consultation."
+            description="Learn how ZuZo's ISO 27001 aligned processes and Data Protection Certification help financial institutions reduce costs by 60% while maintaining the highest security standards. Schedule your consultation."
           />
         </div>
 
