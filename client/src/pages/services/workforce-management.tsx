@@ -452,7 +452,7 @@ export default function WorkforceManagementService() {
                         <ChevronRight className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
-                    <Link href="/contact">
+                    <Link href="/book-demo">
                       <Button variant="outline" size="lg" className="w-full" data-testid="button-cta-contact">
                         Speak with HR Expert
                       </Button>
