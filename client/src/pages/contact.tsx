@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Clock, MessageCircle, Linkedin, Facebook } from "lucide-react";
 import { SEOHead, getOrganizationSchema } from "@/components/seo/seo-head";
+import { CompactTestimonials } from "@/components/testimonials/compact-testimonials";
 
 export default function Contact() {
   return (
@@ -185,6 +186,12 @@ export default function Contact() {
                   </a>
                 </CardContent>
               </Card>
+
+              {/* Social Proof */}
+              <div>
+                <h3 className="font-heading font-semibold text-lg mb-4">Trusted by Businesses Like Yours</h3>
+                <CompactTestimonials limit={2} />
+              </div>
             </div>
           </div>
         </div>

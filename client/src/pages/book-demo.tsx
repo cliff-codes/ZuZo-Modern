@@ -4,6 +4,7 @@ import { BookingForm } from "@/components/forms/booking-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { SEOHead, getOrganizationSchema } from "@/components/seo/seo-head";
+import { CompactTestimonials } from "@/components/testimonials/compact-testimonials";
 
 export default function BookDemo() {
   return (
@@ -110,6 +111,12 @@ export default function BookDemo() {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Social Proof */}
+              <div>
+                <h3 className="font-heading font-semibold text-lg mb-4">What Our Clients Say</h3>
+                <CompactTestimonials limit={2} />
+              </div>
             </div>
           </div>
         </div>
