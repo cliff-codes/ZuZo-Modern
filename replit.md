@@ -5,19 +5,24 @@
 ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solutions, including AI-powered virtual assistants and omnichannel contact center services. The platform enables businesses to reduce operational costs by 60% through a combination of human expertise and AI automation. 
 
 **Key Features**:
-- **Video Hero Section**: Homepage features a 3-minute overview video showcasing ZuZo's Gitex presentation with prominent "Get Your Free Strategy Session Now" CTA directing to /book-demo
-- **5 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management
-- **8 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics & Transportation
+- **Video Hero Section**: Homepage features a 3-minute overview video with optimized poster image for faster mobile loading, showcasing ZuZo's Gitex presentation with prominent "Get Your Free Strategy Session Now" CTA directing to /book-demo
+- **5 Service Pages**: Contact Center, Virtual Assistants, AI & Automation, Back Office Support, Workforce Management (all with contextual CTAs and Service schema markup)
+- **8 Industry Solutions**: E-commerce, Financial Services, Healthcare, Technology/SaaS, Real Estate, Professional Services, Automotive, Logistics & Transportation (all with contextual CTAs and Service schema markup)
+- **Strategic B2B Pages**: Customer Stories showcase, Security & Compliance, Comparison (ZuZo vs In-House vs Traditional BPO), BPO ROI Guide lead magnet
 - **Resources Hub**: Blog, Case Studies, FAQ
-- **Conversion Tools**: Contact forms, demo booking (Cal.com integration), ROI calculator, newsletter subscriptions
+- **Conversion Tools**: Contact forms, demo booking (Cal.com integration), ROI calculator, newsletter subscriptions, downloadable BPO ROI Guide with lead capture
 - **Content Management**: Database-driven testimonials, blog posts, and case studies
 - **Conversion Optimization**:
+  - **Sticky Mobile CTA**: Always-visible "Book Free Demo" button on mobile (hidden on /book-demo and /contact pages)
+  - **Contextual CTAs**: InlineBookingCTA and MiniTrustBar components on all service/industry pages
+  - **Mobile Navigation**: Reorganized with prominent "Book Free Demo" and "Pricing" at top, collapsible accordion for Services/Industries/Resources
   - Client logos and trust indicators section with industry badges and key stats (500+ clients, 12+ industries, 98% satisfaction, 24/7 coverage)
   - "Why ZuZo?" section highlighting 6 key differentiators with trust badges (ISO Certified, GDPR Compliant, Industry Certified)
   - Featured case study prominently displayed on homepage with real metrics and results
   - Compact testimonials on booking and contact pages for social proof
   - Post-newsletter subscription upsell prompting demo booking (auto-dismisses after 10 seconds)
   - Sticky header with "Book Free Demo" CTA available on all pages
+- **SEO Optimization**: Service schema markup (schema.org) on all 13 service and industry pages for improved search visibility
 
 The application is built as a full-stack web platform with a React-based frontend and Express backend, designed for rapid deployment (48-hour launch capability) and global 24/7 service delivery.
 
@@ -34,9 +39,10 @@ Preferred communication style: Simple, everyday language.
 **UI Framework**: shadcn/ui component library built on Radix UI primitives, providing accessible, customizable components with Tailwind CSS styling.
 
 **Routing**: Wouter for lightweight client-side routing with comprehensive page coverage:
-- **Service Pages** (5): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management
-- **Industry Pages** (9): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services, /industries/automotive, /industries/logistics
-- **Resources** (5): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq
+- **Service Pages** (5): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management (all with InlineBookingCTA, MiniTrustBar, and Service schema)
+- **Industry Pages** (9): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services, /industries/automotive, /industries/logistics (all with InlineBookingCTA, MiniTrustBar, and Service schema)
+- **Resources** (6): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq, /resources/bpo-roi-guide (lead magnet with form capture)
+- **Strategic Pages** (3): /customer-stories (success stories showcase), /security (compliance and certifications), /compare (competitive comparison)
 - **Utility Pages**: /contact, /book-demo (with social proof testimonials), /roi-calculator, /pricing, /company/about, /privacy-policy
 
 **State Management**: TanStack Query (React Query) for server state management, handling API calls, caching, and mutations for leads, subscribers, bookings, and content management.
@@ -55,10 +61,14 @@ Preferred communication style: Simple, everyday language.
 - Resources dropdown menu (Blog, Case Studies, FAQ)
 - Direct links for About, Pricing, and ROI Calculator
 - Sticky header with "Book Free Demo" primary CTA and "Contact Us" secondary CTA
-- Mobile-responsive sheet navigation mirroring desktop structure
+- **Mobile Navigation**: Reorganized sheet navigation with prominent "Book Free Demo" and "Pricing" at top, collapsible accordion sections for Services/Industries/Resources, improved conversion focus
 - Comprehensive data-testid attributes for e2e testing
 
 **Conversion Components**:
+- `StickyMobileCTA`: Fixed bottom CTA button on mobile viewports, always visible during scrolling, hidden on /book-demo and /contact to avoid redundancy
+- `InlineBookingCTA`: Contextual CTA section deployed on all service and industry pages with heading, description, and primary CTA button
+- `MiniTrustBar`: Compact trust indicators showing key metrics (500+ clients, 98% satisfaction, 24/7 support) used on service/industry pages
+- `ServiceSchema`: SEO schema markup component for service/industry pages implementing schema.org Service structured data
 - `CompactTestimonials`: Displays 2 testimonials with 5-star ratings, client avatars, and company info on booking/contact pages
 - `WhyZuzoSection`: 6 differentiator cards (60% cost reduction, 48-hour launch, 24/7 coverage, AI-powered, enterprise security, 500+ clients) with trust badges
 - `FeaturedCaseStudy`: Prominent display of top case study with challenge, solution, results, and key metrics
