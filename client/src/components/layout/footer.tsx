@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Linkedin, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, MapPin, MessageCircle, Award } from "lucide-react";
 import { NewsletterSignup } from "./newsletter-signup";
 import whiteLogo from "@assets/ZUZO LOGO ALL WHITE_1763932128050.png";
 
@@ -172,6 +172,16 @@ export function Footer() {
             </Link>
           </div>
           <div className="flex items-center gap-6">
+            <a
+              href="https://clutch.co/profile/zuzo-company#reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+              aria-label="Clutch.co Reviews"
+              data-testid="link-clutch"
+            >
+              <Award className="h-5 w-5" />
+            </a>
             <a
               href="https://www.linkedin.com/company/zuzo-contactcare247/"
               target="_blank"
