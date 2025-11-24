@@ -14,6 +14,7 @@ import VirtualAssistantsService from "@/pages/services/virtual-assistants";
 import AIAutomationService from "@/pages/services/ai-automation";
 import BackOfficeService from "@/pages/services/back-office";
 import WorkforceManagementService from "@/pages/services/workforce-management";
+import OmnichannelPlatformService from "@/pages/services/omnichannel-platform";
 import Contact from "@/pages/contact";
 import BookDemo from "@/pages/book-demo";
 import ROICalculatorPage from "@/pages/roi-calculator";
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/services/ai-automation" component={AIAutomationService} />
       <Route path="/services/back-office" component={BackOfficeService} />
       <Route path="/services/workforce-management" component={WorkforceManagementService} />
+      <Route path="/services/omnichannel-platform" component={OmnichannelPlatformService} />
 
       {/* Resources */}
       <Route path="/resources/blog" component={BlogPage} />

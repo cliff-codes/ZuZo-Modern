@@ -25,6 +25,7 @@ const services = [
   { title: "AI & Automation", href: "/services/ai-automation", description: "Intelligent process automation" },
   { title: "Back Office Support", href: "/services/back-office", description: "Administrative & operational support" },
   { title: "Workforce Management", href: "/services/workforce-management", description: "Scalable team solutions" },
+  { title: "Omnichannel Platform", href: "/services/omnichannel-platform", description: "QContact unified communications platform" },
 ];
 
 const industries = [

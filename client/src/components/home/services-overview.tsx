@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Headset, Bot, Cpu, FileText, Users, ArrowRight } from "lucide-react";
+import { Headset, Bot, Cpu, FileText, Users, Network, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -38,6 +38,13 @@ const services = [
     description: "Capacity planning, scheduling optimization, and performance analytics",
     features: ["Capacity Planning", "Real-time Scheduling", "Performance Tracking", "Resource Allocation"],
     href: "/services/workforce-management",
+  },
+  {
+    icon: Network,
+    title: "Omnichannel Platform",
+    description: "Enterprise platform unifying all customer communications in one dashboard",
+    features: ["Live chat, email, voice, SMS, social", "Automation & smart routing", "Built-in CRM & analytics", "WhatsApp Business integration"],
+    href: "/services/omnichannel-platform",
   },
 ];
 
