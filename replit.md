@@ -17,7 +17,7 @@ ZuZo is a B2B SaaS platform offering Business Process Outsourcing (BPO) solution
   - **Contextual CTAs**: InlineBookingCTA and MiniTrustBar components on all service/industry pages
   - **Mobile Navigation**: Reorganized with prominent "Book Free Demo" and "Pricing" at top, collapsible accordion for Services/Industries/Resources
   - Client logos and trust indicators section with industry badges and key stats (500+ clients, 12+ industries, 98% satisfaction, 24/7 coverage)
-  - "Why ZuZo?" section highlighting 6 key differentiators with trust badges (ISO Certified, GDPR Compliant, Industry Certified)
+  - "Why ZuZo?" section highlighting 6 key differentiators with trust badges (ISO 27001 Aligned, Data Protection Certified, GDPR Compliant)
   - Featured case study prominently displayed on homepage with real metrics and results
   - Compact testimonials on booking and contact pages for social proof
   - Post-newsletter subscription upsell prompting demo booking (auto-dismisses after 10 seconds)

@@ -27,23 +27,23 @@ import {
 
 const certifications = [
   {
-    name: "ISO 27001",
-    description: "Information Security Management",
+    name: "ISO 27001 Aligned",
+    description: "Enterprise-grade security processes aligned with ISO 27001 standards",
     icon: Shield,
   },
   {
-    name: "GDPR",
-    description: "Data Protection Compliance",
+    name: "Data Protection Certified",
+    description: "Certified data protection practices ensuring client privacy",
     icon: FileCheck,
   },
   {
-    name: "HIPAA Ready",
-    description: "Healthcare Data Security",
+    name: "GDPR Compliant",
+    description: "Full compliance with EU data protection regulations",
     icon: Eye,
   },
   {
-    name: "SOC 2 Type II",
-    description: "Service Organization Controls",
+    name: "Enterprise Security",
+    description: "Bank-level encryption and security controls",
     icon: Lock,
   },
 ];
@@ -121,9 +121,9 @@ export default function SecurityPage() {
     <div className="min-h-screen">
       <SEOHead
         title="Security & Compliance"
-        description="Enterprise-grade security with ISO 27001, GDPR, HIPAA-ready, and SOC 2 certifications. AES-256 encryption, 24/7 monitoring, and 99.9% uptime SLA."
+        description="Enterprise-grade security with ISO 27001 aligned processes and Data Protection Certification. GDPR compliant with AES-256 encryption, 24/7 monitoring, and 99.9% uptime SLA."
         canonical="/security"
-        keywords="BPO security, GDPR compliance, ISO 27001, HIPAA ready, data protection, secure outsourcing"
+        keywords="BPO security, GDPR compliance, ISO 27001 aligned, data protection certified, secure outsourcing, Ghana BPO"
       />
       <Header />
 

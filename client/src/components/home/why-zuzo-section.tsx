@@ -85,15 +85,15 @@ export function WhyZuzoSection() {
         <div className="mt-16 flex flex-wrap justify-center items-center gap-8 md:gap-12">
           <div className="flex items-center gap-2 text-sm">
             <Shield className="h-5 w-5 text-success" />
-            <span className="font-semibold">ISO Certified</span>
+            <span className="font-semibold">ISO 27001 Aligned</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Shield className="h-5 w-5 text-success" />
-            <span className="font-semibold">GDPR Compliant</span>
+            <span className="font-semibold">Data Protection Certified</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Award className="h-5 w-5 text-success" />
-            <span className="font-semibold">Industry Certified</span>
+            <span className="font-semibold">GDPR Compliant</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Users className="h-5 w-5 text-success" />

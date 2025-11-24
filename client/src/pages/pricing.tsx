@@ -178,15 +178,15 @@ export default function Pricing() {
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-success mt-0.5" />
                 <div>
-                  <div className="font-semibold mb-1">ISO 27001 Compliance</div>
+                  <div className="font-semibold mb-1">ISO 27001 Aligned Processes</div>
                   <p className="text-sm text-muted-foreground">Enterprise-grade security standards</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-success mt-0.5" />
                 <div>
-                  <div className="font-semibold mb-1">GDPR Certified</div>
-                  <p className="text-sm text-muted-foreground">Full data protection compliance</p>
+                  <div className="font-semibold mb-1">Data Protection Certified</div>
+                  <p className="text-sm text-muted-foreground">Certified data protection practices</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
