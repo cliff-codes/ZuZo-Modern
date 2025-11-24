@@ -33,8 +33,8 @@ export function MiniTrustBar() {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
               <Shield className="h-6 w-6 text-primary" />
             </div>
-            <div className="font-bold text-lg">ISO</div>
-            <div className="text-xs text-muted-foreground">Certified</div>
+            <div className="font-bold text-lg">ISO 27001</div>
+            <div className="text-xs text-muted-foreground">Aligned</div>
           </div>
         </div>
       </div>
