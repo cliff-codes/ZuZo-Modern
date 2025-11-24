@@ -39,7 +39,7 @@ Preferred communication style: Simple, everyday language.
 **UI Framework**: shadcn/ui component library built on Radix UI primitives, providing accessible, customizable components with Tailwind CSS styling.
 
 **Routing**: Wouter for lightweight client-side routing with comprehensive page coverage:
-- **Service Pages** (6): /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management, /services/omnichannel-platform (all with InlineBookingCTA, MiniTrustBar, and Service schema)
+- **Service Pages** (7): /services (landing page), /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management, /services/omnichannel-platform (detail pages with InlineBookingCTA, MiniTrustBar, and Service schema)
 - **Industry Pages** (9): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services, /industries/automotive, /industries/logistics (all with InlineBookingCTA, MiniTrustBar, and Service schema)
 - **Resources** (6): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq, /resources/bpo-roi-guide (lead magnet with form capture)
 - **Strategic Pages** (3): /customer-stories (success stories showcase), /security (compliance and certifications), /compare (competitive comparison)

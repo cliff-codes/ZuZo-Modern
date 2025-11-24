@@ -9,6 +9,7 @@ import { StickyMobileCTA } from "@/components/layout/sticky-mobile-cta";
 
 // Pages
 import Home from "@/pages/home";
+import ServicesPage from "@/pages/services/index";
 import ContactCenterService from "@/pages/services/contact-center";
 import VirtualAssistantsService from "@/pages/services/virtual-assistants";
 import AIAutomationService from "@/pages/services/ai-automation";
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/" component={Home} />
 
       {/* Service Pages */}
+      <Route path="/services" component={ServicesPage} />
       <Route path="/services/contact-center" component={ContactCenterService} />
       <Route path="/services/virtual-assistants" component={VirtualAssistantsService} />
       <Route path="/services/ai-automation" component={AIAutomationService} />
