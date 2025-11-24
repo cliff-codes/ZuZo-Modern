@@ -129,4 +129,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://zuzo.replit.app/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

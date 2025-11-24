@@ -32,6 +32,7 @@ import RealEstatePage from "@/pages/industries/real-estate";
 import ProfessionalServicesPage from "@/pages/industries/professional-services";
 import AutomotivePage from "@/pages/industries/automotive";
 import LogisticsPage from "@/pages/industries/logistics";
+import PrivacyPolicy from "@/pages/privacy-policy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -74,6 +75,9 @@ function Router() {
       {/* Company */}
       <Route path="/company" component={About} />
       <Route path="/company/about" component={About} />
+
+      {/* Legal */}
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
 
       {/* Fallback to 404 */}
       <Route component={NotFound} />

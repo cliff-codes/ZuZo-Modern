@@ -163,9 +163,14 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-300">
-            © {new Date().getFullYear()} ZuZo Company Limited. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p className="text-sm text-gray-300">
+              © {new Date().getFullYear()} ZuZo Company Limited. All rights reserved.
+            </p>
+            <Link href="/privacy-policy" className="text-sm text-gray-300 hover:text-white transition-colors" data-testid="footer-link-privacy">
+              Privacy Policy
+            </Link>
+          </div>
           <div className="flex items-center gap-6">
             <a
               href="https://www.linkedin.com/company/zuzo-contactcare247/"
