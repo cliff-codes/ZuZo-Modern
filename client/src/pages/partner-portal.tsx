@@ -7,7 +7,8 @@ import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { SEOHead } from "@/components/seo/seo-head";
 import { Link } from "wouter";
 import { 
@@ -127,6 +128,10 @@ export default function PartnerPortal() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-[#0a0f1a] border-white/10 text-white w-[280px]">
+                <VisuallyHidden>
+                  <SheetTitle>Partner Portal Navigation</SheetTitle>
+                  <SheetDescription>Navigate to different sections of the Partner Portal</SheetDescription>
+                </VisuallyHidden>
                 <div className="flex flex-col gap-6 mt-8">
                   <Link href="/book-demo">
                     <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white border-0" data-testid="button-mobile-become-partner">
