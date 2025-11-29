@@ -297,10 +297,10 @@ export default function PartnerPortal() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="text-value-prop-title">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent" data-testid="text-value-prop-title">
               The Arbitrage Advantage
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-xl max-w-3xl mx-auto leading-relaxed">
               Premium service delivery at emerging market rates. Your margin is our mission.
             </p>
           </motion.div>
@@ -312,25 +312,31 @@ export default function PartnerPortal() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
+              className="group"
             >
-              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-purple-500/20 h-full hover:border-purple-500/40 transition-colors" data-testid="card-msp">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-xl bg-purple-600/20 flex items-center justify-center mb-6">
-                    <Server className="h-7 w-7 text-purple-400" />
-                  </div>
-                  <div className="text-purple-400 text-sm font-semibold uppercase tracking-wider mb-3">
+              <Card className="relative bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30 h-full overflow-hidden hover:border-purple-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20" data-testid="card-msp">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardContent className="p-8 relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600/40 to-purple-600/10 flex items-center justify-center mb-6 border border-purple-500/30"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Server className="h-8 w-8 text-purple-300" />
+                  </motion.div>
+                  <div className="text-purple-300 text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">
                     For MSPs
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Tier 1 Helpdesk, Solved.
                   </h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed mb-6">
                     Stop burning out US engineers on password resets. 24/7 coverage starting at{" "}
-                    <span className="text-purple-400 font-bold">$8/hr</span>.
+                    <span className="text-purple-300 font-bold">$8/hr</span>.
                   </p>
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <div className="flex items-center gap-2 text-white/50 text-sm">
-                      <CheckCircle className="h-4 w-4 text-purple-400" />
+                  <div className="pt-6 border-t border-purple-500/20">
+                    <div className="flex items-center gap-2 text-purple-300/90 text-sm">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0" />
                       <span>ConnectWise & Autotask Ready</span>
                     </div>
                   </div>
@@ -344,24 +350,30 @@ export default function PartnerPortal() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
+              className="group"
             >
-              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-blue-500/20 h-full hover:border-blue-500/40 transition-colors" data-testid="card-master-agent">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-xl bg-blue-600/20 flex items-center justify-center mb-6">
-                    <Shield className="h-7 w-7 text-blue-400" />
-                  </div>
-                  <div className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-3">
+              <Card className="relative bg-gradient-to-br from-blue-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-blue-500/30 h-full overflow-hidden hover:border-blue-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20" data-testid="card-master-agent">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardContent className="p-8 relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600/40 to-blue-600/10 flex items-center justify-center mb-6 border border-blue-500/30"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Shield className="h-8 w-8 text-blue-300" />
+                  </motion.div>
+                  <div className="text-blue-300 text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">
                     For Master Agents
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Zero-Churn Fulfillment.
                   </h3>
-                  <p className="text-white/60 leading-relaxed">
-                    <span className="text-blue-400 font-bold">4.7/5 CSAT scores</span> that protect your reputation and your residuals.
+                  <p className="text-white/70 leading-relaxed mb-6">
+                    <span className="text-blue-300 font-bold">4.7/5 CSAT scores</span> that protect your reputation and your residuals.
                   </p>
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <div className="flex items-center gap-2 text-white/50 text-sm">
-                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                  <div className="pt-6 border-t border-blue-500/20">
+                    <div className="flex items-center gap-2 text-blue-300/90 text-sm">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0" />
                       <span>Salesforce & HubSpot Integration</span>
                     </div>
                   </div>
@@ -375,25 +387,31 @@ export default function PartnerPortal() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
+              className="group"
             >
-              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-cyan-500/20 h-full hover:border-cyan-500/40 transition-colors" data-testid="card-ndis">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-xl bg-cyan-600/20 flex items-center justify-center mb-6">
-                    <Zap className="h-7 w-7 text-cyan-400" />
-                  </div>
-                  <div className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-3">
+              <Card className="relative bg-gradient-to-br from-cyan-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-cyan-500/30 h-full overflow-hidden hover:border-cyan-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20" data-testid="card-ndis">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardContent className="p-8 relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-600/40 to-cyan-600/10 flex items-center justify-center mb-6 border border-cyan-500/30"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Zap className="h-8 w-8 text-cyan-300" />
+                  </motion.div>
+                  <div className="text-cyan-300 text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">
                     For NDIS Providers
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Overnight Claim Processing.
                   </h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed mb-6">
                     We process claims while Australia sleeps.{" "}
-                    <span className="text-cyan-400 font-bold">Wake up to a cleared queue.</span>
+                    <span className="text-cyan-300 font-bold">Wake up to a cleared queue.</span>
                   </p>
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <div className="flex items-center gap-2 text-white/50 text-sm">
-                      <CheckCircle className="h-4 w-4 text-cyan-400" />
+                  <div className="pt-6 border-t border-cyan-500/20">
+                    <div className="flex items-center gap-2 text-cyan-300/90 text-sm">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0" />
                       <span>NDIS Portal Certified</span>
                     </div>
                   </div>
@@ -564,10 +582,10 @@ export default function PartnerPortal() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="text-partner-tracks-title">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent" data-testid="text-partner-tracks-title">
               Choose Your Partner Track
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-xl max-w-3xl mx-auto leading-relaxed">
               Two paths to partnership. Both paths to profit.
             </p>
           </motion.div>
@@ -592,15 +610,20 @@ export default function PartnerPortal() {
               </TabsList>
               
               <TabsContent value="white-label" className="mt-8">
-                <Card className="bg-gradient-to-br from-purple-900/30 to-[#0d1321] border-purple-500/20" data-testid="card-white-label">
-                  <CardContent className="p-8 lg:p-12">
+                <Card className="bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30 overflow-hidden hover:border-purple-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20" data-testid="card-white-label">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent" />
+                  <CardContent className="p-8 lg:p-12 relative z-10">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-full bg-purple-600/20 flex items-center justify-center">
-                        <Building2 className="h-7 w-7 text-purple-400" />
-                      </div>
+                      <motion.div 
+                        className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600/40 to-purple-600/10 flex items-center justify-center border border-purple-500/30"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Building2 className="h-8 w-8 text-purple-300" />
+                      </motion.div>
                       <div>
                         <h3 className="text-2xl font-bold text-white">The Ghost</h3>
-                        <p className="text-purple-400">Invisible Integration</p>
+                        <p className="text-purple-300">Invisible Integration</p>
                       </div>
                     </div>
                     <p className="text-xl text-white/80 mb-8 leading-relaxed">
@@ -629,15 +652,20 @@ export default function PartnerPortal() {
               </TabsContent>
               
               <TabsContent value="referral" className="mt-8">
-                <Card className="bg-gradient-to-br from-blue-900/30 to-[#0d1321] border-blue-500/20" data-testid="card-referral">
-                  <CardContent className="p-8 lg:p-12">
+                <Card className="bg-gradient-to-br from-blue-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-blue-500/30 overflow-hidden hover:border-blue-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20" data-testid="card-referral">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent" />
+                  <CardContent className="p-8 lg:p-12 relative z-10">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-full bg-blue-600/20 flex items-center justify-center">
-                        <Users className="h-7 w-7 text-blue-400" />
-                      </div>
+                      <motion.div 
+                        className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600/40 to-blue-600/10 flex items-center justify-center border border-blue-500/30"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Users className="h-8 w-8 text-blue-300" />
+                      </motion.div>
                       <div>
                         <h3 className="text-2xl font-bold text-white">The Broker</h3>
-                        <p className="text-blue-400">Hands-Free Revenue</p>
+                        <p className="text-blue-300">Hands-Free Revenue</p>
                       </div>
                     </div>
                     <p className="text-xl text-white/80 mb-8 leading-relaxed">
@@ -678,10 +706,10 @@ export default function PartnerPortal() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" data-testid="text-resources-title">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent" data-testid="text-resources-title">
               Partner Resources
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-xl max-w-3xl mx-auto leading-relaxed">
               Exclusive playbooks to accelerate your growth.
             </p>
           </motion.div>
@@ -851,9 +879,9 @@ export default function PartnerPortal() {
                 <CheckCircle className="h-8 w-8 text-green-400" />
               </motion.div>
               <div className="text-center">
-                <p className="text-white/70 text-sm mb-4">Click below to download your resource:</p>
+                <p className="text-white/70 text-base mb-6">Your resource is ready to download:</p>
                 <Button 
-                  className="bg-green-600 hover:bg-green-700 text-white"
+                  className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white border-0"
                   onClick={() => {
                     const downloadData = getDownloadUrl(selectedAsset);
                     if (downloadData) {
