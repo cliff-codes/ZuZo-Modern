@@ -53,6 +53,10 @@ const playbooks = {
   "The MSP Night Shift Protocol": {
     url: "/assets/playbooks/msp-night-shift-protocol.html",
     filename: "MSP-Night-Shift-Protocol.html"
+  },
+  "Peak Season Survival Guide": {
+    url: "/assets/playbooks/peak-season-survival-guide.html",
+    filename: "Peak-Season-Survival-Guide.html"
   }
 };
 
@@ -104,9 +108,9 @@ export default function PartnerPortal() {
     <div className="min-h-screen bg-[#0a0f1a] text-white">
       <SEOHead
         title="Partner Portal - White Label BPO Platform | ZuZo"
-        description="Scale your margins, not your headcount. The invisible fulfillment engine for MSPs, Master Agents, and NDIS Providers. White-label BPO from Ghana."
+        description="Scale your margins, not your headcount. The invisible fulfillment engine for MSPs, 3PLs, and NDIS Providers. White-label BPO from Ghana."
         canonical="/partner-portal"
-        keywords="white label BPO, partner program, MSP helpdesk, NDIS claim processing, master agent, outsourcing partner"
+        keywords="white label BPO, partner program, MSP helpdesk, 3PL logistics, fulfillment center, NDIS claim processing, WISMO support, outsourcing partner"
       />
 
       {/* Navigation */}
@@ -212,7 +216,7 @@ export default function PartnerPortal() {
             </h1>
 
             <p className="text-xl md:text-2xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-subheadline">
-              The invisible fulfillment engine for MSPs, Master Agents, and NDIS Providers. 
+              The invisible fulfillment engine for MSPs, 3PLs, and NDIS Providers. 
               <span className="text-white font-medium"> You own the client relationship; </span>
               we power the delivery from Ghana.
             </p>
@@ -455,7 +459,7 @@ export default function PartnerPortal() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Card 1: MSPs */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -563,6 +567,44 @@ export default function PartnerPortal() {
                     <div className="flex items-center gap-2 text-cyan-300/90 text-sm">
                       <CheckCircle className="h-4 w-4 flex-shrink-0" />
                       <span>NDIS Portal Certified</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Card 4: 3PLs/Fulfillment Centers */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="group"
+            >
+              <Card className="relative bg-gradient-to-br from-orange-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-orange-500/30 h-full overflow-hidden hover:border-orange-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20" data-testid="card-3pl">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardContent className="p-8 relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-600/40 to-orange-600/10 flex items-center justify-center mb-6 border border-orange-500/30"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Building2 className="h-8 w-8 text-orange-300" />
+                  </motion.div>
+                  <div className="text-orange-300 text-xs font-semibold uppercase tracking-widest mb-3 opacity-80">
+                    For Fulfillment Centers
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    The WISMO Killer.
+                  </h3>
+                  <p className="text-white/70 leading-relaxed mb-6">
+                    "Where Is My Order?" tickets eating your margins?{" "}
+                    <span className="text-orange-300 font-bold">We handle them for $1.80/ticket.</span>
+                  </p>
+                  <div className="pt-6 border-t border-orange-500/20">
+                    <div className="flex items-center gap-2 text-orange-300/90 text-sm">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0" />
+                      <span>ShipStation & Shopify Ready</span>
                     </div>
                   </div>
                 </CardContent>
@@ -864,7 +906,7 @@ export default function PartnerPortal() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Asset 1: NDIS Growth Pack */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -919,6 +961,37 @@ export default function PartnerPortal() {
                     className="w-full border-purple-500/30 text-purple-400 hover:bg-purple-600/20 hover:text-purple-300"
                     onClick={() => handleDownloadClick("The MSP Night Shift Protocol")}
                     data-testid="button-download-msp"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Guide
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Asset 3: Peak Season Survival Guide */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-orange-500/20 h-full hover:border-orange-500/40 transition-all group" data-testid="card-peak-season">
+                <CardContent className="p-8">
+                  <div className="w-16 h-20 rounded-lg bg-orange-600/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <FileText className="h-10 w-10 text-orange-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    Peak Season Survival Guide
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed mb-6">
+                    Scale your support team from 5 to 50 agents for Black Friday—without hiring.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full border-orange-500/30 text-orange-400 hover:bg-orange-600/20 hover:text-orange-300"
+                    onClick={() => handleDownloadClick("Peak Season Survival Guide")}
+                    data-testid="button-download-peak-season"
                   >
                     <Download className="mr-2 h-4 w-4" />
                     Download Guide
