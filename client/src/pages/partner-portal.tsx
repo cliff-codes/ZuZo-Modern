@@ -44,6 +44,17 @@ const staggerContainer = {
   }
 };
 
+const playbooks = {
+  "Australia NDIS Growth Pack": {
+    url: "/assets/playbooks/australia-ndis-growth-pack.html",
+    filename: "Australia-NDIS-Growth-Pack.html"
+  },
+  "The MSP Night Shift Protocol": {
+    url: "/assets/playbooks/msp-night-shift-protocol.html",
+    filename: "MSP-Night-Shift-Protocol.html"
+  }
+};
+
 export default function PartnerPortal() {
   const [agents, setAgents] = useState(10);
   const [hourlyWage, setHourlyWage] = useState(25);
@@ -72,6 +83,11 @@ export default function PartnerPortal() {
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setEmailSubmitted(true);
+  };
+
+  const getDownloadUrl = (assetName: string | null) => {
+    if (!assetName || !playbooks[assetName as keyof typeof playbooks]) return null;
+    return playbooks[assetName as keyof typeof playbooks];
   };
 
   const formatCurrency = (amount: number) => {
@@ -812,13 +828,19 @@ export default function PartnerPortal() {
                 <Button 
                   className="bg-green-600 hover:bg-green-700 text-white"
                   onClick={() => {
-                    setDownloadModalOpen(false);
-                    setEmailSubmitted(false);
-                    setEmail("");
+                    const downloadData = getDownloadUrl(selectedAsset);
+                    if (downloadData) {
+                      window.open(downloadData.url, '_blank');
+                    }
+                    setTimeout(() => {
+                      setDownloadModalOpen(false);
+                      setEmailSubmitted(false);
+                      setEmail("");
+                    }, 500);
                   }}
                   data-testid="button-download-resource"
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
+                  <Download className="mr-2 h-4 w-4" />
                   Download {selectedAsset}
                 </Button>
               </div>
