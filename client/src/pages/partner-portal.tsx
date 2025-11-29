@@ -234,54 +234,101 @@ export default function PartnerPortal() {
             </motion.div>
           </motion.div>
 
-          {/* Abstract visualization */}
+          {/* Network Visualization - Main Hero */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="mt-20 flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 1.2 }}
+            className="mt-24 flex justify-center"
           >
-            <div className="relative w-full max-w-2xl h-48">
-              {/* Connected nodes visualization */}
-              <svg className="w-full h-full" viewBox="0 0 400 150">
-                <defs>
-                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.5" />
-                  </linearGradient>
-                </defs>
-                {/* Connection lines */}
-                <motion.line x1="50" y1="75" x2="150" y2="45" stroke="url(#lineGrad)" strokeWidth="2"
-                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, delay: 0.8 }} />
-                <motion.line x1="50" y1="75" x2="150" y2="105" stroke="url(#lineGrad)" strokeWidth="2"
-                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, delay: 0.9 }} />
-                <motion.line x1="150" y1="45" x2="250" y2="75" stroke="url(#lineGrad)" strokeWidth="2"
-                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, delay: 1 }} />
-                <motion.line x1="150" y1="105" x2="250" y2="75" stroke="url(#lineGrad)" strokeWidth="2"
-                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, delay: 1.1 }} />
-                <motion.line x1="250" y1="75" x2="350" y2="45" stroke="url(#lineGrad)" strokeWidth="2"
-                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, delay: 1.2 }} />
-                <motion.line x1="250" y1="75" x2="350" y2="105" stroke="url(#lineGrad)" strokeWidth="2"
-                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, delay: 1.3 }} />
-                
-                {/* Nodes */}
-                <motion.circle cx="50" cy="75" r="12" fill="#8B5CF6" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.7 }} />
-                <motion.circle cx="150" cy="45" r="10" fill="#6366F1" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.9 }} />
-                <motion.circle cx="150" cy="105" r="10" fill="#6366F1" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1 }} />
-                <motion.circle cx="250" cy="75" r="14" fill="#3B82F6" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.2 }} />
-                <motion.circle cx="350" cy="45" r="10" fill="#0EA5E9" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.4 }} />
-                <motion.circle cx="350" cy="105" r="10" fill="#0EA5E9" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.5 }} />
-              </svg>
+            <div className="relative w-full max-w-6xl">
+              {/* Glow background */}
+              <div className="absolute inset-0 flex justify-center items-center">
+                <div className="w-full h-80 bg-gradient-to-r from-purple-600/20 via-blue-600/30 to-cyan-600/20 rounded-full blur-3xl" />
+              </div>
               
-              {/* Labels */}
-              <div className="absolute left-[8%] top-1/2 -translate-y-1/2 text-center">
-                <span className="text-xs text-purple-400 font-medium">Your Clients</span>
+              {/* Network visualization */}
+              <svg className="w-full h-auto" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="lineGradMain" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#A78BFA" stopOpacity="0.8" />
+                    <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.8" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                {/* Connection lines - larger and more prominent */}
+                <motion.line x1="150" y1="200" x2="350" y2="120" stroke="url(#lineGradMain)" strokeWidth="3" filter="url(#glow)"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.8 }} />
+                <motion.line x1="150" y1="200" x2="350" y2="280" stroke="url(#lineGradMain)" strokeWidth="3" filter="url(#glow)"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.9 }} />
+                
+                <motion.line x1="350" y1="120" x2="500" y2="200" stroke="url(#lineGradMain)" strokeWidth="4" filter="url(#glow)"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 1 }} />
+                <motion.line x1="350" y1="280" x2="500" y2="200" stroke="url(#lineGradMain)" strokeWidth="4" filter="url(#glow)"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 1.1 }} />
+                
+                <motion.line x1="500" y1="200" x2="650" y2="120" stroke="url(#lineGradMain)" strokeWidth="3" filter="url(#glow)"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 1.2 }} />
+                <motion.line x1="500" y1="200" x2="650" y2="280" stroke="url(#lineGradMain)" strokeWidth="3" filter="url(#glow)"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 1.3 }} />
+
+                {/* Nodes with glow and pulse */}
+                <motion.circle cx="150" cy="200" r="35" fill="#A78BFA" filter="url(#glow)"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.15 }}
+                />
+                
+                <motion.circle cx="350" cy="120" r="28" fill="#818CF8" filter="url(#glow)"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.9, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.15 }}
+                />
+                <motion.circle cx="350" cy="280" r="28" fill="#818CF8" filter="url(#glow)"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.15 }}
+                />
+                
+                <motion.circle cx="500" cy="200" r="45" fill="#3B82F6" filter="url(#glow)"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.2, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.15 }}
+                />
+                
+                <motion.circle cx="650" cy="120" r="28" fill="#06B6D4" filter="url(#glow)"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.4, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.15 }}
+                />
+                <motion.circle cx="650" cy="280" r="28" fill="#06B6D4" filter="url(#glow)"
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.5, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.15 }}
+                />
+              </svg>
+
+              {/* Enhanced Labels */}
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 text-center">
+                <div className="text-base md:text-lg font-bold text-purple-300 mb-2">Your Clients</div>
+                <div className="text-xs text-purple-400/70">Your relationships</div>
               </div>
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <span className="text-xs text-blue-400 font-medium">ZuZo Engine</span>
+              
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <div className="text-lg md:text-xl font-bold text-blue-300">ZuZo Engine</div>
+                  <div className="text-xs text-blue-400/70">24/7 Execution</div>
+                </motion.div>
               </div>
-              <div className="absolute right-[5%] top-1/2 -translate-y-1/2 text-center">
-                <span className="text-xs text-cyan-400 font-medium">24/7 Delivery</span>
+              
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 text-center">
+                <div className="text-base md:text-lg font-bold text-cyan-300 mb-2">24/7 Delivery</div>
+                <div className="text-xs text-cyan-400/70">Global scale</div>
               </div>
             </div>
           </motion.div>
