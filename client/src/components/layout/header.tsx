@@ -182,6 +182,12 @@ export function Header() {
                   ROI Calculator
                 </Link>
               </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/partner-portal" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover-elevate disabled:pointer-events-none disabled:opacity-50" data-testid="link-partner-portal">
+                  Partner Portal
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
@@ -305,6 +311,11 @@ export function Header() {
                   <Link href="/roi-calculator" onClick={() => setIsMobileMenuOpen(false)}>
                     <Button variant="ghost" size="sm" className="w-full justify-start" data-testid="mobile-link-roi-calculator">
                       ROI Calculator
+                    </Button>
+                  </Link>
+                  <Link href="/partner-portal" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Button variant="ghost" size="sm" className="w-full justify-start" data-testid="mobile-link-partner-portal">
+                      Partner Portal
                     </Button>
                   </Link>
                 </div>
