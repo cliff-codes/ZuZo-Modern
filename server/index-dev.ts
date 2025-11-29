@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { type Server } from "node:http";
+import express from "express";
 
 import { nanoid } from "nanoid";
 import { type Express } from "express";
@@ -31,6 +32,9 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  // Serve static files from public directory (playbooks, assets, etc.)
+  app.use(express.static(path.resolve(import.meta.dirname, "..", "public")));
+  
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
