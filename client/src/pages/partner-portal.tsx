@@ -1003,6 +1003,252 @@ export default function PartnerPortal() {
         </div>
       </section>
 
+      {/* Interoperability Stack Section */}
+      <section className="py-20 lg:py-28 bg-[#0d1321]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent" data-testid="text-tech-stack-title">
+              We Speak Your Language
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto leading-relaxed">
+              ZuZo acts as a seamless extension of your team. We don't force you to adapt to our systems; we plug directly into yours.
+            </p>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <Tabs defaultValue="ccaas" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-[#1a1f35] p-1 h-auto gap-1">
+                <TabsTrigger 
+                  value="ccaas" 
+                  className="py-3 text-sm data-[state=active]:bg-purple-600 data-[state=active]:text-white"
+                  data-testid="tab-ccaas"
+                >
+                  Contact Center
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="msp" 
+                  className="py-3 text-sm data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                  data-testid="tab-msp"
+                >
+                  IT Services
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="ecommerce" 
+                  className="py-3 text-sm data-[state=active]:bg-orange-600 data-[state=active]:text-white"
+                  data-testid="tab-ecommerce"
+                >
+                  E-Commerce
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="ndis" 
+                  className="py-3 text-sm data-[state=active]:bg-cyan-600 data-[state=active]:text-white"
+                  data-testid="tab-ndis"
+                >
+                  Healthcare
+                </TabsTrigger>
+              </TabsList>
+
+              {/* CCaaS Tab */}
+              <TabsContent value="ccaas" className="mt-8">
+                <Card className="bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30" data-testid="card-ccaas-stack">
+                  <CardContent className="p-8 lg:p-12">
+                    <h3 className="text-2xl font-bold text-white mb-2">Certified CCaaS Platforms</h3>
+                    <p className="text-white/60 mb-8">Enterprise-grade contact center capabilities for Master Agents and resellers.</p>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      {[
+                        { name: "QContact", desc: "Native CRM integration—your customer data flows seamlessly" },
+                        { name: "Five9", desc: "The #1 cloud contact center platform" },
+                        { name: "Genesys Cloud CX", desc: "Enterprise-scale omnichannel orchestration" },
+                        { name: "Nice CXone", desc: "AI-powered customer experience platform" },
+                        { name: "RingCentral", desc: "Mid-market communication leader" },
+                        { name: "Dialpad", desc: "AI-native cloud communications" }
+                      ].map((platform, idx) => (
+                        <div key={idx} className="bg-white/5 rounded-lg p-4 border border-purple-500/20 hover:border-purple-400/40 transition-all">
+                          <div className="font-bold text-purple-300 mb-1">{platform.name}</div>
+                          <div className="text-sm text-white/60">{platform.desc}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-white/50 text-sm mt-8 italic">Our agents are pre-trained on all platforms above, reducing your client's Time-to-Value by 40%.</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              {/* MSP Tab */}
+              <TabsContent value="msp" className="mt-8">
+                <Card className="bg-gradient-to-br from-blue-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-blue-500/30" data-testid="card-msp-stack">
+                  <CardContent className="p-8 lg:p-12">
+                    <h3 className="text-2xl font-bold text-white mb-2">Seamless ITSM Workflow Integration</h3>
+                    <p className="text-white/60 mb-8">Work directly inside your PSA, RMM, and documentation platforms.</p>
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-blue-300 mb-4">Ticketing & PSA</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "QContact", desc: "Integrated lead management and CRM" },
+                            { name: "ConnectWise PSA", desc: "Industry standard for MSPs" },
+                            { name: "Autotask (Datto)", desc: "Enterprise ITSM platform" },
+                            { name: "HaloPSA", desc: "Fastest-growing PSA in 2025" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-blue-500/20">
+                              <div className="font-bold text-blue-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-blue-300 mb-4">Monitoring & RMM</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "NinjaOne", desc: "Modern unified endpoint management" },
+                            { name: "ConnectWise Automate", desc: "Deep PSA integration" },
+                            { name: "Kaseya VSA", desc: "Enterprise RMM solution" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-blue-500/20">
+                              <div className="font-bold text-blue-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-blue-300 mb-4">Documentation</h4>
+                        <div className="bg-white/5 rounded-lg p-4 border border-blue-500/20">
+                          <div className="font-bold text-blue-300 mb-1">IT Glue</div>
+                          <div className="text-sm text-white/60">SOP documentation and knowledge base integration</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-white/50 text-sm mt-8 italic">Our Tier 1 techs work directly inside your PSA board, resolving tickets and documenting every step.</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              {/* E-Commerce Tab */}
+              <TabsContent value="ecommerce" className="mt-8">
+                <Card className="bg-gradient-to-br from-orange-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-orange-500/30" data-testid="card-ecommerce-stack">
+                  <CardContent className="p-8 lg:p-12">
+                    <h3 className="text-2xl font-bold text-white mb-2">E-Commerce & Logistics Engine</h3>
+                    <p className="text-white/60 mb-8">Resolve WISMO tickets directly in your systems without warehouse escalation.</p>
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-orange-300 mb-4">Support Platforms</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "QContact", desc: "Native omnichannel customer engagement" },
+                            { name: "Gorgias", desc: "#1 helpdesk for Shopify stores" },
+                            { name: "Zendesk", desc: "Enterprise support platform" },
+                            { name: "Intercom", desc: "In-app messaging and ticketing" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-orange-500/20">
+                              <div className="font-bold text-orange-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-orange-300 mb-4">Order & Fulfillment Systems</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "Shopify Plus", desc: "Order modifications and refund processing" },
+                            { name: "ShipStation", desc: "Tracking and shipping label management" },
+                            { name: "AfterShip", desc: "Proactive tracking updates" },
+                            { name: "NetSuite", desc: "ERP for large-scale 3PLs" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-orange-500/20">
+                              <div className="font-bold text-orange-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-white/50 text-sm mt-8 italic">We resolve "Where is my order?" tickets directly in Gorgias and ShipStation, keeping your warehouse team focused on fulfillment.</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              {/* NDIS Tab */}
+              <TabsContent value="ndis" className="mt-8">
+                <Card className="bg-gradient-to-br from-cyan-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-cyan-500/30" data-testid="card-ndis-stack">
+                  <CardContent className="p-8 lg:p-12">
+                    <h3 className="text-2xl font-bold text-white mb-2">NDIS & Allied Health Administration</h3>
+                    <p className="text-white/60 mb-8">Government-certified compliance and specialized plan management expertise.</p>
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-cyan-300 mb-4">Government Portals</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "QContact", desc: "Integrated client communication hub" },
+                            { name: "PRODA", desc: "Provider Digital Access (instant trust signal)" },
+                            { name: "PACE", desc: "Next-gen NDIS computer system" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-cyan-500/20">
+                              <div className="font-bold text-cyan-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-cyan-300 mb-4">Plan Management</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "Lumary", desc: "Market-leading plan management" },
+                            { name: "ShiftCare", desc: "Rostering and care coordination" },
+                            { name: "CareMaster", desc: "Comprehensive care management" },
+                            { name: "Brevity", desc: "Streamlined plan admin" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-cyan-500/20">
+                              <div className="font-bold text-cyan-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-cyan-300 mb-4">Accounting & Compliance</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {[
+                            { name: "Xero", desc: "Australian accounting standard" },
+                            { name: "MYOB", desc: "Local NDIS-compliant bookkeeping" }
+                          ].map((tool, idx) => (
+                            <div key={idx} className="bg-white/5 rounded-lg p-4 border border-cyan-500/20">
+                              <div className="font-bold text-cyan-300 mb-1">{tool.name}</div>
+                              <div className="text-sm text-white/60">{tool.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-white/50 text-sm mt-8 italic">Our admin teams are PRODA-verified and proficient in Lumary and Xero, ensuring compliant overnight invoice processing.</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
+
+            {/* Platform Agnostic Message */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 text-center bg-white/5 rounded-lg p-8 border border-white/10"
+            >
+              <p className="text-white/70 text-lg">
+                <span className="text-white font-bold">Don't see your stack?</span> We are platform-agnostic. Our Rapid Implementation Protocol allows us to train a dedicated pod on your proprietary software in under 10 days.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Trust & Compliance Footer */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0d1321] to-[#0a0f1a]">
         <div className="container mx-auto px-6">
