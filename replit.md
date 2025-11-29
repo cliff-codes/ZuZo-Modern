@@ -42,7 +42,16 @@ Preferred communication style: Simple, everyday language.
 - **Service Pages** (7): /services (landing page), /services/contact-center, /services/virtual-assistants, /services/ai-automation, /services/back-office, /services/workforce-management, /services/omnichannel-platform (detail pages with InlineBookingCTA, MiniTrustBar, and Service schema)
 - **Industry Pages** (9): /industries (landing page), /industries/ecommerce, /industries/financial-services, /industries/healthcare, /industries/technology, /industries/real-estate, /industries/professional-services, /industries/automotive, /industries/logistics (all with InlineBookingCTA, MiniTrustBar, and Service schema)
 - **Resources** (6): /resources/blog, /resources/blog/:slug, /resources/case-studies, /resources/case-studies/:slug, /resources/faq, /resources/bpo-roi-guide (lead magnet with form capture)
-- **Strategic Pages** (3): /customer-stories (success stories showcase), /security (compliance and certifications), /compare (competitive comparison)
+- **Strategic Pages** (4): /customer-stories (success stories showcase), /security (compliance and certifications), /compare (competitive comparison), /partner-portal (white-label partner program)
+- **Partner Portal** (/partner-portal): Standalone dark-themed SaaS-style landing page targeting MSPs, Master Agents, and NDIS Providers for white-label partnerships. Features include:
+  - Hero with "Scale Your Margins, Not Your Headcount" messaging
+  - Value proposition cards for MSPs, Master Agents, and NDIS Providers
+  - Interactive "Margin Calculator" with real-time slider updates showing annual savings
+  - Partner Tracks tabs (White Label "The Ghost" and Referral "The Broker")
+  - Gated Asset Library with email capture modals for lead generation
+  - Trust & Compliance footer with ISO 27001, GDPR, HIPAA Ready, SOC2 Ready badges
+  - Framer Motion animations throughout
+  - Deep navy blue/electric purple color scheme
 - **Utility Pages**: /contact, /book-demo (with social proof testimonials), /roi-calculator, /pricing, /company/about, /privacy-policy
 
 **State Management**: TanStack Query (React Query) for server state management, handling API calls, caching, and mutations for leads, subscribers, bookings, and content management.

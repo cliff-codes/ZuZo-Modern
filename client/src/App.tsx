@@ -40,6 +40,7 @@ import CustomerStoriesPage from "@/pages/customer-stories";
 import SecurityPage from "@/pages/security";
 import ComparePage from "@/pages/compare";
 import BPOROIGuidePage from "@/pages/resources/bpo-roi-guide";
+import PartnerPortal from "@/pages/partner-portal";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -88,6 +89,9 @@ function Router() {
       {/* Company */}
       <Route path="/company" component={About} />
       <Route path="/company/about" component={About} />
+
+      {/* Partner Portal */}
+      <Route path="/partner-portal" component={PartnerPortal} />
 
       {/* Legal */}
       <Route path="/privacy-policy" component={PrivacyPolicy} />
