@@ -11,7 +11,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from 
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { SEOHead } from "@/components/seo/seo-head";
 import { Link } from "wouter";
-import blueLogo from "@assets/ZUZO LOGO 2_1763932128048.png";
+import whiteLogo from "@assets/ZUZO LOGO ALL WHITE_1764457099254.png";
 import { 
   Server, 
   Shield, 
@@ -114,9 +114,9 @@ export default function PartnerPortal() {
         <div className="container mx-auto px-6 py-3 flex items-center justify-between">
           <Link href="/">
             <img 
-              src={blueLogo} 
+              src={whiteLogo} 
               alt="ZuZo Logo" 
-              className="h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              className="h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               data-testid="link-logo"
             />
           </Link>
