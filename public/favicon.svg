@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="zuzoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4C1D95;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glossEffect">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+  </defs>
+  
+  <!-- Rounded square background with gradient -->
+  <rect x="32" y="32" width="448" height="448" rx="80" fill="url(#zuzoGradient)" />
+  
+  <!-- Subtle highlight for glass effect -->
+  <rect x="32" y="32" width="448" height="220" rx="80" fill="white" opacity="0.15" />
+  
+  <!-- Bold white Z letter -->
+  <g filter="url(#glossEffect)">
+    <!-- Top horizontal line of Z -->
+    <rect x="140" y="140" width="232" height="32" rx="8" fill="white" />
+    
+    <!-- Diagonal line of Z -->
+    <g transform="translate(256, 256)">
+      <rect x="-120" y="-20" width="240" height="40" rx="12" fill="white" transform="rotate(-45)" />
+    </g>
+    
+    <!-- Bottom horizontal line of Z -->
+    <rect x="140" y="340" width="232" height="32" rx="8" fill="white" />
+  </g>
+</svg>
