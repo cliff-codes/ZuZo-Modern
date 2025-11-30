@@ -1812,18 +1812,18 @@ export default function PartnerPortal() {
 
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="pricing" className="w-full" data-testid="faq-tabs">
-              <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/5 border border-white/10 p-1 rounded-lg" data-testid="faq-tab-list">
-                <TabsTrigger value="pricing" className="text-sm md:text-base" data-testid="tab-pricing">Pricing & Margins</TabsTrigger>
-                <TabsTrigger value="white-label" className="text-sm md:text-base" data-testid="tab-white-label">White Label & Security</TabsTrigger>
-                <TabsTrigger value="operations" className="text-sm md:text-base" data-testid="tab-operations">Operations</TabsTrigger>
-                <TabsTrigger value="tech" className="text-sm md:text-base" data-testid="tab-tech">Tech Specs</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-white/5 border border-white/10 p-2 rounded-lg" data-testid="faq-tab-list">
+                <TabsTrigger value="pricing" className="text-xs sm:text-sm md:text-base py-2" data-testid="tab-pricing">Pricing</TabsTrigger>
+                <TabsTrigger value="white-label" className="text-xs sm:text-sm md:text-base py-2" data-testid="tab-white-label">White Label</TabsTrigger>
+                <TabsTrigger value="operations" className="text-xs sm:text-sm md:text-base py-2" data-testid="tab-operations">Operations</TabsTrigger>
+                <TabsTrigger value="tech" className="text-xs sm:text-sm md:text-base py-2" data-testid="tab-tech">Tech</TabsTrigger>
               </TabsList>
 
               {/* Tab 1: Pricing & Margins */}
               <TabsContent value="pricing" className="space-y-4" data-testid="faq-pricing-content">
                 <Accordion type="single" collapsible>
-                  <AccordionItem value="pricing-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-pricing-model">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="pricing-1" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-pricing-model">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       How does the "Margin Per Agent" model actually work?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1833,8 +1833,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="pricing-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-tier-pricing">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="pricing-2" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-tier-pricing">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       What is included in the "Tier 2 & 3" pricing?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1842,8 +1842,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="pricing-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-downtime-pay">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="pricing-3" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-downtime-pay">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       Do I pay for agents when they aren't on calls?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1851,8 +1851,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="pricing-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-roi-timeline">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="pricing-4" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-roi-timeline">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       How long until we see ROI?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1865,8 +1865,8 @@ export default function PartnerPortal() {
               {/* Tab 2: White Label & Security */}
               <TabsContent value="white-label" className="space-y-4" data-testid="faq-white-label-content">
                 <Accordion type="single" collapsible>
-                  <AccordionItem value="wl-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-client-invisibility">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="wl-1" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-client-invisibility">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       Will my clients know I am outsourcing to ZuZo?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1881,8 +1881,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="wl-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-client-protection">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="wl-2" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-client-protection">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       How do you protect my client relationship? (Non-Solicitation)
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1890,8 +1890,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="wl-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-facility-visits">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="wl-3" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-facility-visits">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       Can I visit the facility or send my clients to visit?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1899,8 +1899,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="wl-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-data-sovereignty">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="wl-4" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-data-sovereignty">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       How do you handle Data Sovereignty (GDPR/Australian Privacy)?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1913,8 +1913,8 @@ export default function PartnerPortal() {
               {/* Tab 3: Operations */}
               <TabsContent value="operations" className="space-y-4" data-testid="faq-operations-content">
                 <Accordion type="single" collapsible>
-                  <AccordionItem value="ops-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-accents">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="ops-1" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-accents">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       How do you handle accents and cultural nuances?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1922,8 +1922,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="ops-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-quality-monitoring">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="ops-2" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-quality-monitoring">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       How do I monitor quality if I'm not there?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1936,8 +1936,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="ops-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-escalations">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="ops-3" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-escalations">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       Do you handle escalations?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1945,8 +1945,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="ops-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-scaling">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="ops-4" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-scaling">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       What happens if I need to scale up for a busy season (like Q4)?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1959,8 +1959,8 @@ export default function PartnerPortal() {
               {/* Tab 4: Tech Specs */}
               <TabsContent value="tech" className="space-y-4" data-testid="faq-tech-content">
                 <Accordion type="single" collapsible>
-                  <AccordionItem value="tech-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-tech-setup">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="tech-1" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-tech-setup">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       What technical setup is required from my side?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1975,8 +1975,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="tech-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-integrations">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="tech-2" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-integrations">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       Can we use this for our own clients?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1984,8 +1984,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="tech-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-integration-support">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="tech-3" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-integration-support">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       What systems do we currently integrate with?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
@@ -1993,8 +1993,8 @@ export default function PartnerPortal() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="tech-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-contracts">
-                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  <AccordionItem value="tech-4" className="bg-white/5 border border-white/10 rounded-lg px-4 sm:px-6 py-3 sm:py-4" data-testid="faq-contracts">
+                    <AccordionTrigger className="text-base sm:text-lg font-semibold text-white hover:text-white/80 transition-colors text-left">
                       What are the contract terms?
                     </AccordionTrigger>
                     <AccordionContent className="text-white/70 mt-4">
