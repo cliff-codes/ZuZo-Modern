@@ -1795,7 +1795,7 @@ export default function PartnerPortal() {
         </div>
       </section>
 
-      {/* Partner FAQ */}
+      {/* Partner FAQ - Tabbed */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0d1321] to-[#0a0f1a]">
         <div className="container mx-auto px-6">
           <motion.div
@@ -1807,65 +1807,203 @@ export default function PartnerPortal() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-faq-title">
               Partner FAQ
             </h2>
-            <p className="text-white/70 text-xl max-w-3xl mx-auto">Everything you need to know about partnering with ZuZo.</p>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">Everything you need to know about partnering with ZuZo. Transparent answers to your toughest questions.</p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="min-volume" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-min-volume">
-                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
-                  What's the minimum volume to partner with ZuZo?
-                </AccordionTrigger>
-                <AccordionContent className="text-white/70 mt-4">
-                  We're flexible. You can start with as few as 1-2 agents and scale as you grow. Our Tier 1 program is designed for partners testing the model. There's no minimum commitment – if you want to pause or adjust, we accommodate it.
-                </AccordionContent>
-              </AccordionItem>
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="pricing" className="w-full" data-testid="faq-tabs">
+              <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/5 border border-white/10 p-1 rounded-lg" data-testid="faq-tab-list">
+                <TabsTrigger value="pricing" className="text-sm md:text-base" data-testid="tab-pricing">Pricing & Margins</TabsTrigger>
+                <TabsTrigger value="white-label" className="text-sm md:text-base" data-testid="tab-white-label">White Label & Security</TabsTrigger>
+                <TabsTrigger value="operations" className="text-sm md:text-base" data-testid="tab-operations">Operations</TabsTrigger>
+                <TabsTrigger value="tech" className="text-sm md:text-base" data-testid="tab-tech">Tech Specs</TabsTrigger>
+              </TabsList>
 
-              <AccordionItem value="roi-timeline" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-roi">
-                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
-                  How long until we see ROI?
-                </AccordionTrigger>
-                <AccordionContent className="text-white/70 mt-4">
-                  Most partners see positive ROI within 30 days of launch. At our $9/hr rate vs. typical $15-25/hr hiring costs, the math works immediately. If you reach profitability within 30 days, great. If not, we extend free training at no cost.
-                </AccordionContent>
-              </AccordionItem>
+              {/* Tab 1: Pricing & Margins */}
+              <TabsContent value="pricing" className="space-y-4" data-testid="faq-pricing-content">
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="pricing-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-pricing-model">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      How does the "Margin Per Agent" model actually work?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      We operate on a <span className="font-semibold text-white">Wholesale BPO model</span>. ZuZo provides you with a "Buy Rate" (e.g., for a dedicated agent) that is significantly lower than market value. You are free to set your own "Sell Rate" to your end-client. 
+                      <br /><br />
+                      <span className="text-white/90 font-semibold">Example:</span> If your Buy Rate is $9/hr and you sell the seat at $18/hr, you keep 50% margin. We do not dictate your pricing strategy.
+                    </AccordionContent>
+                  </AccordionItem>
 
-              <AccordionItem value="escalations" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-escalations">
-                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
-                  Do you handle escalations?
-                </AccordionTrigger>
-                <AccordionContent className="text-white/70 mt-4">
-                  Absolutely. Our agents are trained to identify escalation-worthy issues and flag them immediately. For Tier 2+ partners, we have a dedicated escalation manager available 24/7. Your SLAs are our SLAs – we don't cut corners on critical issues.
-                </AccordionContent>
-              </AccordionItem>
+                  <AccordionItem value="pricing-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-tier-pricing">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      What is included in the "Tier 2 & 3" pricing?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Unlike the Starter tier, Tiers 2 and 3 include our <span className="font-semibold text-white">Rapid Implementation Protocol</span> (setup in &lt;14 days) and a <span className="font-semibold text-white">Dedicated Partner Success Manager</span>. This manager is your single point of contact, ensuring you don't have to manage the agents yourself—we manage the performance, you manage the client relationship.
+                    </AccordionContent>
+                  </AccordionItem>
 
-              <AccordionItem value="white-label" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-white-label">
-                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
-                  Can we use this for our own clients?
-                </AccordionTrigger>
-                <AccordionContent className="text-white/70 mt-4">
-                  Yes – that's exactly what our White Label ("The Ghost") track is for. Your clients never know ZuZo exists. Your agents use your domain, your branding, your systems. You control the entire relationship and pricing. No restrictions on resale.
-                </AccordionContent>
-              </AccordionItem>
+                  <AccordionItem value="pricing-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-downtime-pay">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      Do I pay for agents when they aren't on calls?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Our standard model is <span className="font-semibold text-white">Dedicated Staffing</span>, meaning you pay a flat monthly rate for a dedicated resource who works exclusively for your brand (or your client's brand). This ensures they are fully trained on <span className="italic">your</span> specific SOPs and culture, unlike a shared "minute-based" call center.
+                    </AccordionContent>
+                  </AccordionItem>
 
-              <AccordionItem value="pause" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-pause">
-                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
-                  What if we need to pause temporarily?
-                </AccordionTrigger>
-                <AccordionContent className="text-white/70 mt-4">
-                  No problem. We understand business cycles. You can pause for up to 90 days with no penalties. When you're ready to restart, your team knowledge is preserved and we reactivate immediately. We're here for your long-term success, not quick exits.
-                </AccordionContent>
-              </AccordionItem>
+                  <AccordionItem value="pricing-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-roi-timeline">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      How long until we see ROI?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Most partners see positive ROI within <span className="font-semibold text-white">30 days of launch</span>. At our $9/hr rate vs. typical $15-25/hr hiring costs, the math works immediately. If you reach profitability within 30 days, great. If not, we extend free training at no cost.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </TabsContent>
 
-              <AccordionItem value="contracts" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-contracts">
-                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
-                  What are the contract terms?
-                </AccordionTrigger>
-                <AccordionContent className="text-white/70 mt-4">
-                  Tier 1-2 partners: 6-month rolling contract with 30-day exit. Tier 3 enterprise partners: Custom terms based on volume. All contracts are designed to protect both parties while giving you flexibility. No lock-in traps.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+              {/* Tab 2: White Label & Security */}
+              <TabsContent value="white-label" className="space-y-4" data-testid="faq-white-label-content">
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="wl-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-client-invisibility">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      Will my clients know I am outsourcing to ZuZo?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      No. We operate as a <span className="font-semibold text-white">100% White Label extension</span> of your team.
+                      <ul className="list-disc list-inside mt-3 space-y-2">
+                        <li><span className="font-semibold text-white">Email:</span> We use your domain (e.g., support@youragency.com)</li>
+                        <li><span className="font-semibold text-white">Phone:</span> We answer with your custom greeting</li>
+                        <li><span className="font-semibold text-white">Systems:</span> We work directly inside your ticketing system (ConnectWise, Zendesk, Salesforce)</li>
+                      </ul>
+                      <br />
+                      To your client, our agent is just another member of your team—they just happen to be sitting in Accra.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="wl-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-client-protection">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      How do you protect my client relationship? (Non-Solicitation)
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Trust is our currency. All Partnership Agreements include a strict <span className="font-semibold text-white">Non-Solicitation & Non-Compete Clause</span>. ZuZo is legally bound not to solicit or accept business directly from your end-clients. Your book of business belongs to you, forever.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="wl-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-facility-visits">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      Can I visit the facility or send my clients to visit?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Absolutely. We encourage it. If you bring a client to our Accra facility, we will rebrand the meeting space with <span className="italic">your</span> agency's logo for the day. We are <span className="font-semibold text-white">your office in Africa</span>.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="wl-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-data-sovereignty">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      How do you handle Data Sovereignty (GDPR/Australian Privacy)?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      We utilize a <span className="font-semibold text-white">VDI (Virtual Desktop Infrastructure)</span> environment. This means your customer data never actually leaves your server; our agents merely view it through a secure, encrypted window. No data is stored locally on hard drives in Ghana, ensuring full compliance with GDPR, HIPAA, and Australian Privacy Principles.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </TabsContent>
+
+              {/* Tab 3: Operations */}
+              <TabsContent value="operations" className="space-y-4" data-testid="faq-operations-content">
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="ops-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-accents">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      How do you handle accents and cultural nuances?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Ghana is a Commonwealth nation with English as the official language. Our agents are college-educated and speak with a <span className="font-semibold text-white">neutral, "Global English" accent</span> that is highly rated for clarity in US and UK markets. We invite you to "blind test" our agents before signing a contract.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="ops-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-quality-monitoring">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      How do I monitor quality if I'm not there?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Radical transparency. As a partner, you get:
+                      <ol className="list-decimal list-inside mt-3 space-y-2">
+                        <li><span className="font-semibold text-white">Real-Time Access:</span> Login access to call recordings and live screen monitoring</li>
+                        <li><span className="font-semibold text-white">Weekly Calibration:</span> A weekly QA score (CSAT/QA) report sent to you</li>
+                        <li><span className="font-semibold text-white">The "Red Flag" System:</span> If an agent falls below your KPI threshold for 2 weeks, we automatically place them on a Performance Improvement Plan (PIP) or replace them at no cost to you</li>
+                      </ol>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="ops-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-escalations">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      Do you handle escalations?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Absolutely. Our agents are trained to identify escalation-worthy issues and flag them immediately. For Tier 2+ partners, we have a <span className="font-semibold text-white">dedicated escalation manager available 24/7</span>. Your SLAs are our SLAs – we don't cut corners on critical issues.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="ops-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-scaling">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      What happens if I need to scale up for a busy season (like Q4)?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      This is where our <span className="font-semibold text-white">Tier 3 (Enterprise)</span> status shines. We maintain a "bench" of pre-vetted talent. For partners in the Growth or Enterprise tiers, we can ramp up 5-10 additional agents in as little as <span className="font-semibold text-white">10 business days</span>.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </TabsContent>
+
+              {/* Tab 4: Tech Specs */}
+              <TabsContent value="tech" className="space-y-4" data-testid="faq-tech-content">
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="tech-1" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-tech-setup">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      What technical setup is required from my side?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Very little. We need:
+                      <ol className="list-decimal list-inside mt-3 space-y-2">
+                        <li>Provisioned licenses for your tools (e.g., a seat on your Salesforce/Zendesk)</li>
+                        <li>VPN access (if required)</li>
+                        <li>Training manuals (SOPs)</li>
+                      </ol>
+                      <br />
+                      Our IT team handles the rest, ensuring our hardware matches your security specs.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="tech-2" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-integrations">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      Can we use this for our own clients?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Yes – that's exactly what our <span className="font-semibold text-white">White Label ("The Ghost")</span> track is for. Your clients never know ZuZo exists. Your agents use your domain, your branding, your systems. You control the entire relationship and pricing. No restrictions on resale.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="tech-3" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-integration-support">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      What systems do we currently integrate with?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      Our platform integrates with <span className="font-semibold text-white">Salesforce, HubSpot, Zendesk, ConnectWise, Freshdesk, Jira, Microsoft Teams, Slack, and Zapier</span>. If you use a system not listed, our API team can typically establish integration within 5-7 business days. For Tier 3 partners, custom API access is included.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="tech-4" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-contracts">
+                    <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                      What are the contract terms?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/70 mt-4">
+                      <span className="font-semibold text-white">Tier 1-2 partners:</span> 6-month rolling contract with 30-day exit. <span className="font-semibold text-white">Tier 3 enterprise partners:</span> Custom terms based on volume. All contracts are designed to protect both parties while giving you flexibility. No lock-in traps.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
