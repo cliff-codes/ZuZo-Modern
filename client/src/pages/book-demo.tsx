@@ -2,8 +2,9 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { BookingForm } from "@/components/forms/booking-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
-import { SEOHead, getOrganizationSchema } from "@/components/seo/seo-head";
+import { CheckCircle, Server, Shield, Users } from "lucide-react";
+import { SEOHead, getOrganizationSchema, getPartnerProgramSchema } from "@/components/seo/seo-head";
+import { Link } from "wouter";
 import { CompactTestimonials } from "@/components/testimonials/compact-testimonials";
 
 export default function BookDemo() {
@@ -111,6 +112,50 @@ export default function BookDemo() {
                       </p>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+
+              {/* Partner Solutions */}
+              <Card className="border-blue-200/50 bg-blue-50/50" data-testid="card-partner-solutions">
+                <CardHeader>
+                  <CardTitle className="font-heading text-lg">Partner Solutions Available</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Users className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm mb-1">MSP Partnership</div>
+                      <p className="text-xs text-muted-foreground">
+                        Tier 1 support for IT helpdesk + ConnectWise, Autotask, HaloPSA
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Server className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm mb-1">3PL Logistics</div>
+                      <p className="text-xs text-muted-foreground">
+                        WISMO support in Gorgias, Shopify, ShipStation
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Shield className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm mb-1">NDIS Providers</div>
+                      <p className="text-xs text-muted-foreground">
+                        Claim processing in Lumary, Xero, PRODA-verified
+                      </p>
+                    </div>
+                  </div>
+
+                  <Link href="/partner-portal">
+                    <div className="mt-4 p-3 bg-blue-100/50 rounded-md hover:bg-blue-100 transition-colors cursor-pointer">
+                      <p className="text-sm font-medium text-blue-700">Explore white-label partnership →</p>
+                    </div>
+                  </Link>
                 </CardContent>
               </Card>
 

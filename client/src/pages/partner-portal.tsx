@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { SEOHead } from "@/components/seo/seo-head";
+import { SEOHead, getPartnerProgramSchema } from "@/components/seo/seo-head";
 import { Link } from "wouter";
 import whiteLogo from "@assets/ZUZO LOGO ALL WHITE_1764457099254.png";
 import { 
@@ -108,9 +108,10 @@ export default function PartnerPortal() {
     <div className="min-h-screen bg-[#0a0f1a] text-white">
       <SEOHead
         title="Partner Portal - White Label BPO Platform | ZuZo"
-        description="Scale your margins, not your headcount. The invisible fulfillment engine for MSPs, 3PLs, and NDIS Providers. White-label BPO from Ghana."
+        description="Scale your margins, not your headcount. The invisible fulfillment engine for MSPs, 3PLs, and NDIS Providers. White-label BPO from Ghana. Access QContact integration, margin calculator, and gated resources."
         canonical="/partner-portal"
-        keywords="white label BPO, partner program, MSP helpdesk, 3PL logistics, fulfillment center, NDIS claim processing, WISMO support, outsourcing partner"
+        keywords="white label BPO, partner program, MSP helpdesk, 3PL logistics, fulfillment center, NDIS claim processing, WISMO support, outsourcing partner, QContact, technology stack integration, arbitrage BPO"
+        schema={getPartnerProgramSchema()}
       />
 
       {/* Navigation */}

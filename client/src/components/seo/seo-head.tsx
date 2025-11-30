@@ -173,3 +173,45 @@ export function getServiceSchema(service: {
     })
   };
 }
+
+export function getPartnerProgramSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateOffer",
+    "name": "ZuZo Partner Program",
+    "description": "White-label BPO partnership for MSPs, 3PLs, and NDIS providers with technology integration, margin acceleration, and rapid deployment.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "White Label Partnership - 'The Ghost'",
+        "description": "Become the invisible fulfillment engine for your clients. Deliver ZuZo-powered services under your brand with full margin capture.",
+        "seller": {
+          "@type": "Organization",
+          "name": "ZuZo Company Limited"
+        },
+        "url": "https://zuzo.replit.app/partner-portal",
+        "priceCurrency": "USD",
+        "price": "0"
+      },
+      {
+        "@type": "Offer",
+        "name": "Referral Partnership - 'The Broker'",
+        "description": "Introduce qualified leads to ZuZo and earn recurring referral commissions. Zero setup cost, passive revenue.",
+        "seller": {
+          "@type": "Organization",
+          "name": "ZuZo Company Limited"
+        },
+        "url": "https://zuzo.replit.app/partner-portal",
+        "priceCurrency": "USD",
+        "price": "0"
+      }
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "ZuZo Company Limited",
+      "description": "AI-powered virtual assistants and omnichannel BPO solutions for Global enterprises"
+    },
+    "availableLanguage": ["English"],
+    "areaServed": ["US", "Canada", "UK", "Australia", "Global"]
+  };
+}
