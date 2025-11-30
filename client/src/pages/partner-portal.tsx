@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { SEOHead, getPartnerProgramSchema } from "@/components/seo/seo-head";
 import { Link } from "wouter";
@@ -1647,6 +1648,314 @@ export default function PartnerPortal() {
                   <p className="text-white/70 leading-relaxed">
                     Structured optimization sessions during your launch phase. Performance review, agent quality tuning, process refinement.
                   </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Tier Pricing Breakdown */}
+      <section className="py-20 lg:py-28 bg-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-pricing-tiers-title">
+              Partnership Tier Pricing
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">Scale your margins as you grow. Clear, transparent pricing at every tier.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Tier 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Card className="bg-gradient-to-br from-blue-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-blue-500/30 h-full hover:border-blue-500/60 transition-all" data-testid="card-tier-1">
+                <CardContent className="p-8">
+                  <div className="mb-6">
+                    <h4 className="text-2xl font-bold text-white mb-2" data-testid="text-tier-1-name">Tier 1: Starter</h4>
+                    <p className="text-blue-300 font-semibold">1-10 Agents</p>
+                  </div>
+                  <div className="bg-blue-600/20 rounded-lg p-4 mb-6 border border-blue-500/30">
+                    <div className="text-4xl font-bold text-blue-300 mb-2" data-testid="text-tier-1-margin">35%</div>
+                    <p className="text-white/70 text-sm">Your margin per agent</p>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                      <span className="text-sm">Standard onboarding</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                      <span className="text-sm">Email support</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                      <span className="text-sm">Monthly check-ins</span>
+                    </div>
+                  </div>
+                  <p className="text-white/50 text-xs mt-6 italic">Perfect for testing the partnership model.</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Tier 2 - Featured */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <div className="relative">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-1 rounded-full text-sm font-bold" data-testid="badge-popular">
+                  Most Popular
+                </div>
+                <Card className="bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/60 h-full hover:border-purple-500/80 transition-all shadow-lg shadow-purple-500/20" data-testid="card-tier-2">
+                  <CardContent className="p-8">
+                    <div className="mb-6">
+                      <h4 className="text-2xl font-bold text-white mb-2" data-testid="text-tier-2-name">Tier 2: Growth</h4>
+                      <p className="text-purple-300 font-semibold">11-50 Agents</p>
+                    </div>
+                    <div className="bg-purple-600/20 rounded-lg p-4 mb-6 border border-purple-500/30">
+                      <div className="text-4xl font-bold text-purple-300 mb-2" data-testid="text-tier-2-margin">45%</div>
+                      <p className="text-white/70 text-sm">Your margin per agent</p>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2 text-white/70">
+                        <CheckCircle className="h-4 w-4 text-purple-400" />
+                        <span className="text-sm">Rapid Implementation Protocol</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-white/70">
+                        <CheckCircle className="h-4 w-4 text-purple-400" />
+                        <span className="text-sm">Dedicated success manager</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-white/70">
+                        <CheckCircle className="h-4 w-4 text-purple-400" />
+                        <span className="text-sm">Weekly optimization calls</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-white/70">
+                        <CheckCircle className="h-4 w-4 text-purple-400" />
+                        <span className="text-sm">Priority support</span>
+                      </div>
+                    </div>
+                    <p className="text-white/50 text-xs mt-6 italic">Rapid growth path with dedicated support.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+
+            {/* Tier 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="bg-gradient-to-br from-green-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-green-500/30 h-full hover:border-green-500/60 transition-all" data-testid="card-tier-3">
+                <CardContent className="p-8">
+                  <div className="mb-6">
+                    <h4 className="text-2xl font-bold text-white mb-2" data-testid="text-tier-3-name">Tier 3: Enterprise</h4>
+                    <p className="text-green-300 font-semibold">51+ Agents</p>
+                  </div>
+                  <div className="bg-green-600/20 rounded-lg p-4 mb-6 border border-green-500/30">
+                    <div className="text-4xl font-bold text-green-300 mb-2" data-testid="text-tier-3-margin">50%+</div>
+                    <p className="text-white/70 text-sm">Your margin per agent</p>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <span className="text-sm">Custom pricing & terms</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <span className="text-sm">Dedicated partnership manager</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <span className="text-sm">24/7 priority hotline</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <span className="text-sm">Custom API access</span>
+                    </div>
+                  </div>
+                  <p className="text-white/50 text-xs mt-6 italic">Enterprise solution with full customization.</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner FAQ */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0d1321] to-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-faq-title">
+              Partner FAQ
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">Everything you need to know about partnering with ZuZo.</p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="min-volume" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-min-volume">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  What's the minimum volume to partner with ZuZo?
+                </AccordionTrigger>
+                <AccordionContent className="text-white/70 mt-4">
+                  We're flexible. You can start with as few as 1-2 agents and scale as you grow. Our Tier 1 program is designed for partners testing the model. There's no minimum commitment – if you want to pause or adjust, we accommodate it.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="roi-timeline" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-roi">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  How long until we see ROI?
+                </AccordionTrigger>
+                <AccordionContent className="text-white/70 mt-4">
+                  Most partners see positive ROI within 30 days of launch. At our $9/hr rate vs. typical $15-25/hr hiring costs, the math works immediately. If you reach profitability within 30 days, great. If not, we extend free training at no cost.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="escalations" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-escalations">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  Do you handle escalations?
+                </AccordionTrigger>
+                <AccordionContent className="text-white/70 mt-4">
+                  Absolutely. Our agents are trained to identify escalation-worthy issues and flag them immediately. For Tier 2+ partners, we have a dedicated escalation manager available 24/7. Your SLAs are our SLAs – we don't cut corners on critical issues.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="white-label" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-white-label">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  Can we use this for our own clients?
+                </AccordionTrigger>
+                <AccordionContent className="text-white/70 mt-4">
+                  Yes – that's exactly what our White Label ("The Ghost") track is for. Your clients never know ZuZo exists. Your agents use your domain, your branding, your systems. You control the entire relationship and pricing. No restrictions on resale.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="pause" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-pause">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  What if we need to pause temporarily?
+                </AccordionTrigger>
+                <AccordionContent className="text-white/70 mt-4">
+                  No problem. We understand business cycles. You can pause for up to 90 days with no penalties. When you're ready to restart, your team knowledge is preserved and we reactivate immediately. We're here for your long-term success, not quick exits.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="contracts" className="bg-white/5 border border-white/10 rounded-lg px-6 py-4" data-testid="faq-contracts">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:text-white/80 transition-colors">
+                  What are the contract terms?
+                </AccordionTrigger>
+                <AccordionContent className="text-white/70 mt-4">
+                  Tier 1-2 partners: 6-month rolling contract with 30-day exit. Tier 3 enterprise partners: Custom terms based on volume. All contracts are designed to protect both parties while giving you flexibility. No lock-in traps.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Badge/Certification Program */}
+      <section className="py-20 lg:py-28 bg-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-certification-title">
+              Partner Certification Program
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">Earn recognition. Build credibility. Grow faster.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* ZuZo Certified Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Card className="bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30 h-full hover:border-purple-500/60 transition-all" data-testid="card-certified-badge">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-purple-600/20 border-2 border-purple-500 mb-4">
+                      <CheckCircle className="h-10 w-10 text-purple-300" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white" data-testid="text-certified-title">ZuZo Certified Partner</h4>
+                  </div>
+                  <p className="text-white/70 mb-6 leading-relaxed">
+                    Earned after completing your first month as an active partner. Includes downloadable email signature badge, website badge, and LinkedIn verification.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">Email signature badge (4 formats)</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">Website embed code</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">LinkedIn profile badge</span>
+                    </div>
+                  </div>
+                  <p className="text-white/50 text-sm italic">Boost credibility with your prospects and clients.</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Top Performer Recognition */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="bg-gradient-to-br from-amber-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-amber-500/30 h-full hover:border-amber-500/60 transition-all" data-testid="card-top-performer">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-600/20 border-2 border-amber-500 mb-4">
+                      <TrendingUp className="h-10 w-10 text-amber-300" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white" data-testid="text-top-performer-title">Top Performer Recognition</h4>
+                  </div>
+                  <p className="text-white/70 mb-6 leading-relaxed">
+                    Awarded quarterly to partners achieving 98%+ retention, highest agent quality, or fastest scaling. Featured in partner newsletter and case studies.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-amber-400 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">Quarterly feature in partner newsletter</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-amber-400 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">Exclusive Q/A interview rights</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-5 w-5 text-amber-400 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">5% margin bonus for 3 months</span>
+                    </div>
+                  </div>
+                  <p className="text-white/50 text-sm italic">Excellence rewarded. Growth accelerated.</p>
                 </CardContent>
               </Card>
             </motion.div>
