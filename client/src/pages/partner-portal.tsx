@@ -1061,7 +1061,7 @@ export default function PartnerPortal() {
                     <p className="text-white/60 mb-8">Enterprise-grade contact center capabilities for Master Agents and resellers.</p>
                     <div className="grid sm:grid-cols-2 gap-6">
                       {[
-                        { name: "QContact", desc: "Native CRM integration—your customer data flows seamlessly" },
+                        { name: "QContact", desc: "Rated #1 mid-market contact center—omnichannel (voice, chat, email, WhatsApp, social) + built-in CRM" },
                         { name: "Five9", desc: "The #1 cloud contact center platform" },
                         { name: "Genesys Cloud CX", desc: "Enterprise-scale omnichannel orchestration" },
                         { name: "Nice CXone", desc: "AI-powered customer experience platform" },
@@ -1090,7 +1090,7 @@ export default function PartnerPortal() {
                         <h4 className="text-lg font-bold text-blue-300 mb-4">Ticketing & PSA</h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {[
-                            { name: "QContact", desc: "Integrated lead management and CRM" },
+                            { name: "QContact", desc: "Full-featured ticketing + omnichannel case management" },
                             { name: "ConnectWise PSA", desc: "Industry standard for MSPs" },
                             { name: "Autotask (Datto)", desc: "Enterprise ITSM platform" },
                             { name: "HaloPSA", desc: "Fastest-growing PSA in 2025" }
@@ -1141,7 +1141,7 @@ export default function PartnerPortal() {
                         <h4 className="text-lg font-bold text-orange-300 mb-4">Support Platforms</h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {[
-                            { name: "QContact", desc: "Native omnichannel customer engagement" },
+                            { name: "QContact", desc: "Omnichannel support (voice, email, WhatsApp, live chat, SMS, social)" },
                             { name: "Gorgias", desc: "#1 helpdesk for Shopify stores" },
                             { name: "Zendesk", desc: "Enterprise support platform" },
                             { name: "Intercom", desc: "In-app messaging and ticketing" }
@@ -1186,7 +1186,7 @@ export default function PartnerPortal() {
                         <h4 className="text-lg font-bold text-cyan-300 mb-4">Government Portals</h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {[
-                            { name: "QContact", desc: "Integrated client communication hub" },
+                            { name: "QContact", desc: "Unified communication hub for client outreach + case tracking" },
                             { name: "PRODA", desc: "Provider Digital Access (instant trust signal)" },
                             { name: "PACE", desc: "Next-gen NDIS computer system" }
                           ].map((tool, idx) => (
