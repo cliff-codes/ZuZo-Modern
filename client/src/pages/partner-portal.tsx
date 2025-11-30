@@ -1235,16 +1235,38 @@ export default function PartnerPortal() {
               </TabsContent>
             </Tabs>
 
-            {/* Platform Agnostic Message */}
+            {/* Platform Agnostic Message - HIGHLIGHTED */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              className="mt-12 text-center bg-white/5 rounded-lg p-8 border border-white/10"
+              transition={{ duration: 0.6 }}
+              className="mt-16 text-center relative"
             >
-              <p className="text-white/70 text-lg">
-                <span className="text-white font-bold">Don't see your stack?</span> We are platform-agnostic. Our Rapid Implementation Protocol allows us to train a dedicated pod on your proprietary software in under 10 days.
-              </p>
+              {/* Glow effect background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-yellow-500/20 rounded-2xl blur-2xl" />
+              
+              {/* Main card */}
+              <div className="relative bg-gradient-to-br from-amber-950/40 to-orange-950/40 rounded-2xl p-10 md:p-12 border-2 border-amber-500/50 shadow-2xl">
+                {/* Top accent line */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full" />
+                
+                {/* Content */}
+                <div className="flex flex-col items-center gap-4">
+                  <Zap className="h-8 w-8 text-amber-400" />
+                  <div>
+                    <p className="text-white text-lg md:text-xl">
+                      <span className="text-amber-300 font-bold text-2xl">Don't see your stack?</span>
+                    </p>
+                    <p className="text-amber-100 text-base md:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
+                      We are <span className="font-bold text-white">platform-agnostic</span>. Our <span className="font-bold text-amber-300">Rapid Implementation Protocol</span> allows us to train a dedicated pod on your proprietary software in <span className="font-bold text-yellow-300 underline underline-offset-2">under 10 days</span>.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full" />
+              </div>
             </motion.div>
           </div>
         </div>
