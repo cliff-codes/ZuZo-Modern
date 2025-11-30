@@ -27,7 +27,11 @@ import {
   BarChart3,
   Network,
   Menu,
-  ExternalLink
+  ExternalLink,
+  Calendar,
+  Phone,
+  TrendingUp,
+  ArrowRight
 } from "lucide-react";
 
 const fadeInUp = {
@@ -1267,6 +1271,384 @@ export default function PartnerPortal() {
                 {/* Bottom accent line */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full" />
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10-Day Onboarding Timeline */}
+      <section className="py-20 lg:py-28 bg-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-timeline-title">
+              Your 10-Day Onboarding Path
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">From assessment to full deployment in just 10 days.</p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+              {/* Days 1-2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+                className="flex flex-col items-center md:items-start"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-purple-600/30 border-2 border-purple-500 mb-4 flex-shrink-0">
+                  <span className="font-bold text-white text-lg">1-2</span>
+                </div>
+                <div className="bg-gradient-to-br from-purple-950/40 to-[#1a1f35] border border-purple-500/30 rounded-lg p-4 flex-1">
+                  <h4 className="font-bold text-white mb-2">Assessment & Setup</h4>
+                  <p className="text-white/60 text-sm">Tool stack review, security protocols, team allocation.</p>
+                </div>
+                <div className="hidden md:flex h-16 w-1 bg-gradient-to-b from-purple-500 to-blue-500/30 my-4" />
+              </motion.div>
+
+              {/* Days 3-5 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="flex flex-col items-center md:items-start"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-600/30 border-2 border-blue-500 mb-4 flex-shrink-0">
+                  <span className="font-bold text-white text-lg">3-5</span>
+                </div>
+                <div className="bg-gradient-to-br from-blue-950/40 to-[#1a1f35] border border-blue-500/30 rounded-lg p-4 flex-1">
+                  <h4 className="font-bold text-white mb-2">Training & Integration</h4>
+                  <p className="text-white/60 text-sm">Hands-on platform training, PSA/API setup, documentation.</p>
+                </div>
+                <div className="hidden md:flex h-16 w-1 bg-gradient-to-b from-blue-500 to-cyan-500/30 my-4" />
+              </motion.div>
+
+              {/* Days 6-8 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-col items-center md:items-start"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cyan-600/30 border-2 border-cyan-500 mb-4 flex-shrink-0">
+                  <span className="font-bold text-white text-lg">6-8</span>
+                </div>
+                <div className="bg-gradient-to-br from-cyan-950/40 to-[#1a1f35] border border-cyan-500/30 rounded-lg p-4 flex-1">
+                  <h4 className="font-bold text-white mb-2">Pilot Launch</h4>
+                  <p className="text-white/60 text-sm">Soft launch with limited clients, performance monitoring.</p>
+                </div>
+                <div className="hidden md:flex h-16 w-1 bg-gradient-to-b from-cyan-500 to-green-500/30 my-4" />
+              </motion.div>
+
+              {/* Days 9-10 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col items-center md:items-start md:col-span-2"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-600/30 border-2 border-green-500 mb-4 flex-shrink-0">
+                  <span className="font-bold text-white text-lg">9-10</span>
+                </div>
+                <div className="bg-gradient-to-br from-green-950/40 to-[#1a1f35] border border-green-500/30 rounded-lg p-4 w-full">
+                  <h4 className="font-bold text-white mb-2">Full Deployment</h4>
+                  <p className="text-white/60 text-sm">Scale to full production, performance optimization, ongoing support.</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Happens Next */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0d1321] to-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-next-steps-title">
+              What Happens Next
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">Your journey to partnership in 4 clear steps.</p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-6">
+              {/* Step 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-purple-600/30 border-2 border-purple-500 flex-shrink-0 mt-1">
+                  <span className="font-bold text-white text-lg">1</span>
+                </div>
+                <div className="flex-1 pt-1">
+                  <h4 className="text-xl font-bold text-white mb-2" data-testid="text-step-1">Book Your Demo</h4>
+                  <p className="text-white/70">Click "Become a Launch Partner" to schedule a 30-minute partnership consultation.</p>
+                </div>
+              </motion.div>
+
+              {/* Arrow */}
+              <div className="flex justify-center py-2">
+                <ArrowDown className="h-6 w-6 text-purple-400 animate-bounce" />
+              </div>
+
+              {/* Step 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-600/30 border-2 border-blue-500 flex-shrink-0 mt-1">
+                  <span className="font-bold text-white text-lg">2</span>
+                </div>
+                <div className="flex-1 pt-1">
+                  <h4 className="text-xl font-bold text-white mb-2" data-testid="text-step-2">Partner Package Sent</h4>
+                  <p className="text-white/70">Receive your customized partnership proposal with pricing, terms, and integration roadmap.</p>
+                </div>
+              </motion.div>
+
+              {/* Arrow */}
+              <div className="flex justify-center py-2">
+                <ArrowDown className="h-6 w-6 text-blue-400 animate-bounce" />
+              </div>
+
+              {/* Step 3 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-cyan-600/30 border-2 border-cyan-500 flex-shrink-0 mt-1">
+                  <span className="font-bold text-white text-lg">3</span>
+                </div>
+                <div className="flex-1 pt-1">
+                  <h4 className="text-xl font-bold text-white mb-2" data-testid="text-step-3">Onboarding Call</h4>
+                  <p className="text-white/70">Kickoff meeting with your dedicated partner success manager to confirm timeline and requirements.</p>
+                </div>
+              </motion.div>
+
+              {/* Arrow */}
+              <div className="flex justify-center py-2">
+                <ArrowDown className="h-6 w-6 text-cyan-400 animate-bounce" />
+              </div>
+
+              {/* Step 4 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600/30 border-2 border-green-500 flex-shrink-0 mt-1">
+                  <span className="font-bold text-white text-lg">✓</span>
+                </div>
+                <div className="flex-1 pt-1">
+                  <h4 className="text-xl font-bold text-white mb-2" data-testid="text-step-4">10-Day Launch</h4>
+                  <p className="text-white/70">Your team goes live. Our Rapid Implementation Protocol begins – full deployment in under 10 days.</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Partner Metrics Dashboard */}
+      <section className="py-20 lg:py-28 bg-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-metrics-title">
+              Live Partner Metrics
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">Real-time proof of our partner success.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Partners Metric */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Card className="bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30 h-full" data-testid="card-partners-metric">
+                <CardContent className="p-8 text-center">
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-600/30 border border-purple-500 mb-4"
+                  >
+                    <Users className="h-8 w-8 text-purple-300" />
+                  </motion.div>
+                  <div className="text-5xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text mb-2" data-testid="text-partners-count">
+                    500+
+                  </div>
+                  <p className="text-white/70 text-lg font-semibold">Partners Generating Revenue</p>
+                  <p className="text-white/50 text-sm mt-2">Across 50+ countries and 12+ industries</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Tickets Metric */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="bg-gradient-to-br from-blue-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-blue-500/30 h-full" data-testid="card-tickets-metric">
+                <CardContent className="p-8 text-center">
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600/30 border border-blue-500 mb-4"
+                  >
+                    <BarChart3 className="h-8 w-8 text-blue-300" />
+                  </motion.div>
+                  <div className="text-5xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text mb-2" data-testid="text-tickets-count">
+                    2M+
+                  </div>
+                  <p className="text-white/70 text-lg font-semibold">Tickets Resolved Monthly</p>
+                  <p className="text-white/50 text-sm mt-2">Across all partnership tiers and regions</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Retention Metric */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="bg-gradient-to-br from-green-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-green-500/30 h-full" data-testid="card-retention-metric">
+                <CardContent className="p-8 text-center">
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-600/30 border border-green-500 mb-4"
+                  >
+                    <TrendingUp className="h-8 w-8 text-green-300" />
+                  </motion.div>
+                  <div className="text-5xl font-bold text-transparent bg-gradient-to-r from-green-400 to-green-600 bg-clip-text mb-2" data-testid="text-retention-rate">
+                    98%
+                  </div>
+                  <p className="text-white/70 text-lg font-semibold">Partner Retention Rate</p>
+                  <p className="text-white/50 text-sm mt-2">Year-over-year repeat business</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Support Commitment */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0d1321] to-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" data-testid="text-support-title">
+              Our Partner Support Commitment
+            </h2>
+            <p className="text-white/70 text-xl max-w-3xl mx-auto">We don't just launch your partnership – we actively manage your success.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* 24/7 Support */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+            >
+              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-2 border-amber-500/30 h-full hover:border-amber-500/60 transition-all group" data-testid="card-24-7-support">
+                <CardContent className="p-8">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber-600/30 border border-amber-500 mb-6 group-hover:scale-110 transition-transform">
+                    <Phone className="h-7 w-7 text-amber-300" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3" data-testid="text-support-24-7">
+                    24/7 Partner Hotline
+                  </h4>
+                  <p className="text-white/70 leading-relaxed">
+                    Dedicated emergency support line. Critical issues resolved within 1 hour. Direct escalation path to our leadership team.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Dedicated Manager */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30 h-full hover:border-purple-500/60 transition-all group" data-testid="card-dedicated-manager">
+                <CardContent className="p-8">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-purple-600/30 border border-purple-500 mb-6 group-hover:scale-110 transition-transform">
+                    <Users className="h-7 w-7 text-purple-300" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3" data-testid="text-support-manager">
+                    Dedicated Success Manager
+                  </h4>
+                  <p className="text-white/70 leading-relaxed">
+                    Named partner account manager. Direct communication channel. Proactive optimization and strategic reviews.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* 90-Day Check-ins */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="bg-gradient-to-br from-[#1a1f35] to-[#0d1321] border-2 border-cyan-500/30 h-full hover:border-cyan-500/60 transition-all group" data-testid="card-90-day-checkin">
+                <CardContent className="p-8">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-cyan-600/30 border border-cyan-500 mb-6 group-hover:scale-110 transition-transform">
+                    <Calendar className="h-7 w-7 text-cyan-300" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3" data-testid="text-support-checkins">
+                    Weekly Check-ins (90 Days)
+                  </h4>
+                  <p className="text-white/70 leading-relaxed">
+                    Structured optimization sessions during your launch phase. Performance review, agent quality tuning, process refinement.
+                  </p>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>
