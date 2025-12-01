@@ -2196,11 +2196,15 @@ export default function PartnerPortal() {
             <div className="flex flex-wrap justify-center gap-6 mt-8 text-white/50 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>Prefer a call? +233-302-123456</span>
+                <a href="tel:+233240526570" className="hover:text-white/70 transition-colors">
+                  Prefer a call? +233 24 052 6570
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>partners@zuzogp.com</span>
+                <a href="mailto:remote@zuzogp.com" className="hover:text-white/70 transition-colors">
+                  remote@zuzogp.com
+                </a>
               </div>
             </div>
           </motion.div>
