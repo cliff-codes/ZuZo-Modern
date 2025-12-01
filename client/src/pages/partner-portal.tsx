@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Cal, { getCalApi } from "@calcom/embed-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -73,6 +74,21 @@ export default function PartnerPortal() {
   const [email, setEmail] = useState("");
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
+  // Initialize Cal.com with Partner Portal purple theme
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "partner-30min" });
+      cal("ui", {
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#7c3aed" },
+          dark: { "cal-brand": "#7c3aed" }
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    })();
+  }, []);
+
   const zuzoRate = 9;
   const hoursPerMonth = 160;
   
@@ -83,6 +99,10 @@ export default function PartnerPortal() {
 
   const scrollToCalculator = () => {
     document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToBooking = () => {
+    document.getElementById('book-call')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleDownloadClick = (assetName: string) => {
@@ -142,11 +162,14 @@ export default function PartnerPortal() {
             <a href="#resources" className="text-white/70 hover:text-white transition-colors text-sm" data-testid="link-resources">
               Resources
             </a>
-            <Link href="/book-demo">
-              <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white border-0" data-testid="button-nav-become-partner">
-                Become a Partner
-              </Button>
-            </Link>
+            <Button 
+              size="sm" 
+              onClick={scrollToBooking}
+              className="bg-purple-600 hover:bg-purple-700 text-white border-0" 
+              data-testid="button-nav-become-partner"
+            >
+              Book a Call
+            </Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -163,11 +186,13 @@ export default function PartnerPortal() {
                   <SheetDescription>Navigate to different sections of the Partner Portal</SheetDescription>
                 </VisuallyHidden>
                 <div className="flex flex-col gap-6 mt-8">
-                  <Link href="/book-demo">
-                    <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white border-0" data-testid="button-mobile-become-partner">
-                      Become a Partner
-                    </Button>
-                  </Link>
+                  <Button 
+                    onClick={scrollToBooking}
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white border-0" 
+                    data-testid="button-mobile-become-partner"
+                  >
+                    Book a Call
+                  </Button>
                   <a href="#calculator" className="text-white/70 hover:text-white transition-colors py-2" data-testid="link-mobile-calculator">
                     Calculator
                   </a>
@@ -2101,6 +2126,87 @@ export default function PartnerPortal() {
         </div>
       </section>
 
+      {/* Partner Booking Section */}
+      <section id="book-call" className="py-20 lg:py-28 bg-gradient-to-b from-[#0a0f1a] to-[#0d1321]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 bg-purple-600/20 border border-purple-500/30 px-4 py-2 rounded-full mb-6">
+              <Calendar className="h-4 w-4 text-purple-400" />
+              <span className="text-purple-300 text-sm font-medium">Book Your Partner Call</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" data-testid="text-booking-title">
+              Let's Build Your{" "}
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Margin Engine
+              </span>
+            </h2>
+            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">
+              Schedule a 30-minute strategy session with our Partner Success team. 
+              No obligations—just a conversation about your growth goals.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="max-w-4xl mx-auto"
+          >
+            {/* Partner Benefits Bar */}
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
+              <div className="flex items-center gap-2 text-white/70 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-400" />
+                <span>Free strategy session</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/70 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-400" />
+                <span>Custom margin analysis</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/70 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-400" />
+                <span>No commitment required</span>
+              </div>
+            </div>
+
+            {/* Cal.com Embed */}
+            <div className="rounded-xl overflow-hidden border border-white/10 bg-white shadow-2xl shadow-purple-500/10">
+              <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-6 text-center">
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-2">Pick a Time That Works for You</h3>
+                <p className="text-white/80 text-sm md:text-base">
+                  30-minute partner strategy session via Microsoft Teams
+                </p>
+              </div>
+              <div data-testid="partner-cal-booking-embed">
+                <Cal
+                  namespace="partner-30min"
+                  calLink="zuzo-ltd/30min"
+                  style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                  config={{ layout: "month_view" }}
+                />
+              </div>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center gap-6 mt-8 text-white/50 text-sm">
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4" />
+                <span>Prefer a call? +233-302-123456</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                <span>partners@zuzogp.com</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Trust & Compliance Footer */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0d1321] to-[#0a0f1a]">
         <div className="container mx-auto px-6">
@@ -2142,16 +2248,15 @@ export default function PartnerPortal() {
               <p className="text-white/60 mb-8">
                 Join the next generation of fulfillment partners.
               </p>
-              <Link href="/book-demo">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 text-lg px-10 py-6 h-auto"
-                  data-testid="button-become-launch-partner"
-                >
-                  Become a Launch Partner
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                onClick={scrollToBooking}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 text-lg px-10 py-6 h-auto"
+                data-testid="button-become-launch-partner"
+              >
+                Book Your Partner Call
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
 
             {/* Footer links */}

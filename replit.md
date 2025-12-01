@@ -49,9 +49,11 @@ Preferred communication style: Simple, everyday language.
   - Interactive "Margin Calculator" with real-time slider updates showing annual savings
   - Partner Tracks tabs (White Label "The Ghost" and Referral "The Broker")
   - Gated Asset Library with email capture modals for lead generation
+  - **Inline Partner Booking**: Embedded Cal.com booking calendar with purple theme directly on the page (no redirect needed), includes trust indicators and contact fallbacks
   - Trust & Compliance footer with ISO 27001, GDPR, HIPAA Ready, SOC2 Ready badges
   - Framer Motion animations throughout
   - Deep navy blue/electric purple color scheme
+  - Mobile-optimized: 2-column FAQ tabs, responsive accordion padding, scalable typography
 - **Utility Pages**: /contact, /book-demo (with social proof testimonials), /roi-calculator, /pricing, /company/about, /privacy-policy
 
 **State Management**: TanStack Query (React Query) for server state management, handling API calls, caching, and mutations for leads, subscribers, bookings, and content management.
