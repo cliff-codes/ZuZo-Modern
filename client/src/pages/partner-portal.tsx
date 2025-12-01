@@ -2202,8 +2202,8 @@ export default function PartnerPortal() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:remote@zuzogp.com" className="hover:text-white/70 transition-colors">
-                  remote@zuzogp.com
+                <a href="mailto:partners@zuzogp.com" className="hover:text-white/70 transition-colors">
+                  partners@zuzogp.com
                 </a>
               </div>
             </div>
