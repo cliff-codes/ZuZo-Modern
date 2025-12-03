@@ -25,26 +25,26 @@ export interface IStorage {
   // Leads
   createLead(lead: InsertLead): Promise<Lead>;
   getLeads(): Promise<Lead[]>;
-  
+
   // Subscribers
   createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber>;
   getSubscribers(): Promise<Subscriber[]>;
-  
+
   // Bookings
   createBooking(booking: InsertBooking): Promise<Booking>;
   getBookings(): Promise<Booking[]>;
   updateBookingStatus(id: string, status: string): Promise<Booking | undefined>;
-  
+
   // Blog Posts
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
   getBlogPosts(publishedOnly?: boolean): Promise<BlogPost[]>;
   getBlogPostBySlug(slug: string): Promise<BlogPost | undefined>;
-  
+
   // Case Studies
   createCaseStudy(caseStudy: InsertCaseStudy): Promise<CaseStudy>;
   getCaseStudies(publishedOnly?: boolean): Promise<CaseStudy[]>;
   getCaseStudyBySlug(slug: string): Promise<CaseStudy | undefined>;
-  
+
   // Testimonials
   createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial>;
   getTestimonials(publishedOnly?: boolean): Promise<Testimonial[]>;
@@ -62,18 +62,29 @@ export class DatabaseStorage implements IStorage {
   }
 
   // Subscribers
-  async createSubscriber(insertSubscriber: InsertSubscriber): Promise<Subscriber> {
-    const [subscriber] = await db.insert(subscribers).values(insertSubscriber).returning();
+  async createSubscriber(
+    insertSubscriber: InsertSubscriber
+  ): Promise<Subscriber> {
+    const [subscriber] = await db
+      .insert(subscribers)
+      .values(insertSubscriber)
+      .returning();
     return subscriber;
   }
 
   async getSubscribers(): Promise<Subscriber[]> {
-    return await db.select().from(subscribers).orderBy(desc(subscribers.subscribedAt));
+    return await db
+      .select()
+      .from(subscribers)
+      .orderBy(desc(subscribers.subscribedAt));
   }
 
   // Bookings
   async createBooking(insertBooking: InsertBooking): Promise<Booking> {
-    const [booking] = await db.insert(bookings).values(insertBooking).returning();
+    const [booking] = await db
+      .insert(bookings)
+      .values(insertBooking)
+      .returning();
     return booking;
   }
 
@@ -81,7 +92,10 @@ export class DatabaseStorage implements IStorage {
     return await db.select().from(bookings).orderBy(desc(bookings.createdAt));
   }
 
-  async updateBookingStatus(id: string, status: string): Promise<Booking | undefined> {
+  async updateBookingStatus(
+    id: string,
+    status: string
+  ): Promise<Booking | undefined> {
     const [booking] = await db
       .update(bookings)
       .set({ status })
@@ -117,7 +131,10 @@ export class DatabaseStorage implements IStorage {
 
   // Case Studies
   async createCaseStudy(insertCaseStudy: InsertCaseStudy): Promise<CaseStudy> {
-    const [caseStudy] = await db.insert(caseStudies).values(insertCaseStudy).returning();
+    const [caseStudy] = await db
+      .insert(caseStudies)
+      .values(insertCaseStudy)
+      .returning();
     return caseStudy;
   }
 
@@ -129,7 +146,10 @@ export class DatabaseStorage implements IStorage {
         .where(eq(caseStudies.published, true))
         .orderBy(desc(caseStudies.createdAt));
     }
-    return await db.select().from(caseStudies).orderBy(desc(caseStudies.createdAt));
+    return await db
+      .select()
+      .from(caseStudies)
+      .orderBy(desc(caseStudies.createdAt));
   }
 
   async getCaseStudyBySlug(slug: string): Promise<CaseStudy | undefined> {
@@ -141,8 +161,13 @@ export class DatabaseStorage implements IStorage {
   }
 
   // Testimonials
-  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
-    const [testimonial] = await db.insert(testimonials).values(insertTestimonial).returning();
+  async createTestimonial(
+    insertTestimonial: InsertTestimonial
+  ): Promise<Testimonial> {
+    const [testimonial] = await db
+      .insert(testimonials)
+      .values(insertTestimonial)
+      .returning();
     return testimonial;
   }
 
@@ -154,7 +179,10 @@ export class DatabaseStorage implements IStorage {
         .where(eq(testimonials.published, true))
         .orderBy(desc(testimonials.createdAt));
     }
-    return await db.select().from(testimonials).orderBy(desc(testimonials.createdAt));
+    return await db
+      .select()
+      .from(testimonials)
+      .orderBy(desc(testimonials.createdAt));
   }
 }
 

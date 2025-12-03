@@ -1,13 +1,14 @@
-import { db } from "../server/db";
-import { blogPosts } from "../shared/schema";
+import { db } from '../server/db';
+import { blogPosts } from '../../shared/schema';
 
 const seedBlogPosts = [
-  {
-    title: "How AI-Powered Virtual Assistants Are Transforming Business Operations",
-    slug: "ai-powered-virtual-assistants-transforming-business",
-    author: "ZuZo Team",
-    excerpt: "Discover how combining human expertise with AI technology creates the perfect virtual assistant solution for modern businesses.",
-    content: `<h2>The Evolution of Virtual Assistance</h2>
+    {
+        title: 'How AI-Powered Virtual Assistants Are Transforming Business Operations',
+        slug: 'ai-powered-virtual-assistants-transforming-business',
+        author: 'ZuZo Team',
+        excerpt:
+            'Discover how combining human expertise with AI technology creates the perfect virtual assistant solution for modern businesses.',
+        content: `<h2>The Evolution of Virtual Assistance</h2>
 <p>Virtual assistants have evolved from simple task executors to strategic business partners. At ZuZo, we've combined the best of both worlds: human creativity and emotional intelligence with AI-powered efficiency and accuracy.</p>
 
 <h2>Key Benefits of AI-Enhanced Virtual Assistants</h2>
@@ -30,17 +31,18 @@ const seedBlogPosts = [
 
 <h2>The Future is Hybrid</h2>
 <p>The future isn't about replacing humans with AI—it's about empowering humans with AI. Our approach ensures you get the best of both worlds.</p>`,
-    category: "Virtual Assistants",
-    readTime: 5,
-    published: true,
-    publishedAt: new Date("2025-11-15"),
-  },
-  {
-    title: "Reducing Customer Support Costs by 60%: A Comprehensive Guide",
-    slug: "reducing-customer-support-costs-guide",
-    author: "ZuZo Team",
-    excerpt: "Learn proven strategies to dramatically reduce customer support costs while improving service quality and satisfaction.",
-    content: `<h2>The Cost Challenge</h2>
+        category: 'Virtual Assistants',
+        readTime: 5,
+        published: true,
+        publishedAt: new Date('2025-11-15'),
+    },
+    {
+        title: 'Reducing Customer Support Costs by 60%: A Comprehensive Guide',
+        slug: 'reducing-customer-support-costs-guide',
+        author: 'ZuZo Team',
+        excerpt:
+            'Learn proven strategies to dramatically reduce customer support costs while improving service quality and satisfaction.',
+        content: `<h2>The Cost Challenge</h2>
 <p>Customer support is essential but expensive. Between salaries, benefits, infrastructure, and training, costs add up quickly. There's a better way.</p>
 
 <h2>The ZuZo Approach</h2>
@@ -71,17 +73,18 @@ const seedBlogPosts = [
 
 <h3>Phase 3: Optimization</h3>
 <p>Continuous monitoring and improvement ensure you're getting maximum value from your investment.</p>`,
-    category: "Cost Optimization",
-    readTime: 6,
-    published: true,
-    publishedAt: new Date("2025-11-10"),
-  },
-  {
-    title: "Omnichannel Customer Support: Best Practices for 2025",
-    slug: "omnichannel-customer-support-best-practices-2025",
-    author: "ZuZo Team",
-    excerpt: "Master omnichannel customer support with proven strategies for seamless communication across phone, email, chat, and social media.",
-    content: `<h2>What is Omnichannel Support?</h2>
+        category: 'Cost Optimization',
+        readTime: 6,
+        published: true,
+        publishedAt: new Date('2025-11-10'),
+    },
+    {
+        title: 'Omnichannel Customer Support: Best Practices for 2025',
+        slug: 'omnichannel-customer-support-best-practices-2025',
+        author: 'ZuZo Team',
+        excerpt:
+            'Master omnichannel customer support with proven strategies for seamless communication across phone, email, chat, and social media.',
+        content: `<h2>What is Omnichannel Support?</h2>
 <p>Omnichannel support means providing a seamless customer experience across all channels—phone, email, live chat, SMS, social media, and more. Customers can start a conversation on one channel and continue it on another without repeating information.</p>
 
 <h2>Why It Matters</h2>
@@ -109,28 +112,28 @@ const seedBlogPosts = [
 
 <h2>ZuZo's Omnichannel Solution</h2>
 <p>Our platform integrates seamlessly with your existing systems to provide true omnichannel support with real-time analytics and performance tracking.</p>`,
-    category: "Customer Experience",
-    readTime: 7,
-    published: true,
-    publishedAt: new Date("2025-11-05"),
-  },
+        category: 'Customer Experience',
+        readTime: 7,
+        published: true,
+        publishedAt: new Date('2025-11-05'),
+    },
 ];
 
 async function seedDatabase() {
-  try {
-    console.log("Seeding blog posts...");
-    
-    for (const post of seedBlogPosts) {
-      await db.insert(blogPosts).values(post);
-      console.log(`Inserted blog post: ${post.title}`);
+    try {
+        console.log('Seeding blog posts...');
+
+        for (const post of seedBlogPosts) {
+            await db.insert(blogPosts).values(post);
+            console.log(`Inserted blog post: ${post.title}`);
+        }
+
+        console.log('✓ Blog posts seeded successfully!');
+        process.exit(0);
+    } catch (error) {
+        console.error('Error seeding database:', error);
+        process.exit(1);
     }
-    
-    console.log("✓ Blog posts seeded successfully!");
-    process.exit(0);
-  } catch (error) {
-    console.error("Error seeding database:", error);
-    process.exit(1);
-  }
 }
 
 seedDatabase();
