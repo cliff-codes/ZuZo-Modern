@@ -1,4 +1,4 @@
-import type { Lead, Subscriber } from '@shared/schema';
+import type { Lead, Subscriber } from '../schema/schema';
 
 interface QContactPayload {
     first_name: string;
