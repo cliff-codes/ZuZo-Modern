@@ -1,62 +1,11 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Link } from 'wouter';
-import { Check, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Check } from 'lucide-react';
 import { SEOHead, getSoftwareApplicationSchema } from '@/components/seo/seo-head';
 import { CallToAction } from '@/components/cta/callToAction';
 import { SectionBackground } from '@/components/patterns/section-background';
 import { PricingSection } from '@/components/home/pricing-section';
-
-const pricingTiers = [
-    {
-        name: 'Hourly',
-        price: '$6.19',
-        period: 'per hour',
-        description: 'Flexible, pay-as-you-go support',
-        features: [
-            '15-minute billing increments',
-            'No minimum commitment',
-            'All services included',
-            'Flexible scheduling',
-            'Real-time billing',
-            'Cancel anytime',
-        ],
-        popular: false,
-    },
-    {
-        name: 'Daily',
-        price: '$45',
-        period: 'per day (8 hours)',
-        description: 'Best value for ongoing needs',
-        features: [
-            '8-hour dedicated support',
-            'Priority scheduling',
-            'Same-day deployment available',
-            'Daily performance reports',
-            'Highest ROI',
-            'Scalable capacity',
-        ],
-        popular: true,
-    },
-    {
-        name: 'Monthly',
-        price: '$990',
-        period: 'per dedicated VA',
-        description: 'Consistent, dedicated support',
-        features: [
-            '22 working days per month',
-            'Fully dedicated team member',
-            'Advanced skill training',
-            'Personal account manager',
-            'Priority support',
-            'Maximum consistency',
-        ],
-        popular: false,
-    },
-];
 
 const services = [
     { name: 'Contact Center Support', hourly: '$6.19', daily: '$45', monthly: '$990' },
