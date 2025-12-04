@@ -1,15 +1,17 @@
-import { db } from "../server/db";
-import { caseStudies } from "../shared/schema";
+import { db } from '../server/db';
+import { caseStudies } from '../../shared/schema';
 
 const seedCaseStudies = [
-  {
-    title: "TechFlow Solutions - 65% Cost Reduction in Customer Support",
-    slug: "techflow-solutions-cost-reduction",
-    client: "TechFlow Solutions",
-    industry: "Technology",
-    challenge: "TechFlow Solutions was struggling with high customer support costs and increasing ticket volumes. Their in-house team of 15 agents couldn't keep up with demand, leading to long wait times and frustrated customers. Monthly support costs exceeded $85,000.",
-    solution: "ZuZo deployed a dedicated team of 12 contact center specialists trained specifically on TechFlow's product. We implemented AI-powered ticket routing and introduced 24/7 coverage across multiple time zones.",
-    results: `<h2>Background</h2>
+    {
+        title: 'TechFlow Solutions - 65% Cost Reduction in Customer Support',
+        slug: 'techflow-solutions-cost-reduction',
+        client: 'TechFlow Solutions',
+        industry: 'Technology',
+        challenge:
+            "TechFlow Solutions was struggling with high customer support costs and increasing ticket volumes. Their in-house team of 15 agents couldn't keep up with demand, leading to long wait times and frustrated customers. Monthly support costs exceeded $85,000.",
+        solution:
+            "ZuZo deployed a dedicated team of 12 contact center specialists trained specifically on TechFlow's product. We implemented AI-powered ticket routing and introduced 24/7 coverage across multiple time zones.",
+        results: `<h2>Background</h2>
 <p>TechFlow Solutions, a rapidly growing SaaS platform serving 50,000+ users, faced a common scaling challenge: explosive growth in customer support needs without corresponding budget increases.</p>
 
 <h2>The Challenge in Detail</h2>
@@ -45,17 +47,24 @@ const seedCaseStudies = [
 
 <h2>Client Testimonial</h2>
 <p><em>"ZuZo transformed our support operations. We're spending 65% less while delivering significantly better service. It's the best business decision we've made this year."</em> - Sarah Mitchell, CEO</p>`,
-    metrics: ["65% cost reduction", "12 team members", "385% ROI", "40% satisfaction improvement"],
-    published: true,
-  },
-  {
-    title: "Global Retail Corp - Scaling E-commerce Support 3X",
-    slug: "global-retail-corp-scaling-ecommerce-support",
-    client: "Global Retail Corp",
-    industry: "E-commerce",
-    challenge: "Global Retail Corp needed to triple their support capacity for the holiday season but couldn't afford to hire and train temporary staff only to lay them off in January. They needed a flexible, cost-effective solution.",
-    solution: "ZuZo provided a scalable omnichannel support team that could ramp up from 8 to 24 agents during peak season and scale back down afterward. We integrated with their Shopify store, email, chat, and social media channels.",
-    results: `<h2>The Seasonal Challenge</h2>
+        metrics: [
+            '65% cost reduction',
+            '12 team members',
+            '385% ROI',
+            '40% satisfaction improvement',
+        ],
+        published: true,
+    },
+    {
+        title: 'Global Retail Corp - Scaling E-commerce Support 3X',
+        slug: 'global-retail-corp-scaling-ecommerce-support',
+        client: 'Global Retail Corp',
+        industry: 'E-commerce',
+        challenge:
+            "Global Retail Corp needed to triple their support capacity for the holiday season but couldn't afford to hire and train temporary staff only to lay them off in January. They needed a flexible, cost-effective solution.",
+        solution:
+            'ZuZo provided a scalable omnichannel support team that could ramp up from 8 to 24 agents during peak season and scale back down afterward. We integrated with their Shopify store, email, chat, and social media channels.',
+        results: `<h2>The Seasonal Challenge</h2>
 <p>E-commerce businesses face unique challenges with seasonal demand spikes. Global Retail Corp's support volume increased 300% during November and December, but hiring temporary staff meant:</p>
 <ul>
 <li>6+ weeks recruitment and training</li>
@@ -93,26 +102,31 @@ ZuZo Model: $54,000 for scaled support
 
 <h2>Year-Round Benefits</h2>
 <p>Beyond peak season, Global Retail maintains the core 8-agent team at 55% less cost than their previous in-house operation.</p>`,
-    metrics: ["65% cost reduction", "8-24 scalable team", "425% ROI", "47,000+ interactions handled"],
-    published: true,
-  },
+        metrics: [
+            '65% cost reduction',
+            '8-24 scalable team',
+            '425% ROI',
+            '47,000+ interactions handled',
+        ],
+        published: true,
+    },
 ];
 
 async function seedDatabase() {
-  try {
-    console.log("Seeding case studies...");
-    
-    for (const caseStudy of seedCaseStudies) {
-      await db.insert(caseStudies).values(caseStudy);
-      console.log(`Inserted case study: ${caseStudy.companyName}`);
+    try {
+        console.log('Seeding case studies...');
+
+        for (const caseStudy of seedCaseStudies) {
+            await db.insert(caseStudies).values(caseStudy);
+            console.log(`Inserted case study: ${caseStudy.companyName}`);
+        }
+
+        console.log('✓ Case studies seeded successfully!');
+        process.exit(0);
+    } catch (error) {
+        console.error('Error seeding database:', error);
+        process.exit(1);
     }
-    
-    console.log("✓ Case studies seeded successfully!");
-    process.exit(0);
-  } catch (error) {
-    console.error("Error seeding database:", error);
-    process.exit(1);
-  }
 }
 
 seedDatabase();
