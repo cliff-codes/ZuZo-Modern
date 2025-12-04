@@ -8,7 +8,6 @@ import { MiniTrustBar } from '@/components/trust/mini-trust-bar';
 import { ServiceSchema } from '@/components/seo/service-schema';
 import { Link } from 'wouter';
 import {
-    Laptop,
     Code,
     Users,
     LifeBuoy,
@@ -16,11 +15,8 @@ import {
     Bug,
     FileText,
     UserPlus,
-    TrendingUp,
-    Target,
     ChevronRight,
     CheckCircle2,
-    ArrowRight,
 } from 'lucide-react';
 import { CallToAction } from '@/components/cta/callToAction';
 

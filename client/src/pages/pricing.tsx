@@ -1,61 +1,11 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Link } from 'wouter';
-import { Check, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Check } from 'lucide-react';
 import { SEOHead, getSoftwareApplicationSchema } from '@/components/seo/seo-head';
 import { CallToAction } from '@/components/cta/callToAction';
 import { SectionBackground } from '@/components/patterns/section-background';
-
-const pricingTiers = [
-    {
-        name: 'Hourly',
-        price: '$6.19',
-        period: 'per hour',
-        description: 'Flexible, pay-as-you-go support',
-        features: [
-            '15-minute billing increments',
-            'No minimum commitment',
-            'All services included',
-            'Flexible scheduling',
-            'Real-time billing',
-            'Cancel anytime',
-        ],
-        popular: false,
-    },
-    {
-        name: 'Daily',
-        price: '$45',
-        period: 'per day (8 hours)',
-        description: 'Best value for ongoing needs',
-        features: [
-            '8-hour dedicated support',
-            'Priority scheduling',
-            'Same-day deployment available',
-            'Daily performance reports',
-            'Highest ROI',
-            'Scalable capacity',
-        ],
-        popular: true,
-    },
-    {
-        name: 'Monthly',
-        price: '$990',
-        period: 'per dedicated VA',
-        description: 'Consistent, dedicated support',
-        features: [
-            '22 working days per month',
-            'Fully dedicated team member',
-            'Advanced skill training',
-            'Personal account manager',
-            'Priority support',
-            'Maximum consistency',
-        ],
-        popular: false,
-    },
-];
+import { PricingSection } from '@/components/home/pricing-section';
 
 const services = [
     { name: 'Contact Center Support', hourly: '$6.19', daily: '$45', monthly: '$990' },
@@ -80,80 +30,10 @@ export default function Pricing() {
             </SectionBackground>
             <Header />
 
-            <main className="pt-32 pb-20 lg:pt-40 lg:pb-24">
+            <PricingSection />
+
+            <main className="pt-16 pb-12 lg:pt-4 lg:pb-8">
                 <div className="container mx-auto px-4 lg:px-8">
-                    {/* Header */}
-                    <div className="max-w-3xl mx-auto text-center mb-16">
-                        <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
-                            Transparent, Flexible Pricing
-                        </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground">
-                            Choose the pricing model that fits your business needs. No hidden fees,
-                            no long-term contracts, no surprises.
-                        </p>
-                    </div>
-
-                    {/* Pricing Cards */}
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
-                        {pricingTiers.map((tier, index) => (
-                            <Card
-                                key={index}
-                                className={`relative transition-all duration-300 ${
-                                    tier.popular
-                                        ? 'border-primary shadow-lg scale-105'
-                                        : 'hover-elevate'
-                                }`}
-                                data-testid={`pricing-tier-${tier.name.toLowerCase()}`}
-                            >
-                                {tier.popular && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                        <Badge className="bg-primary text-primary-foreground">
-                                            BEST VALUE
-                                        </Badge>
-                                    </div>
-                                )}
-                                <CardHeader className="text-center pb-8">
-                                    <CardTitle className="font-heading text-2xl mb-2">
-                                        {tier.name}
-                                    </CardTitle>
-                                    <div className="mb-2">
-                                        <span className="font-heading font-bold text-5xl text-primary">
-                                            {tier.price}
-                                        </span>
-                                        <div className="text-sm text-muted-foreground mt-1">
-                                            {tier.period}
-                                        </div>
-                                    </div>
-                                    <CardDescription className="text-base">
-                                        {tier.description}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-3 mb-8">
-                                        {tier.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-center gap-3">
-                                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center">
-                                                    <Check className="h-3 w-3 text-success" />
-                                                </div>
-                                                <span className="text-sm">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <Link href="/book-demo">
-                                        <Button
-                                            className="w-full"
-                                            variant={tier.popular ? 'default' : 'outline'}
-                                            data-testid={`button-get-started-${tier.name.toLowerCase()}`}
-                                        >
-                                            Get Started
-                                            <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Button>
-                                    </Link>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-
                     {/* Service-Specific Pricing */}
                     <div className="max-w-6xl mx-auto mb-20">
                         <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12">
