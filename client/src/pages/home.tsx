@@ -43,7 +43,7 @@ export default function Home() {
                 <ClutchCredentials />
                 <HowItWorks />
                 <TestimonialsSection />
-                <PricingSection />
+                <PricingSection displayFullPricing={true} />
                 <CTASection />
             </main>
             <Footer />

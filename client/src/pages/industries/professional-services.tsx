@@ -18,7 +18,6 @@ import {
     Clock,
     ChevronRight,
     CheckCircle2,
-    ArrowRight,
 } from 'lucide-react';
 import { CallToAction } from '@/components/cta/callToAction';
 
