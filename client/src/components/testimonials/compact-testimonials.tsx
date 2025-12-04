@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { Testimonial } from "@shared/schema";
+import type { Testimonial } from "@/types/Testimonial";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
