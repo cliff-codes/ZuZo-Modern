@@ -1,4 +1,6 @@
 import type { Lead, Subscriber } from '../schema/schema';
+import { logger } from '../utils/logger';
+import 'dotenv/config';
 
 interface QContactPayload {
     first_name: string;
@@ -14,21 +16,37 @@ interface QContactPayload {
 
 export class QContactService {
     private readonly webhookUrl: string = '';
+    private readonly isConfigured: boolean;
 
     constructor() {
         const orgId = process.env.QCONTACT_ORG_ID;
         const eventId = process.env.QCONTACT_EVENT_ID;
         const baseUrl =
-            process.env.QCONTACT_WEBHOOK_URL ||
-            'https://zuzo.qcontact.com/api/v2/webhooks/callback/inbound';
+            // process.env.QCONTACT_WEBHOOK_URL ||
+            `https://zuzo.qcontact.com/api/v2/webhooks/callback/inbound`;
 
-        if (orgId && eventId) {
+        this.isConfigured = !!(orgId && eventId);
+
+        if (this.isConfigured) {
             this.webhookUrl = `${baseUrl}?org_id=${orgId}&eid=${eventId}`;
+            logger.info('QContact service configured', 'qcontact-service', {
+                hasOrgId: !!orgId,
+                hasEventId: !!eventId,
+                hasCustomUrl: !!process.env.QCONTACT_WEBHOOK_URL,
+            });
         } else {
-            // Fallback to test URL if credentials not configured
-            this.webhookUrl =
-                'https://zuzo.qcontact.com/api/v2/webhooks/callback/inbound?org_id=123&eid=456';
+            logger.warn(
+                'QContact credentials not configured. Using test URL. Set QCONTACT_ORG_ID and QCONTACT_EVENT_ID in .env',
+                'qcontact-service',
+            );
         }
+    }
+
+    /**
+     * Check if QContact is properly configured
+     */
+    isServiceConfigured(): boolean {
+        return this.isConfigured;
     }
 
     /**
@@ -73,7 +91,7 @@ export class QContactService {
         try {
             const payload = this.mapLeadToQContact(lead);
 
-            console.log('[QContact] Forwarding lead:', {
+            logger.debug('Forwarding lead to QContact', 'qcontact-service', {
                 leadId: lead.id,
                 firstName: payload.first_name,
                 lastName: payload.last_name,
@@ -89,7 +107,7 @@ export class QContactService {
 
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('[QContact] Webhook failed:', {
+                logger.error('QContact webhook failed', undefined, 'qcontact-service', {
                     status: response.status,
                     statusText: response.statusText,
                     error: errorText,
@@ -102,11 +120,15 @@ export class QContactService {
             }
 
             const result = await response.text();
-            console.log('[QContact] Webhook success:', result);
+            logger.debug('QContact webhook success', 'qcontact-service', { result });
 
             return { success: true };
         } catch (error) {
-            console.error('[QContact] Webhook error:', error);
+            logger.error(
+                'QContact webhook error',
+                error instanceof Error ? error : new Error(String(error)),
+                'qcontact-service',
+            );
             return {
                 success: false,
                 error: error instanceof Error ? error.message : 'Unknown error',
@@ -127,10 +149,9 @@ export class QContactService {
             if (attempt > 0) {
                 // Exponential backoff: 1s, 2s
                 const delay = Math.pow(2, attempt - 1) * 1000;
-                console.log(
-                    `[QContact] Retrying after ${delay}ms (attempt ${attempt + 1}/${
-                        maxRetries + 1
-                    })`,
+                logger.debug(
+                    `Retrying after ${delay}ms (attempt ${attempt + 1}/${maxRetries + 1})`,
+                    'qcontact-service',
                 );
                 await new Promise((resolve) => setTimeout(resolve, delay));
             }
@@ -139,7 +160,7 @@ export class QContactService {
 
             if (result.success) {
                 if (attempt > 0) {
-                    console.log(`[QContact] Succeeded on retry attempt ${attempt + 1}`);
+                    logger.info(`Succeeded on retry attempt ${attempt + 1}`, 'qcontact-service');
                 }
                 return result;
             }
@@ -175,7 +196,7 @@ export class QContactService {
         try {
             const payload = this.mapSubscriberToQContact(subscriber);
 
-            console.log('[QContact] Forwarding newsletter subscriber:', {
+            logger.debug('Forwarding newsletter subscriber to QContact', 'qcontact-service', {
                 subscriberId: subscriber.id,
                 email: subscriber.email,
             });
@@ -190,7 +211,7 @@ export class QContactService {
 
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('[QContact] Webhook failed:', {
+                logger.error('QContact webhook failed', undefined, 'qcontact-service', {
                     status: response.status,
                     statusText: response.statusText,
                     error: errorText,
@@ -203,11 +224,15 @@ export class QContactService {
             }
 
             const result = await response.text();
-            console.log('[QContact] Webhook success:', result);
+            logger.debug('QContact webhook success', 'qcontact-service', { result });
 
             return { success: true };
         } catch (error) {
-            console.error('[QContact] Webhook error:', error);
+            logger.error(
+                'QContact webhook error',
+                error instanceof Error ? error : new Error(String(error)),
+                'qcontact-service',
+            );
             return {
                 success: false,
                 error: error instanceof Error ? error.message : 'Unknown error',
@@ -228,10 +253,9 @@ export class QContactService {
             if (attempt > 0) {
                 // Exponential backoff: 1s, 2s
                 const delay = Math.pow(2, attempt - 1) * 1000;
-                console.log(
-                    `[QContact] Retrying after ${delay}ms (attempt ${attempt + 1}/${
-                        maxRetries + 1
-                    })`,
+                logger.debug(
+                    `Retrying after ${delay}ms (attempt ${attempt + 1}/${maxRetries + 1})`,
+                    'qcontact-service',
                 );
                 await new Promise((resolve) => setTimeout(resolve, delay));
             }
@@ -240,7 +264,7 @@ export class QContactService {
 
             if (result.success) {
                 if (attempt > 0) {
-                    console.log(`[QContact] Succeeded on retry attempt ${attempt + 1}`);
+                    logger.info(`Succeeded on retry attempt ${attempt + 1}`, 'qcontact-service');
                 }
                 return result;
             }
