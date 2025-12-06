@@ -23,6 +23,10 @@ import {
     ArrowDown,
     Calendar,
     BarChart3,
+    Headphones,
+    Settings,
+    ShoppingCart,
+    Stethoscope,
 } from 'lucide-react';
 
 // Import new modular components
@@ -118,39 +122,106 @@ export default function PartnerPortal() {
 
                     <div className="max-w-5xl mx-auto">
                         <Tabs defaultValue="ccaas" className="w-full">
-                            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-[#1a1f35] p-1 h-auto gap-1">
-                                <TabsTrigger
-                                    value="ccaas"
-                                    className="py-3 text-sm data-[state=active]:bg-purple-600 data-[state=active]:text-white"
-                                    data-testid="tab-ccaas"
+                            {/* Mobile: Icon-based Horizontal Layout */}
+                            <div className="block sm:hidden mb-8">
+                                <TabsList
+                                    className="!flex !w-full gap-2 mb-0 bg-white/10 border border-white/20 p-2 rounded-xl overflow-hidden h-auto !inline-flex shadow-lg backdrop-blur-sm"
+                                    data-testid="tech-stack-tab-list-mobile"
                                 >
-                                    Contact Center
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="msp"
-                                    className="py-3 text-sm data-[state=active]:bg-blue-600 data-[state=active]:text-white"
-                                    data-testid="tab-msp"
+                                    <TabsTrigger
+                                        value="ccaas"
+                                        className="!flex !items-center !justify-center gap-2 text-xs font-semibold py-3 px-3 data-[state=active]:px-4 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-purple-600 data-[state=active]:!to-purple-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-md data-[state=active]:!shadow-purple-500/40 transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white active:scale-[0.97] min-h-[48px] flex-1"
+                                        data-testid="tab-ccaas"
+                                    >
+                                        <Headphones className="h-5 w-5 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            Contact Center
+                                        </span>
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="msp"
+                                        className="!flex !items-center !justify-center gap-2 text-xs font-semibold py-3 px-3 data-[state=active]:px-4 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-blue-600 data-[state=active]:!to-blue-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-md data-[state=active]:!shadow-blue-500/40 transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white active:scale-[0.97] min-h-[48px] flex-1"
+                                        data-testid="tab-msp"
+                                    >
+                                        <Settings className="h-5 w-5 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            IT Services
+                                        </span>
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="ecommerce"
+                                        className="!flex !items-center !justify-center gap-2 text-xs font-semibold py-3 px-3 data-[state=active]:px-4 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-orange-600 data-[state=active]:!to-orange-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-md data-[state=active]:!shadow-orange-500/40 transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white active:scale-[0.97] min-h-[48px] flex-1"
+                                        data-testid="tab-ecommerce"
+                                    >
+                                        <ShoppingCart className="h-5 w-5 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            E-Commerce
+                                        </span>
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="ndis"
+                                        className="!flex !items-center !justify-center gap-2 text-xs font-semibold py-3 px-3 data-[state=active]:px-4 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-cyan-600 data-[state=active]:!to-cyan-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-md data-[state=active]:!shadow-cyan-500/40 transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white active:scale-[0.97] min-h-[48px] flex-1"
+                                        data-testid="tab-ndis"
+                                    >
+                                        <Stethoscope className="h-5 w-5 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            Healthcare
+                                        </span>
+                                    </TabsTrigger>
+                                </TabsList>
+                            </div>
+
+                            {/* Tablet & Desktop: Icon-based Grid Layout */}
+                            <div className="hidden sm:block">
+                                <TabsList
+                                    className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-3 mb-10 bg-white/10 border border-white/20 p-3 rounded-xl overflow-hidden h-auto min-h-[64px] md:min-h-[68px] !inline-grid backdrop-blur-sm shadow-lg"
+                                    data-testid="tech-stack-tab-list"
                                 >
-                                    IT Services
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="ecommerce"
-                                    className="py-3 text-sm data-[state=active]:bg-orange-600 data-[state=active]:text-white"
-                                    data-testid="tab-ecommerce"
-                                >
-                                    E-Commerce
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="ndis"
-                                    className="py-3 text-sm data-[state=active]:bg-cyan-600 data-[state=active]:text-white"
-                                    data-testid="tab-ndis"
-                                >
-                                    Healthcare
-                                </TabsTrigger>
-                            </TabsList>
+                                    <TabsTrigger
+                                        value="ccaas"
+                                        className="!flex !items-center !justify-center gap-2.5 text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 data-[state=active]:px-5 md:data-[state=active]:px-6 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-purple-600 data-[state=active]:!to-purple-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-lg data-[state=active]:!shadow-purple-500/40 data-[state=active]:!scale-[1.02] transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-[1.01] active:scale-[0.98] min-h-[56px] md:min-h-[60px]"
+                                        data-testid="tab-ccaas"
+                                    >
+                                        <Headphones className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            Contact Center
+                                        </span>
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="msp"
+                                        className="!flex !items-center !justify-center gap-2.5 text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 data-[state=active]:px-5 md:data-[state=active]:px-6 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-blue-600 data-[state=active]:!to-blue-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-lg data-[state=active]:!shadow-blue-500/40 data-[state=active]:!scale-[1.02] transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-[1.01] active:scale-[0.98] min-h-[56px] md:min-h-[60px]"
+                                        data-testid="tab-msp"
+                                    >
+                                        <Settings className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            IT Services
+                                        </span>
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="ecommerce"
+                                        className="!flex !items-center !justify-center gap-2.5 text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 data-[state=active]:px-5 md:data-[state=active]:px-6 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-orange-600 data-[state=active]:!to-orange-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-lg data-[state=active]:!shadow-orange-500/40 data-[state=active]:!scale-[1.02] transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-[1.01] active:scale-[0.98] min-h-[56px] md:min-h-[60px]"
+                                        data-testid="tab-ecommerce"
+                                    >
+                                        <ShoppingCart className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            E-Commerce
+                                        </span>
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="ndis"
+                                        className="!flex !items-center !justify-center gap-2.5 text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 data-[state=active]:px-5 md:data-[state=active]:px-6 !rounded-lg data-[state=active]:!bg-gradient-to-r data-[state=active]:!from-cyan-600 data-[state=active]:!to-cyan-700 data-[state=active]:!text-white data-[state=active]:!font-bold data-[state=active]:!shadow-lg data-[state=active]:!shadow-cyan-500/40 data-[state=active]:!scale-[1.02] transition-all duration-300 bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-[1.01] active:scale-[0.98] min-h-[56px] md:min-h-[60px]"
+                                        data-testid="tab-ndis"
+                                    >
+                                        <Stethoscope className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+                                        <span className="hidden data-[state=active]:inline whitespace-nowrap">
+                                            Healthcare
+                                        </span>
+                                    </TabsTrigger>
+                                </TabsList>
+                            </div>
 
                             {/* CCaaS Tab */}
-                            <TabsContent value="ccaas" className="mt-8">
+                            <TabsContent value="ccaas" className="mt-6 sm:mt-10">
                                 <Card
                                     className="bg-gradient-to-br from-purple-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-purple-500/30"
                                     data-testid="card-ccaas-stack"
@@ -212,7 +283,7 @@ export default function PartnerPortal() {
                             </TabsContent>
 
                             {/* MSP Tab */}
-                            <TabsContent value="msp" className="mt-8">
+                            <TabsContent value="msp" className="mt-6 sm:mt-10">
                                 <Card
                                     className="bg-gradient-to-br from-blue-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-blue-500/30"
                                     data-testid="card-msp-stack"
@@ -320,7 +391,7 @@ export default function PartnerPortal() {
                             </TabsContent>
 
                             {/* E-Commerce Tab */}
-                            <TabsContent value="ecommerce" className="mt-8">
+                            <TabsContent value="ecommerce" className="mt-6 sm:mt-10">
                                 <Card
                                     className="bg-gradient-to-br from-orange-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-orange-500/30"
                                     data-testid="card-ecommerce-stack"
@@ -419,7 +490,7 @@ export default function PartnerPortal() {
                             </TabsContent>
 
                             {/* NDIS Tab */}
-                            <TabsContent value="ndis" className="mt-8">
+                            <TabsContent value="ndis" className="mt-6 sm:mt-10">
                                 <Card
                                     className="bg-gradient-to-br from-cyan-950/40 via-[#1a1f35] to-[#0d1321] border-2 border-cyan-500/30"
                                     data-testid="card-ndis-stack"
@@ -1505,39 +1576,79 @@ export default function PartnerPortal() {
 
                     <div className="max-w-4xl mx-auto">
                         <Tabs defaultValue="pricing" className="w-full" data-testid="faq-tabs">
-                            <TabsList
-                                className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-1 mb-8 bg-white/5 border border-white/10 p-1 rounded-lg overflow-hidden !inline-grid"
-                                data-testid="faq-tab-list"
-                            >
-                                <TabsTrigger
-                                    value="pricing"
-                                    className="text-xs sm:text-sm md:text-base py-2.5 px-2 sm:px-3 !rounded-md data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:shadow-sm transition-all min-w-0"
-                                    data-testid="tab-pricing"
+                            {/* Mobile: Compact Horizontal Layout */}
+                            <div className="block sm:hidden mb-8">
+                                <TabsList
+                                    className="!flex !w-full gap-1.5 mb-0 bg-white/10 border border-white/20 p-1.5 rounded-xl overflow-hidden h-auto !inline-flex shadow-lg backdrop-blur-sm"
+                                    data-testid="faq-tab-list-mobile"
                                 >
-                                    Pricing
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="white-label"
-                                    className="text-xs sm:text-sm md:text-base py-2.5 px-2 sm:px-3 !rounded-md data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:shadow-sm transition-all min-w-0"
-                                    data-testid="tab-white-label"
+                                    <TabsTrigger
+                                        value="pricing"
+                                        className="text-xs font-semibold py-3 px-2.5 flex-1 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-md data-[state=active]:shadow-white/20 transition-all duration-300 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.97] min-w-0 min-h-[44px] flex items-center justify-center"
+                                        data-testid="tab-pricing"
+                                    >
+                                        Pricing
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="white-label"
+                                        className="text-xs font-semibold py-3 px-2.5 flex-1 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-md data-[state=active]:shadow-white/20 transition-all duration-300 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.97] min-w-0 min-h-[44px] flex items-center justify-center"
+                                        data-testid="tab-white-label"
+                                    >
+                                        White Label
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="operations"
+                                        className="text-xs font-semibold py-3 px-2.5 flex-1 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-md data-[state=active]:shadow-white/20 transition-all duration-300 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.97] min-w-0 min-h-[44px] flex items-center justify-center"
+                                        data-testid="tab-operations"
+                                    >
+                                        Operations
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="tech"
+                                        className="text-xs font-semibold py-3 px-2.5 flex-1 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-md data-[state=active]:shadow-white/20 transition-all duration-300 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.97] min-w-0 min-h-[44px] flex items-center justify-center"
+                                        data-testid="tab-tech"
+                                    >
+                                        Tech
+                                    </TabsTrigger>
+                                </TabsList>
+                            </div>
+
+                            {/* Tablet & Desktop: Grid Layout */}
+                            <div className="hidden sm:block">
+                                <TabsList
+                                    className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-2.5 mb-10 bg-white/10 border border-white/20 p-2.5 rounded-xl overflow-hidden h-auto min-h-[64px] md:min-h-[68px] !inline-grid backdrop-blur-sm shadow-lg"
+                                    data-testid="faq-tab-list"
                                 >
-                                    White Label
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="operations"
-                                    className="text-xs sm:text-sm md:text-base py-2.5 px-2 sm:px-3 !rounded-md data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:shadow-sm transition-all min-w-0"
-                                    data-testid="tab-operations"
-                                >
-                                    Operations
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="tech"
-                                    className="text-xs sm:text-sm md:text-base py-2.5 px-2 sm:px-3 !rounded-md data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:shadow-sm transition-all min-w-0"
-                                    data-testid="tab-tech"
-                                >
-                                    Tech
-                                </TabsTrigger>
-                            </TabsList>
+                                    <TabsTrigger
+                                        value="pricing"
+                                        className="text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-lg data-[state=active]:shadow-white/20 data-[state=active]:scale-[1.02] transition-all duration-300 min-w-0 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.98] flex items-center justify-center"
+                                        data-testid="tab-pricing"
+                                    >
+                                        Pricing
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="white-label"
+                                        className="text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-lg data-[state=active]:shadow-white/20 data-[state=active]:scale-[1.02] transition-all duration-300 min-w-0 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.98] flex items-center justify-center"
+                                        data-testid="tab-white-label"
+                                    >
+                                        White Label
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="operations"
+                                        className="text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-lg data-[state=active]:shadow-white/20 data-[state=active]:scale-[1.02] transition-all duration-300 min-w-0 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.98] flex items-center justify-center"
+                                        data-testid="tab-operations"
+                                    >
+                                        Operations
+                                    </TabsTrigger>
+                                    <TabsTrigger
+                                        value="tech"
+                                        className="text-sm md:text-base font-semibold py-4 md:py-4 px-4 md:px-5 !rounded-lg data-[state=active]:!bg-white data-[state=active]:!text-[#0a0f1a] data-[state=active]:!font-bold data-[state=active]:shadow-lg data-[state=active]:shadow-white/20 data-[state=active]:scale-[1.02] transition-all duration-300 min-w-0 text-white/90 hover:text-white hover:bg-white/15 active:scale-[0.98] flex items-center justify-center"
+                                        data-testid="tab-tech"
+                                    >
+                                        Tech
+                                    </TabsTrigger>
+                                </TabsList>
+                            </div>
 
                             {/* Tab 1: Pricing & Margins */}
                             <TabsContent

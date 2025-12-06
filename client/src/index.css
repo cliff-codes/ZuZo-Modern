@@ -231,6 +231,26 @@
     @apply hidden;
   }
 
+  /* Hide scrollbar while maintaining scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+
+  /* Touch action for horizontal scrolling only */
+  .touch-pan-x {
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+
+  /* Prevent scroll chaining */
+  .overscroll-contain-x {
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
+  }
+
   /* Placeholder styling for contentEditable div */
   [contenteditable][data-placeholder]:empty::before {
     content: attr(data-placeholder);
