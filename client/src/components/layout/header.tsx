@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import {
@@ -108,6 +108,8 @@ const resources = [
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [location] = useLocation();
+    const isHomePage = location === '/';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -140,6 +142,18 @@ export function Header() {
                     {/* Desktop Navigation */}
                     <NavigationMenu className="hidden lg:flex">
                         <NavigationMenuList className="gap-1">
+                            {!isHomePage && (
+                                <NavigationMenuItem>
+                                    <Link
+                                        href="/"
+                                        className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover-elevate disabled:pointer-events-none disabled:opacity-50"
+                                        data-testid="link-home-nav"
+                                    >
+                                        Home
+                                    </Link>
+                                </NavigationMenuItem>
+                            )}
+
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger
                                     className="font-sans"
@@ -345,6 +359,23 @@ export function Header() {
                                         </Link>
                                     </div>
                                 </div>
+
+                                {/* Home link in mobile menu */}
+                                {!isHomePage && (
+                                    <Link
+                                        href="/"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className="w-full justify-start"
+                                            data-testid="mobile-link-home"
+                                        >
+                                            Home
+                                        </Button>
+                                    </Link>
+                                )}
 
                                 {/* Collapsible sections for Services, Industries, Resources */}
                                 <Accordion type="single" collapsible className="w-full">
