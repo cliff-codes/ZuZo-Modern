@@ -9,7 +9,7 @@ const values = [
         icon: Target,
         title: 'Efficiency',
         description:
-            'Optimizing processes to deliver maximum value with minimal waste, ensuring our clients achieve their goals effectively.',
+            'Optimizing processes to deliver maximum value with minimal waste, ensuring our clients achieve our goals effectively.',
     },
     {
         icon: Award,
@@ -50,31 +50,13 @@ export default function About() {
             <Header />
             <main>
                 {/* Hero */}
-                <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
-                    {/* Background Image */}
-                    <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{
-                            backgroundImage: `
-      linear-gradient(
-        
-        
-        
-      ),
-      url('https://images.pexels.com/photos/5990269/pexels-photo-5990269.jpeg')
-    `,
-                        }}
-                    />
-
-                    {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/60" />
-
+                <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
                     <div className="relative container mx-auto px-4 lg:px-8 z-10">
                         <div className="max-w-4xl mx-auto text-center">
-                            <h1 className="text-[#FFFFFF] font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
+                            <h1 className="text-foreground font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
                                 Redefining Business Process Outsourcing
                             </h1>
-                            <p className="text-lg md:text-xl text-[#FFFFFF] leading-relaxed">
+                            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                                 At ZuZo, we believe outsourcing should amplify your business
                                 capabilities, not compromise them. We've transformed the traditional
                                 BPO model by combining human expertise, cutting-edge technology, and

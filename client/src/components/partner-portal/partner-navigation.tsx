@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,6 +18,17 @@ interface PartnerNavigationProps {
 }
 
 export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps) {
+    const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+    const handleLinkClick = () => {
+        setIsSheetOpen(false);
+    };
+
+    const handleBookingClick = () => {
+        setIsSheetOpen(false);
+        onScrollToBooking();
+    };
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1a]/90 backdrop-blur-md border-b border-white/10">
             <div className="container mx-auto px-6 py-3 flex items-center justify-between">
@@ -64,7 +76,7 @@ export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps)
 
                 {/* Mobile Navigation */}
                 <div className="md:hidden">
-                    <Sheet>
+                    <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                         <SheetTrigger asChild>
                             <Button
                                 size="icon"
@@ -87,7 +99,7 @@ export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps)
                             </VisuallyHidden>
                             <div className="flex flex-col gap-6 mt-8">
                                 <Button
-                                    onClick={onScrollToBooking}
+                                    onClick={handleBookingClick}
                                     className="w-full bg-purple-600 hover:bg-purple-700 text-white border-0"
                                     data-testid="button-mobile-become-partner"
                                 >
@@ -95,6 +107,7 @@ export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps)
                                 </Button>
                                 <a
                                     href="#calculator"
+                                    onClick={handleLinkClick}
                                     className="text-white/70 hover:text-white transition-colors py-2"
                                     data-testid="link-mobile-calculator"
                                 >
@@ -102,6 +115,7 @@ export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps)
                                 </a>
                                 <a
                                     href="#partner-tracks"
+                                    onClick={handleLinkClick}
                                     className="text-white/70 hover:text-white transition-colors py-2"
                                     data-testid="link-mobile-partner-tracks"
                                 >
@@ -109,6 +123,7 @@ export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps)
                                 </a>
                                 <a
                                     href="#resources"
+                                    onClick={handleLinkClick}
                                     className="text-white/70 hover:text-white transition-colors py-2"
                                     data-testid="link-mobile-resources"
                                 >
@@ -116,6 +131,7 @@ export function PartnerNavigation({ onScrollToBooking }: PartnerNavigationProps)
                                 </a>
                                 <Link
                                     href="/"
+                                    onClick={handleLinkClick}
                                     className="text-white/70 hover:text-white transition-colors py-2"
                                 >
                                     Back to Main Site

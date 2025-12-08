@@ -8,10 +8,10 @@ export function PartnerNetworkVisualization() {
             <div className="absolute inset-0 overflow-hidden rounded-3xl">
                 <motion.div
                     className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-600/30 via-purple-500/20 to-transparent rounded-full blur-3xl"
-                    animate={{ 
+                    animate={{
                         x: [-50, 50, -50],
                         y: [-30, 30, -30],
-                        scale: [1, 1.1, 1]
+                        scale: [1, 1.1, 1],
                     }}
                     transition={{
                         duration: 8,
@@ -21,9 +21,9 @@ export function PartnerNetworkVisualization() {
                 />
                 <motion.div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-blue-600/25 via-cyan-500/20 to-blue-600/25 rounded-full blur-3xl"
-                    animate={{ 
+                    animate={{
                         scale: [1, 1.15, 1],
-                        opacity: [0.3, 0.5, 0.3]
+                        opacity: [0.3, 0.5, 0.3],
                     }}
                     transition={{
                         duration: 6,
@@ -33,10 +33,10 @@ export function PartnerNetworkVisualization() {
                 />
                 <motion.div
                     className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-cyan-600/30 via-cyan-500/20 to-transparent rounded-full blur-3xl"
-                    animate={{ 
+                    animate={{
                         x: [30, -30, 30],
                         y: [50, -50, 50],
-                        scale: [1, 1.1, 1]
+                        scale: [1, 1.1, 1],
                     }}
                     transition={{
                         duration: 10,
@@ -77,7 +77,7 @@ export function PartnerNetworkVisualization() {
                         <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.9" />
                         <stop offset="100%" stopColor="#22D3EE" stopOpacity="0.7" />
                     </linearGradient>
-                    
+
                     {/* Glow filters */}
                     <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
                         <feGaussianBlur stdDeviation="6" result="coloredBlur" />
@@ -305,15 +305,15 @@ export function PartnerNetworkVisualization() {
                         fill="url(#engineGradient)"
                         filter="url(#nodeGlow)"
                         initial={{ scale: 0 }}
-                        animate={{ 
+                        animate={{
                             scale: 1,
-                            opacity: [1, 0.95, 1]
+                            opacity: [1, 0.95, 1],
                         }}
-                        transition={{ 
+                        transition={{
                             delay: 1,
                             type: 'spring',
                             stiffness: 80,
-                            opacity: { duration: 2, repeat: Infinity }
+                            opacity: { duration: 2, repeat: Infinity },
                         }}
                         whileHover={{ scale: 1.2 }}
                     />
@@ -382,7 +382,7 @@ export function PartnerNetworkVisualization() {
             {/* Text Labels - Responsive positioning */}
             {/* Your Clients - Left */}
             <motion.div
-                className="absolute left-2 sm:left-4 md:left-16 top-[25%] sm:top-[30%] md:top-1/2 md:-translate-y-1/2 text-center z-20 w-[110px] sm:w-[130px] md:w-auto"
+                className="absolute left-[5%] top-[23%] sm:left-[9%] sm:top-[20%] md:left-16 md:top-[15%] lg:top-[8%]  lg:left-[10%] md:-translate-y-1/2 text-center z-20 w-[110px] sm:w-[130px] md:w-auto"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.8, type: 'spring' }}
@@ -402,26 +402,26 @@ export function PartnerNetworkVisualization() {
                 </div>
             </motion.div>
 
-            {/* ZuZo Engine - Center */}
+            {/* ZuZo Engine - Center (below the blue circle) */}
             <motion.div
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 w-[160px] sm:w-[180px] md:w-auto px-3 sm:px-4 md:px-2"
+                className="absolute top-[55%] left-[32%] sm:top-[58%] md:top-[60%]  sm:left-[36%] lg:left-[42%] md:left-[37%] -translate-x-1/2 text-center z-20 w-[160px] sm:w-[180px] md:w-auto px-3 sm:px-4 md:px-2"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 2, type: 'spring' }}
             >
                 <motion.div
-                    animate={{ 
+                    animate={{
                         scale: [1, 1.1, 1],
-                        rotate: [0, 5, -5, 0]
+                        rotate: [0, 5, -5, 0],
                     }}
                     transition={{
                         duration: 3,
                         repeat: Infinity,
                         ease: 'easeInOut',
                     }}
-                    className="mb-3 md:mb-3"
+                    className="mb-2.5 md:mb-3"
                 >
-                    <Zap className="h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-400 mx-auto mb-2 md:mb-2" />
+                    <Zap className="h-8 w-8 sm:h-9 sm:w-9 md:h-12 md:w-12 text-blue-400 mx-auto mb-1 md:mb-1.5" />
                 </motion.div>
                 <motion.div
                     animate={{ scale: [1, 1.05, 1] }}
@@ -431,7 +431,7 @@ export function PartnerNetworkVisualization() {
                         ease: 'easeInOut',
                     }}
                 >
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-300 bg-clip-text text-transparent mb-1.5 md:mb-2 leading-snug">
+                    <div className="text-lg sm:text-xl md:text-3xl font-bold bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-300 bg-clip-text text-transparent mb-0.5 md:mb-1 leading-snug">
                         ZuZo Engine
                     </div>
                     <div className="text-xs sm:text-sm md:text-base text-blue-400/70 leading-relaxed">
@@ -440,9 +440,9 @@ export function PartnerNetworkVisualization() {
                 </motion.div>
             </motion.div>
 
-            {/* 24/7 Delivery - Right */}
+            {/* 24/7 Delivery - Right (above the delivery nodes) */}
             <motion.div
-                className="absolute right-2 sm:right-4 md:right-16 top-[75%] sm:top-[70%] md:top-1/2 md:-translate-y-1/2 text-center z-20 w-[110px] sm:w-[130px] md:w-auto"
+                className="absolute right-[6%] top-[23%] sm:right-[10%] sm:top-[20%] md:right-[10%] md:top-[15%] lg:top-[8%] lg:right-[10%] text-center z-20 w-[110px] sm:w-[130px] md:w-auto"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.9, type: 'spring' }}
