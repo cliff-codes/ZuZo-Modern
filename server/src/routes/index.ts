@@ -1,198 +1,90 @@
-import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { qcontactService } from "./services/qcontact.service";
+import type { Express } from 'express';
 import {
-  insertLeadSchema,
-  insertSubscriberSchema,
-  insertBookingSchema,
-  insertBlogPostSchema,
-  insertCaseStudySchema,
-  insertTestimonialSchema,
-} from "@shared/schema";
+    insertLeadSchema,
+    insertSubscriberSchema,
+    insertBookingSchema,
+    insertBlogPostSchema,
+    insertCaseStudySchema,
+    insertTestimonialSchema,
+} from '../schema/schema';
+import { z } from 'zod';
+import { validateBody, validateParams } from '../middleware/validator';
+import { leadsController } from '../controllers/leads.controller';
+import { subscribersController } from '../controllers/subscribers.controller';
+import { bookingsController } from '../controllers/bookings.controller';
+import { blogPostsController } from '../controllers/blog-posts.controller';
+import { caseStudiesController } from '../controllers/case-studies.controller';
+import { testimonialsController } from '../controllers/testimonials.controller';
+import { healthController } from '../controllers/health.controller';
+import { qcontactController } from '../controllers/qcontact.controller';
 
-export async function registerRoutes(app: Express): Promise<Server> {
-  // Lead Management (Contact Forms)
-  app.post("/api/leads", async (req, res) => {
-    try {
-      const validatedData = insertLeadSchema.parse(req.body);
-      const lead = await storage.createLead(validatedData);
-      
-      // Forward to QContact asynchronously (don't block the response)
-      qcontactService.forwardLeadWithRetry(lead).catch(error => {
-        console.error('[QContact] Failed to forward lead:', error);
-      });
-      
-      res.json(lead);
-    } catch (error: any) {
-      res.status(400).json({ error: error.message || "Invalid request data" });
-    }
-  });
+const idParamSchema = z.object({
+    id: z.string().uuid('Invalid ID format'),
+});
 
-  app.get("/api/leads", async (req, res) => {
-    try {
-      const leads = await storage.getLeads();
-      res.json(leads);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch leads" });
-    }
-  });
+const slugParamSchema = z.object({
+    slug: z.string().min(1, 'Slug is required'),
+});
 
-  // Newsletter Subscribers
-  app.post("/api/subscribers", async (req, res) => {
-    try {
-      const validatedData = insertSubscriberSchema.parse(req.body);
-      const subscriber = await storage.createSubscriber(validatedData);
-      
-      // Forward to QContact asynchronously (don't block the response)
-      qcontactService.forwardSubscriberWithRetry(subscriber).catch(error => {
-        console.error('[QContact] Failed to forward subscriber:', error);
-      });
-      
-      res.json(subscriber);
-    } catch (error: any) {
-      res.status(400).json({ error: error.message || "Invalid request data" });
-    }
-  });
+const bookingStatusBodySchema = z.object({
+    status: z.enum(['pending', 'confirmed', 'completed', 'cancelled']),
+});
 
-  app.get("/api/subscribers", async (req, res) => {
-    try {
-      const subscribers = await storage.getSubscribers();
-      res.json(subscribers);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch subscribers" });
-    }
-  });
+const qcontactForwardBodySchema = z.object({
+    retry: z.boolean().optional().default(false),
+    maxRetries: z.number().int().min(0).max(5).optional(),
+});
 
-  // Demo Bookings
-  app.post("/api/bookings", async (req, res) => {
-    try {
-      const validatedData = insertBookingSchema.parse(req.body);
-      const booking = await storage.createBooking(validatedData);
-      res.json(booking);
-    } catch (error: any) {
-      res.status(400).json({ error: error.message || "Invalid request data" });
-    }
-  });
+export function registerRoutes(app: Express): void {
+    // Health check
+    app.get('/api/health', healthController.check);
 
-  app.get("/api/bookings", async (req, res) => {
-    try {
-      const bookings = await storage.getBookings();
-      res.json(bookings);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch bookings" });
-    }
-  });
+    // Lead Management (Contact Forms)
+    app.post('/api/leads', validateBody(insertLeadSchema), leadsController.create);
+    app.get('/api/leads', leadsController.getAll);
 
-  app.patch("/api/bookings/:id/status", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const { status } = req.body;
-      
-      if (!status || !['pending', 'confirmed', 'completed', 'cancelled'].includes(status)) {
-        return res.status(400).json({ error: "Invalid status value" });
-      }
-      
-      const booking = await storage.updateBookingStatus(id, status);
-      if (!booking) {
-        return res.status(404).json({ error: "Booking not found" });
-      }
-      
-      res.json(booking);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to update booking" });
-    }
-  });
+    // Newsletter Subscribers
+    app.post('/api/subscribers', validateBody(insertSubscriberSchema), subscribersController.create);
+    app.get('/api/subscribers', subscribersController.getAll);
 
-  // Blog Posts
-  app.post("/api/blog-posts", async (req, res) => {
-    try {
-      const validatedData = insertBlogPostSchema.parse(req.body);
-      const post = await storage.createBlogPost(validatedData);
-      res.json(post);
-    } catch (error: any) {
-      res.status(400).json({ error: error.message || "Invalid request data" });
-    }
-  });
+    // Demo Bookings
+    app.post('/api/bookings', validateBody(insertBookingSchema), bookingsController.create);
+    app.get('/api/bookings', bookingsController.getAll);
+    app.patch(
+        '/api/bookings/:id/status',
+        validateParams(idParamSchema),
+        validateBody(bookingStatusBodySchema),
+        bookingsController.updateStatus,
+    );
 
-  app.get("/api/blog-posts", async (req, res) => {
-    try {
-      const publishedOnly = req.query.published !== 'false';
-      const posts = await storage.getBlogPosts(publishedOnly);
-      res.json(posts);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch blog posts" });
-    }
-  });
+    // Blog Posts
+    app.post('/api/blog-posts', validateBody(insertBlogPostSchema), blogPostsController.create);
+    app.get('/api/blog-posts', blogPostsController.getAll);
+    app.get('/api/blog-posts/:slug', validateParams(slugParamSchema), blogPostsController.getBySlug);
 
-  app.get("/api/blog-posts/:slug", async (req, res) => {
-    try {
-      const { slug } = req.params;
-      const post = await storage.getBlogPostBySlug(slug);
-      if (!post) {
-        return res.status(404).json({ error: "Blog post not found" });
-      }
-      res.json(post);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch blog post" });
-    }
-  });
+    // Case Studies
+    app.post('/api/case-studies', validateBody(insertCaseStudySchema), caseStudiesController.create);
+    app.get('/api/case-studies', caseStudiesController.getAll);
+    app.get('/api/case-studies/:slug', validateParams(slugParamSchema), caseStudiesController.getBySlug);
 
-  // Case Studies
-  app.post("/api/case-studies", async (req, res) => {
-    try {
-      const validatedData = insertCaseStudySchema.parse(req.body);
-      const caseStudy = await storage.createCaseStudy(validatedData);
-      res.json(caseStudy);
-    } catch (error: any) {
-      res.status(400).json({ error: error.message || "Invalid request data" });
-    }
-  });
+    // Testimonials
+    app.post('/api/testimonials', validateBody(insertTestimonialSchema), testimonialsController.create);
+    app.get('/api/testimonials', testimonialsController.getAll);
 
-  app.get("/api/case-studies", async (req, res) => {
-    try {
-      const publishedOnly = req.query.published !== 'false';
-      const caseStudies = await storage.getCaseStudies(publishedOnly);
-      res.json(caseStudies);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch case studies" });
-    }
-  });
-
-  app.get("/api/case-studies/:slug", async (req, res) => {
-    try {
-      const { slug } = req.params;
-      const caseStudy = await storage.getCaseStudyBySlug(slug);
-      if (!caseStudy) {
-        return res.status(404).json({ error: "Case study not found" });
-      }
-      res.json(caseStudy);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch case study" });
-    }
-  });
-
-  // Testimonials
-  app.post("/api/testimonials", async (req, res) => {
-    try {
-      const validatedData = insertTestimonialSchema.parse(req.body);
-      const testimonial = await storage.createTestimonial(validatedData);
-      res.json(testimonial);
-    } catch (error: any) {
-      res.status(400).json({ error: error.message || "Invalid request data" });
-    }
-  });
-
-  app.get("/api/testimonials", async (req, res) => {
-    try {
-      const publishedOnly = req.query.published !== 'false';
-      const testimonials = await storage.getTestimonials(publishedOnly);
-      res.json(testimonials);
-    } catch (error: any) {
-      res.status(500).json({ error: error.message || "Failed to fetch testimonials" });
-    }
-  });
-
-  const httpServer = createServer(app);
-  return httpServer;
+    // QContact Integration
+    app.get('/api/qcontact/status', qcontactController.getStatus);
+    app.get('/api/qcontact/test', qcontactController.testConnection);
+    app.post('/api/qcontact/test', qcontactController.testConnection); // Also support POST for backward compatibility
+    app.post(
+        '/api/qcontact/leads/:id/forward',
+        validateParams(idParamSchema),
+        validateBody(qcontactForwardBodySchema),
+        qcontactController.forwardLead,
+    );
+    app.post(
+        '/api/qcontact/subscribers/:id/forward',
+        validateParams(idParamSchema),
+        validateBody(qcontactForwardBodySchema),
+        qcontactController.forwardSubscriber,
+    );
 }

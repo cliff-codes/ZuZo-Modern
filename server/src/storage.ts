@@ -1,34 +1,38 @@
 import {
-  leads,
-  subscribers,
-  bookings,
-  blogPosts,
-  caseStudies,
-  testimonials,
-  type Lead,
-  type InsertLead,
-  type Subscriber,
-  type InsertSubscriber,
-  type Booking,
-  type InsertBooking,
-  type BlogPost,
-  type InsertBlogPost,
-  type CaseStudy,
-  type InsertCaseStudy,
-  type Testimonial,
-  type InsertTestimonial,
-} from "@shared/schema";
-import { db } from "./db";
-import { eq, desc } from "drizzle-orm";
+    leads,
+    subscribers,
+    bookings,
+    blogPosts,
+    caseStudies,
+    testimonials,
+    type Lead,
+    type InsertLead,
+    type Subscriber,
+    type InsertSubscriber,
+    type Booking,
+    type InsertBooking,
+    type BlogPost,
+    type InsertBlogPost,
+    type CaseStudy,
+    type InsertCaseStudy,
+    type Testimonial,
+    type InsertTestimonial,
+} from './schema/schema';
+import { db } from './db';
+import { eq, desc } from 'drizzle-orm';
+import { DatabaseError } from './utils/errors';
+import { logger } from './utils/logger';
 
 export interface IStorage {
   // Leads
   createLead(lead: InsertLead): Promise<Lead>;
   getLeads(): Promise<Lead[]>;
+  getLeadById(id: string): Promise<Lead | undefined>;
 
   // Subscribers
   createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber>;
   getSubscribers(): Promise<Subscriber[]>;
+  getSubscriberById(id: string): Promise<Subscriber | undefined>;
 
   // Bookings
   createBooking(booking: InsertBooking): Promise<Booking>;
@@ -61,6 +65,11 @@ export class DatabaseStorage implements IStorage {
     return await db.select().from(leads).orderBy(desc(leads.createdAt));
   }
 
+  async getLeadById(id: string): Promise<Lead | undefined> {
+    const [lead] = await db.select().from(leads).where(eq(leads.id, id));
+    return lead;
+  }
+
   // Subscribers
   async createSubscriber(
     insertSubscriber: InsertSubscriber
@@ -77,6 +86,11 @@ export class DatabaseStorage implements IStorage {
       .select()
       .from(subscribers)
       .orderBy(desc(subscribers.subscribedAt));
+  }
+
+  async getSubscriberById(id: string): Promise<Subscriber | undefined> {
+    const [subscriber] = await db.select().from(subscribers).where(eq(subscribers.id, id));
+    return subscriber;
   }
 
   // Bookings

@@ -3,13 +3,15 @@
     "version": "1.0.0",
     "description": "ZuZo Backend Service",
     "main": "dist/index.js",
+    "type": "module",
     "scripts": {
         "build": "tsc",
         "start": "node dist/index.js",
-        "dev": "tsx watch src/index.ts",
+        "dev": "nodemon",
         "migrate": "drizzle-kit push:pg"
     },
     "dependencies": {
+        "@neondatabase/serverless": "^1.0.2",
         "@types/express": "^4.17.21",
         "@types/express-session": "^1.18.0",
         "@types/node": "20.16.11",
@@ -41,6 +43,7 @@
     "devDependencies": {
         "@types/cors": "^2.8.17",
         "drizzle-kit": "^0.31.4",
-        "esbuild": "^0.25.0"
+        "esbuild": "^0.25.0",
+        "nodemon": "^3.1.11"
     }
 }

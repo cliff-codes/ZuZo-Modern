@@ -1,10 +1,33 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
-import { Play, CheckCircle, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
+import { Play, Pause, CheckCircle, ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
+import { useState, useRef } from 'react';
 import videoFile from '@assets/Zuzo Ltd Gitex - Oct 7_ 2025_1760910955846-DS4WSt0i_1763928463966.mp4';
 import videoPoster from '@assets/generated_images/zuzo_ghana_contact_center_team.png';
 
 export function VideoHeroSection() {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [showPauseButton, setShowPauseButton] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const handlePlay = () => {
+        setIsPlaying(true);
+    };
+
+    const handlePause = () => {
+        setIsPlaying(false);
+    };
+
+    const handleMouseEnter = () => {
+        if (isPlaying) {
+            setShowPauseButton(true);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setShowPauseButton(false);
+    };
+
     return (
         <section className="relative w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-visible">
             {/* Animated Background Mesh */}
@@ -44,9 +67,9 @@ export function VideoHeroSection() {
             <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary/10 rounded-full blur-[80px]"></div>
 
             <div className="container mx-auto px-4 lg:px-8 relative z-10 py-24 lg:py-32 pb-32 lg:pb-40">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch max-w-7xl mx-auto">
                     {/* Left Column - Content */}
-                    <div className="text-center lg:text-left space-y-6 lg:space-y-8 animate-fade-in">
+                    <div className="text-center lg:text-left space-y-6 lg:space-y-8 animate-fade-in flex flex-col justify-center">
                         {/* Trust Badge with Glassmorphism */}
                         <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-lg">
                             <Sparkles className="h-4 w-4 text-primary" />
@@ -146,20 +169,27 @@ export function VideoHeroSection() {
                     </div>
 
                     {/* Right Column - Video */}
-                    <div className="relative group animate-fade-in pb-8 lg:pb-0">
+                    <div className="relative group animate-fade-in pb-8 lg:pb-0 flex items-stretch">
                         {/* Glow Effect */}
                         <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500"></div>
 
                         {/* Video Container */}
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-500 bg-gradient-to-br from-primary/20 to-accent/20">
-                            <div className="relative aspect-video">
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-500 bg-gradient-to-br from-primary/20 to-accent/20 flex flex-col w-full">
+                            <div 
+                                className="relative flex-1 cursor-pointer"
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
                                 <video
+                                    ref={videoRef}
                                     controls
                                     preload="metadata"
                                     poster={videoPoster}
                                     className="w-full h-full object-cover"
                                     data-testid="video-hero-player"
                                     aria-label="ZuZo company overview video showcasing BPO solutions"
+                                    onPlay={handlePlay}
+                                    onPause={handlePause}
                                 >
                                     <source src={videoFile} type="video/mp4" />
                                     Your browser does not support the video tag.
@@ -168,11 +198,22 @@ export function VideoHeroSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
 
                                 {/* Play Button Overlay (when paused) */}
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                    <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border-4 border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <Play className="h-10 w-10 text-white ml-1" fill="white" />
+                                {!isPlaying && (
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border-4 border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <Play className="h-10 w-10 text-white ml-1" fill="white" />
+                                        </div>
                                     </div>
-                                </div>
+                                )}
+
+                                {/* Pause Button Overlay (when playing and hovering) */}
+                                {isPlaying && showPauseButton && (
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border-4 border-white/30 flex items-center justify-center transition-opacity duration-300">
+                                            <Pause className="h-10 w-10 text-white" fill="white" />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Modern Video Caption */}
