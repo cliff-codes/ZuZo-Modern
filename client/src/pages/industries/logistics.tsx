@@ -15,7 +15,6 @@ import {
   ClipboardCheck, 
   BarChart3,
   ArrowRight,
-  CheckCircle2,
   Clock,
   TrendingUp,
   Users

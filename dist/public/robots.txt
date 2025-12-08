@@ -1,0 +1,13 @@
+# robots.txt for ZuZo BPO Solutions
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://zuzo.replit.app/sitemap.xml
+
+# Crawl-delay for bots (optional, helps manage server load)
+Crawl-delay: 1
+
+# Block specific paths if needed (none currently)
+# Disallow: /admin/
+# Disallow: /api/

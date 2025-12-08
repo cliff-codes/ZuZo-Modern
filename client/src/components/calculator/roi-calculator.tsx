@@ -14,8 +14,8 @@ export function ROICalculator() {
 
   // Calculations
   const annualCostCurrent = teamSize * avgSalary;
-  const zuzoHourlyRate = 6.19;
-  const zuzoDailyRate = 45;
+  // const zuzoHourlyRate = 6.19; // Reference rate
+  // const zuzoDailyRate = 45; // Reference rate
   const zuzoMonthlyRate = 990;
   
   // Assuming 22 working days per month, 8 hours per day

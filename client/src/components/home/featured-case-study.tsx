@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { CaseStudy } from "@shared/schema";
+import type { CaseStudy } from "@/types/CaseStudy";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, CheckCircle } from "lucide-react";
@@ -67,7 +67,7 @@ export function FeaturedCaseStudy() {
               {/* Key Metrics */}
               {featuredCaseStudy.metrics && featuredCaseStudy.metrics.length > 0 && (
                 <div className="grid grid-cols-2 gap-4">
-                  {featuredCaseStudy.metrics.slice(0, 4).map((metric, index) => (
+                  {featuredCaseStudy.metrics.slice(0, 4).map((metric: string, index: number) => (
                     <div key={index} className="bg-background/50 backdrop-blur-sm rounded-lg p-4 border">
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />

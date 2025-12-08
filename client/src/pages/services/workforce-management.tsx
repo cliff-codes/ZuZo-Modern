@@ -16,7 +16,6 @@ import {
   DollarSign,
   ChevronRight,
   CheckCircle2,
-  ArrowRight,
   UserPlus,
   Calendar,
   BarChart3,
