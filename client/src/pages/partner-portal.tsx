@@ -125,7 +125,7 @@ export default function PartnerPortal() {
                             {/* Mobile: Icon-based Horizontal Layout */}
                             <div className="block sm:hidden mb-8">
                                 <TabsList
-                                    className="!flex !w-full gap-2 mb-0 bg-white/10 border border-white/20 p-2 rounded-xl overflow-hidden h-auto !inline-flex shadow-lg backdrop-blur-sm"
+                                    className="!flex !w-full gap-2 mb-0 bg-white/10 border border-white/20 p-2 rounded-xl overflow-hidden h-auto shadow-lg backdrop-blur-sm"
                                     data-testid="tech-stack-tab-list-mobile"
                                 >
                                     <TabsTrigger
@@ -174,7 +174,7 @@ export default function PartnerPortal() {
                             {/* Tablet & Desktop: Icon-based Grid Layout */}
                             <div className="hidden sm:block">
                                 <TabsList
-                                    className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-3 mb-10 bg-white/10 border border-white/20 p-3 rounded-xl overflow-hidden h-auto min-h-[64px] md:min-h-[68px] !inline-grid backdrop-blur-sm shadow-lg"
+                                    className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-3 mb-10 bg-white/10 border border-white/20 p-3 rounded-xl overflow-hidden h-auto min-h-[64px] md:min-h-[68px] backdrop-blur-sm shadow-lg"
                                     data-testid="tech-stack-tab-list"
                                 >
                                     <TabsTrigger
@@ -690,13 +690,13 @@ export default function PartnerPortal() {
                         {/* Desktop Timeline - Enhanced Design */}
                         <div className="hidden lg:block relative">
                             {/* Animated Timeline Line */}
-                            <div className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 via-cyan-500 to-green-500 rounded-full opacity-30" />
+                            <div className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500  to-green-500 rounded-full opacity-30" />
                             <motion.div
                                 initial={{ scaleX: 0 }}
                                 whileInView={{ scaleX: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1.5, ease: 'easeInOut' }}
-                                className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 via-cyan-500 to-green-500 rounded-full origin-left"
+                                className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500  to-green-500 rounded-full origin-left"
                             />
 
                             <div className="grid grid-cols-4 gap-8 relative pt-8">
@@ -1579,7 +1579,7 @@ export default function PartnerPortal() {
                             {/* Mobile: Compact Horizontal Layout */}
                             <div className="block sm:hidden mb-8">
                                 <TabsList
-                                    className="!flex !w-full gap-1.5 mb-0 bg-white/10 border border-white/20 p-1.5 rounded-xl overflow-hidden h-auto !inline-flex shadow-lg backdrop-blur-sm"
+                                    className="!flex !w-full gap-1.5 mb-0 bg-white/10 border border-white/20 p-1.5 rounded-xl overflow-hidden h-auto shadow-lg backdrop-blur-sm"
                                     data-testid="faq-tab-list-mobile"
                                 >
                                     <TabsTrigger
@@ -1616,7 +1616,7 @@ export default function PartnerPortal() {
                             {/* Tablet & Desktop: Grid Layout */}
                             <div className="hidden sm:block">
                                 <TabsList
-                                    className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-2.5 mb-10 bg-white/10 border border-white/20 p-2.5 rounded-xl overflow-hidden h-auto min-h-[64px] md:min-h-[68px] !inline-grid backdrop-blur-sm shadow-lg"
+                                    className="!grid !w-full grid-cols-2 md:grid-cols-4 gap-2.5 mb-10 bg-white/10 border border-white/20 p-2.5 rounded-xl overflow-hidden h-auto min-h-[64px] md:min-h-[68px] backdrop-blur-sm shadow-lg"
                                     data-testid="faq-tab-list"
                                 >
                                     <TabsTrigger
