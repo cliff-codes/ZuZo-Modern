@@ -71,7 +71,7 @@ export function VideoHeroSection() {
                     {/* Left Column - Content */}
                     <div className="text-center lg:text-left space-y-6 lg:space-y-8 animate-fade-in flex flex-col justify-center">
                         {/* Trust Badge with Glassmorphism */}
-                        <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-lg">
+                        <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-lg w-fit mx-auto lg:mx-0">
                             <Sparkles className="h-4 w-4 text-primary" />
                             <span>Trusted by 500+ businesses worldwide</span>
                         </div>
