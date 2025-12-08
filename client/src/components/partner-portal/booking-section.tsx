@@ -1,8 +1,20 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Cal from '@calcom/embed-react';
 import { CheckCircle, Calendar, Phone, Mail } from 'lucide-react';
+import { TimeSlotPicker } from './time-slot-picker';
 
 export function BookingSection() {
+    const [selectedDate] = useState<Date | undefined>(new Date());
+    const [selectedTime, setSelectedTime] = useState<string | undefined>();
+    const [showCalEmbed, setShowCalEmbed] = useState(false);
+
+    const handleTimeSelect = (time: string) => {
+        setSelectedTime(time);
+        // Optionally trigger Cal.com booking flow
+        setShowCalEmbed(true);
+    };
+
     return (
         <section
             id="book-call"
@@ -59,8 +71,8 @@ export function BookingSection() {
                         </div>
                     </div>
 
-                    {/* Cal.com Embed */}
-                    <div className="rounded-xl overflow-hidden border border-white/10 bg-white shadow-2xl shadow-purple-500/10">
+                    {/* Enhanced Time Selection */}
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-white/0 shadow-2xl shadow-purple-500/10 backdrop-blur-sm">
                         <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-6 text-center">
                             <h3 className="font-heading font-bold text-xl md:text-2xl mb-2">
                                 Pick a Time That Works for You
@@ -69,13 +81,52 @@ export function BookingSection() {
                                 30-minute partner strategy session via Microsoft Teams
                             </p>
                         </div>
-                        <div data-testid="partner-cal-booking-embed">
-                            <Cal
-                                namespace="partner-30min"
-                                calLink="zuzo-ltd/30min"
-                                style={{ width: '100%', height: '100%', overflow: 'scroll' }}
-                                config={{ layout: 'month_view' }}
-                            />
+                        <div className="p-6 bg-[#0a0f1a]">
+                            {!showCalEmbed ? (
+                                <TimeSlotPicker
+                                    selectedDate={selectedDate}
+                                    selectedTime={selectedTime}
+                                    onTimeSelect={handleTimeSelect}
+                                />
+                            ) : (
+                                <div className="space-y-4">
+                                    {selectedTime && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="bg-green-500/20 border border-green-500/30 rounded-lg p-4 text-center"
+                                        >
+                                            <p className="text-green-400 font-medium mb-2">
+                                                Selected Time: {selectedTime}
+                                            </p>
+                                            <button
+                                                onClick={() => {
+                                                    setShowCalEmbed(false);
+                                                    setSelectedTime(undefined);
+                                                }}
+                                                className="text-sm text-white/70 hover:text-white transition-colors"
+                                            >
+                                                Choose a different time
+                                            </button>
+                                        </motion.div>
+                                    )}
+                                    <div
+                                        className="rounded-lg overflow-hidden bg-white"
+                                        data-testid="partner-cal-booking-embed"
+                                    >
+                                        <Cal
+                                            namespace="partner-30min"
+                                            calLink="zuzo-ltd/30min"
+                                            style={{
+                                                width: '100%',
+                                                height: '600px',
+                                                overflow: 'auto',
+                                            }}
+                                            config={{ layout: 'month_view' }}
+                                        />
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -105,4 +156,3 @@ export function BookingSection() {
         </section>
     );
 }
-
