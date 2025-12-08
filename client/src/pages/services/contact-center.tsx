@@ -65,12 +65,22 @@ export default function ContactCenterService() {
           description="24/7 omnichannel customer support with AI-powered automation"
           url="/services/contact-center"
         />
-        <ServiceHero
-          title="Contact Center Services"
-          subtitle="24/7 Customer Support"
-          description="Transform your customer experience with our omnichannel contact center solutions. From inbound support to technical assistance, we deliver exceptional service that builds loyalty and drives growth."
-          icon={<Headset className="h-10 w-10 text-primary" />}
-        />
+        
+        {/* Hero Section with Background Image */}
+        <div className="relative">
+          
+          
+          {/* Hero Content */}
+          <div className="relative z-10">
+            <ServiceHero
+              title="Contact Center Services"
+              subtitle="24/7 Customer Support"
+              description="Transform your customer experience with our omnichannel contact center solutions. From inbound support to technical assistance, we deliver exceptional service that builds loyalty and drives growth."
+              icon={<Headset className="h-10 w-10 text-primary" />}
+            />
+          </div>
+        </div>
+        
         <MiniTrustBar />
         <ServiceFeatures features={features} />
         <div className="container mx-auto px-4 lg:px-8 py-16">
